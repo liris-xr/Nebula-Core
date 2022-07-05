@@ -1,0 +1,2196 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.25f1 (9b9180224418) revision 10195328'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19042) 64bit Professional' Language: 'fr' Physical Memory: 32487 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/elst/Documents/Unity/MAO_Core/MAO-UnitySoftware
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+50042
+Successfully changed project path to: C:/Users/elst/Documents/Unity/MAO_Core/MAO-UnitySoftware
+C:/Users/elst/Documents/Unity/MAO_Core/MAO-UnitySoftware
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 107.10 ms, found 7 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.25f1 (9b9180224418)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/elst/Documents/Unity/MAO_Core/MAO-UnitySoftware/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3080 Ti (ID=0x2208)
+    Vendor:   
+    VRAM:     12108 MB
+    Driver:   30.0.14.7212
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56420
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001870 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 41.31 ms, found 7 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.501 seconds
+Domain Reload Profiling:
+	ReloadAssembly (501ms)
+		BeginReloadAssembly (46ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (395ms)
+			LoadAssemblies (45ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (134ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (154ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (41ms)
+				BeforeProcessingInitializeOnLoad (13ms)
+				ProcessInitializeOnLoadAttributes (71ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006653 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 38.69 ms, found 7 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.021 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1022ms)
+		BeginReloadAssembly (121ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (850ms)
+			LoadAssemblies (77ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (262ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (41ms)
+			SetupLoadedEditorAssemblies (360ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (39ms)
+				BeforeProcessingInitializeOnLoad (75ms)
+				ProcessInitializeOnLoadAttributes (227ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.61 ms, found 7 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2321 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.6 MB.
+System memory in use after: 109.8 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2757.
+Total: 3.165100 ms (FindLiveObjects: 0.192500 ms CreateObjectMapping: 0.089800 ms MarkObjects: 2.777700 ms  DeleteObjects: 0.083100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/SampleSceneMAO-Standalone.unity
+  artifactKey: Guid(049b14f01bad11142a62c18cd56a7e01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO-Standalone.unity using Guid(049b14f01bad11142a62c18cd56a7e01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '340ec864d4853cdbb2d54886ec1a5c38') in 0.018624 seconds 
+  Import took 0.021691 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 48.363636 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyTreePack/Models/Tree Type2 05.dae
+  artifactKey: Guid(08370ae33fad3da4a8357631f8a9f5ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyTreePack/Models/Tree Type2 05.dae using Guid(08370ae33fad3da4a8357631f8a9f5ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27143799b127c5d9c58dad6603e2c200') in 0.137934 seconds 
+  Import took 0.141518 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011264 seconds.
+  path: Assets/InternetAssets/Texture/Ground020_1K-JPG/Ground020_1K_Color.jpg
+  artifactKey: Guid(48bcda376c2aa8b4fb985873582d130d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/Texture/Ground020_1K-JPG/Ground020_1K_Color.jpg using Guid(48bcda376c2aa8b4fb985873582d130d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2577434bf1b7b61eb9b5cd3b4d82758a') in 0.024484 seconds 
+  Import took 0.027520 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009215 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyRockPack/Materials/Grey.mat
+  artifactKey: Guid(18ec5123ab1b37446998bf1b1228a0c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyRockPack/Materials/Grey.mat using Guid(18ec5123ab1b37446998bf1b1228a0c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90ccfb42eb3afa6f1ece196cd63732fd') in 0.134181 seconds 
+  Import took 0.137413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006751 seconds.
+  path: Assets/InternetAssets/ZAHA LIGHT pendants/Orange.jpg
+  artifactKey: Guid(bbbead27d11fbfe4f9c44e2068795f05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/ZAHA LIGHT pendants/Orange.jpg using Guid(bbbead27d11fbfe4f9c44e2068795f05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb9559e5178077325f365fe9c0f56af5') in 0.013008 seconds 
+  Import took 0.016344 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002840 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_1_Over.mat
+  artifactKey: Guid(6b8eb467714aec94cb78cb85013ff993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_1_Over.mat using Guid(6b8eb467714aec94cb78cb85013ff993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40f66edbfadb955deb6a5936f1cd78f4') in 0.057028 seconds 
+  Import took 0.060219 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002832 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-73_comp_shadowmask.png
+  artifactKey: Guid(1cf71318e916e4b46a01bc2d6d318dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-73_comp_shadowmask.png using Guid(1cf71318e916e4b46a01bc2d6d318dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73ae13fbf99c4a73bdcf7b90c2ecd0ec') in 0.017245 seconds 
+  Import took 0.020035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003114 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-76_comp_shadowmask.png
+  artifactKey: Guid(85fd1e6ee5c1cf84593d93297d663647) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-76_comp_shadowmask.png using Guid(85fd1e6ee5c1cf84593d93297d663647) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdb47f16f8adb6a6530eecee514c26f0') in 0.014719 seconds 
+  Import took 0.018202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002814 seconds.
+  path: Assets/PersonalAssets/Misc/NewLayer 1.terrainlayer
+  artifactKey: Guid(cf22be68847099d449c8ee3ab4a3b357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Misc/NewLayer 1.terrainlayer using Guid(cf22be68847099d449c8ee3ab4a3b357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e31f6e246606352a21ab8e7c812a1497') in 0.019613 seconds 
+  Import took 0.022807 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003451 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-88_comp_shadowmask.png
+  artifactKey: Guid(f24b4f5422337b246a4f853da7dba702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-88_comp_shadowmask.png using Guid(f24b4f5422337b246a4f853da7dba702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b997ed1bebc1e3bc599d014bd4c09850') in 0.017841 seconds 
+  Import took 0.021219 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007588 seconds.
+  path: Assets/PersonalAssets/SceneMAO/UI/Wood051_1K_Displacement.jpg
+  artifactKey: Guid(e7140fda96441b847ad6d1a2822f54ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/UI/Wood051_1K_Displacement.jpg using Guid(e7140fda96441b847ad6d1a2822f54ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cb6ef0b6ffd42721b085e3bcb6d28b0') in 0.014583 seconds 
+  Import took 0.017969 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003136 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-86_comp_shadowmask.png
+  artifactKey: Guid(b4e6ee395be4b614fbb705819328d014) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-86_comp_shadowmask.png using Guid(b4e6ee395be4b614fbb705819328d014) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a9dc58308c6059299080133a45742a2') in 0.014281 seconds 
+  Import took 0.017236 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003404 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall_2_4_Over.mat
+  artifactKey: Guid(33a51f6eb9ef3b442b710691f8aaae66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall_2_4_Over.mat using Guid(33a51f6eb9ef3b442b710691f8aaae66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '598ec8808ff693eb230cca6e9f675de7') in 0.020167 seconds 
+  Import took 0.023599 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002943 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Hood Fan.mat
+  artifactKey: Guid(dafd7b57e1a9a9e4b896be43c633edb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Hood Fan.mat using Guid(dafd7b57e1a9a9e4b896be43c633edb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e541042ac44ca6e9ce15e5202066fd5') in 0.014076 seconds 
+  Import took 0.017237 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003789 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_hold_ping_pong_ball_anim.fbx
+  artifactKey: Guid(a49c22e69aed68a4e9c458fe4276065c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_hold_ping_pong_ball_anim.fbx using Guid(a49c22e69aed68a4e9c458fe4276065c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d71912930d3a463311f06818d9f0d5f') in 0.014325 seconds 
+  Import took 0.017455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002285 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Models/RightHandAnimator.controller
+  artifactKey: Guid(f2f9ddb32c6ba5e4dbe0f3ff6cf497aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Models/RightHandAnimator.controller using Guid(f2f9ddb32c6ba5e4dbe0f3ff6cf497aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59b2df5380653e49d69263e058e4bba2') in 0.011577 seconds 
+  Import took 0.014608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006530 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Doors/Door2/Frame1Material.mat
+  artifactKey: Guid(8ce4e906e7ffb4c48b4ab6999d23b047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Doors/Door2/Frame1Material.mat using Guid(8ce4e906e7ffb4c48b4ab6999d23b047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4457b22431a615b22c25e28143b2d5b3') in 0.012414 seconds 
+  Import took 0.015760 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021940 seconds.
+  path: Assets/InternetAssets/ZAHA LIGHT pendants/ZAHA LIGHT white pendant Simplified.obj
+  artifactKey: Guid(fd6420e2a0e5f2544a7069f7cae9665f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/ZAHA LIGHT pendants/ZAHA LIGHT white pendant Simplified.obj using Guid(fd6420e2a0e5f2544a7069f7cae9665f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96ff8a89985319534528d62b2d2a2d48') in 0.128067 seconds 
+  Import took 0.131629 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003588 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ceiling/OfficeCeiling001_1K_Color.jpg
+  artifactKey: Guid(b8d3628eb31bb754b9c6d0b748ac4e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ceiling/OfficeCeiling001_1K_Color.jpg using Guid(b8d3628eb31bb754b9c6d0b748ac4e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0aa7b93bd0f760de7e37b9165f291198') in 0.011827 seconds 
+  Import took 0.014517 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007033 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-83_comp_shadowmask.png
+  artifactKey: Guid(aef6b813ced4b7341bd1544f7d01dbce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-83_comp_shadowmask.png using Guid(aef6b813ced4b7341bd1544f7d01dbce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3415b1b8f41edea97a1ce85cfcfb5ec4') in 0.015862 seconds 
+  Import took 0.018621 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003206 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Hood_Fan_Color.png
+  artifactKey: Guid(40b1c52b5b31dfa409ebf4dd98860ab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Hood_Fan_Color.png using Guid(40b1c52b5b31dfa409ebf4dd98860ab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b31cf59edb98f90877dca8ddda192bbf') in 0.016442 seconds 
+  Import took 0.019769 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003660 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Models/l_hand_skeletal_lowres.fbx
+  artifactKey: Guid(ca20b3907ff1c794cb89c1ad2cce8282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Models/l_hand_skeletal_lowres.fbx using Guid(ca20b3907ff1c794cb89c1ad2cce8282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18e38ed921c8049f0fc57f71cf884666') in 0.046816 seconds 
+  Import took 0.049864 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004218 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Sugar_Jar_Color.png
+  artifactKey: Guid(febee028c3710c748b7595c20ef13805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Sugar_Jar_Color.png using Guid(febee028c3710c748b7595c20ef13805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca67a27f82dcde289ccd00ef3aabecaa') in 0.012001 seconds 
+  Import took 0.014953 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002844 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-75_comp_shadowmask.png
+  artifactKey: Guid(2aa6be2a9ead89b49ac815ffe17f9303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-75_comp_shadowmask.png using Guid(2aa6be2a9ead89b49ac815ffe17f9303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14b1575218ade855d39d1631a3361ddb') in 0.018849 seconds 
+  Import took 0.021871 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009392 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/source/Living Room Asset Pack.fbx
+  artifactKey: Guid(cd11333fb71a29b47b116eb4a3a472d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/source/Living Room Asset Pack.fbx using Guid(cd11333fb71a29b47b116eb4a3a472d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a7e4e85e45e6f05cd48e969799306f9') in 0.164049 seconds 
+  Import took 0.167507 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003332 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-70_comp_shadowmask.png
+  artifactKey: Guid(bab15f12dfa41a849b8e8f81811892d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-70_comp_shadowmask.png using Guid(bab15f12dfa41a849b8e8f81811892d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18bc62331132f7d9ac60b9636fcfe669') in 0.015011 seconds 
+  Import took 0.018469 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005349 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-93_comp_light.exr
+  artifactKey: Guid(53458dd480f01a946b08a6fa26aa7528) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-93_comp_light.exr using Guid(53458dd480f01a946b08a6fa26aa7528) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3d185d59d4177fefa8fd39bf2735c7d') in 0.016502 seconds 
+  Import took 0.019457 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024446 seconds.
+  path: Assets/InternetAssets/orange/orange_halb3DC_(null)_color.jpg
+  artifactKey: Guid(a603be89c66623a479ac344142adb28c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/orange/orange_halb3DC_(null)_color.jpg using Guid(a603be89c66623a479ac344142adb28c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f18b31cc9449ba0305ecb78e2d7682dc') in 0.011817 seconds 
+  Import took 0.015105 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002605 seconds.
+  path: Assets/InternetAssets/PicNicTable/Metal.mat
+  artifactKey: Guid(a8725372ff3f7194fb45bcf697312ed3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/PicNicTable/Metal.mat using Guid(a8725372ff3f7194fb45bcf697312ed3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50cb35a9737bd0c9175722d3ab44ab81') in 0.012382 seconds 
+  Import took 0.015451 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010442 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-89_comp_light.exr
+  artifactKey: Guid(12f8c4edf5552a04a92a336530103d98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-89_comp_light.exr using Guid(12f8c4edf5552a04a92a336530103d98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1ddaac4a08b08c4e15968a8129270ce') in 0.016922 seconds 
+  Import took 0.020420 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003081 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Doors/Door.prefab
+  artifactKey: Guid(e33ab6e04cfca6f4cb30488adfb5ab11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Doors/Door.prefab using Guid(e33ab6e04cfca6f4cb30488adfb5ab11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd45eb2201da9fe5edcbc1bedc017d1b') in 0.091514 seconds 
+  Import took 0.094477 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002419 seconds.
+  path: Assets/InternetAssets/home-office-desk-maple/textures/Maple Desk.mat
+  artifactKey: Guid(2053c34a3f9bdd549935e609828e288a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/home-office-desk-maple/textures/Maple Desk.mat using Guid(2053c34a3f9bdd549935e609828e288a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00ddab66f82652849e1ff203552282f5') in 0.053697 seconds 
+  Import took 0.056909 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005162 seconds.
+  path: Assets/InternetAssets/PicNicTable/map-normal.png
+  artifactKey: Guid(7445994f607e46042b27ec791aad9e81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/PicNicTable/map-normal.png using Guid(7445994f607e46042b27ec791aad9e81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2ee11c45e68c9a59ed8a554607c6a40') in 0.020967 seconds 
+  Import took 0.024286 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005144 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ground/GroundMaterial.mat
+  artifactKey: Guid(d5b961b34163f4b4ab09f300b29bb921) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ground/GroundMaterial.mat using Guid(d5b961b34163f4b4ab09f300b29bb921) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84d6199b318bb6e3ef367a007dcbcbfb') in 0.051562 seconds 
+  Import took 0.055034 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008275 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-68_comp_shadowmask.png
+  artifactKey: Guid(489eb3bf46ea46549a151930073faf6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-68_comp_shadowmask.png using Guid(489eb3bf46ea46549a151930073faf6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '164e19defea5d12c5e6c16db7ac974a1') in 0.014314 seconds 
+  Import took 0.017691 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003106 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-85_comp_shadowmask.png
+  artifactKey: Guid(7c5739f4b3d5d6b4783b807e2227d755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-85_comp_shadowmask.png using Guid(7c5739f4b3d5d6b4783b807e2227d755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55d541084dfbd39c7c327d9971bc0ad2') in 0.019879 seconds 
+  Import took 0.023002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009492 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-81_comp_shadowmask.png
+  artifactKey: Guid(8354128c2a8ecf44ebd65a0c997c7961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-81_comp_shadowmask.png using Guid(8354128c2a8ecf44ebd65a0c997c7961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '992ce099d90caacc0c6c2e42c0c815ff') in 0.018158 seconds 
+  Import took 0.021416 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003522 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-77_comp_shadowmask.png
+  artifactKey: Guid(eb2b38daf7bc58542a32967e7d9b25ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-77_comp_shadowmask.png using Guid(eb2b38daf7bc58542a32967e7d9b25ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c564517981446f45ffb1b560c1f4f699') in 0.013943 seconds 
+  Import took 0.017380 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010513 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_thumbs_up_anim.fbx
+  artifactKey: Guid(367eacd8142e4ca478642189323d9cee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_thumbs_up_anim.fbx using Guid(367eacd8142e4ca478642189323d9cee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'daf214b94c81ec7e606164055ab534ff') in 0.009352 seconds 
+  Import took 0.012821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010500 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Coffee_Table_Color.png
+  artifactKey: Guid(3a27c771089c283438bd4fd06728e4e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Coffee_Table_Color.png using Guid(3a27c771089c283438bd4fd06728e4e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef5badc8081cceae26f89b556e7f3a56') in 0.017091 seconds 
+  Import took 0.020753 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004951 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-77_comp_light.exr
+  artifactKey: Guid(c65484b4dd2edfb4db7151ece11d3c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-77_comp_light.exr using Guid(c65484b4dd2edfb4db7151ece11d3c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a84073d27edbf1eed3567e39f453369') in 0.013003 seconds 
+  Import took 0.015808 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012370 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Textures/Plaster002_1K_Displacement.jpg
+  artifactKey: Guid(762e77c8c3ca99f4991edf415da21c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Textures/Plaster002_1K_Displacement.jpg using Guid(762e77c8c3ca99f4991edf415da21c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1d9128ad7cfdb7d07b0b99c1b28d06d') in 0.012606 seconds 
+  Import took 0.015677 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004094 seconds.
+  path: Assets/InternetAssets/Day-Night Skyboxes/Textures/SkyAfterNoon_Right.png
+  artifactKey: Guid(811d583fb21e7a147a32350476c9b9b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/Day-Night Skyboxes/Textures/SkyAfterNoon_Right.png using Guid(811d583fb21e7a147a32350476c9b9b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5461414954bb27144a0e40d87805e535') in 0.012427 seconds 
+  Import took 0.015241 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004307 seconds.
+  path: Assets/NuGet/Editor/NugetForUnity.dll
+  artifactKey: Guid(8dc1be91775c4bb469f6b74cef450eaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NuGet/Editor/NugetForUnity.dll using Guid(8dc1be91775c4bb469f6b74cef450eaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6662ebbf7f25e49806c90bf1933e3224') in 0.007702 seconds 
+  Import took 0.011874 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003400 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-67_comp_shadowmask.png
+  artifactKey: Guid(596bf51c0ecdd494aba4aee76723c2ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-67_comp_shadowmask.png using Guid(596bf51c0ecdd494aba4aee76723c2ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a126bdece14b37dd09652bdb64ac4f9') in 0.015083 seconds 
+  Import took 0.018698 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010081 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ground/WoodFloor040_1K_AmbientOcclusion.jpg
+  artifactKey: Guid(7901b12dd124c5d4f81be6d321515eb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ground/WoodFloor040_1K_AmbientOcclusion.jpg using Guid(7901b12dd124c5d4f81be6d321515eb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26b717dc7a808693869cc7e276bc6ffb') in 0.012380 seconds 
+  Import took 0.015868 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015058 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-84_comp_shadowmask.png
+  artifactKey: Guid(99b2223ac34c9c548b1ec3b3ece55b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-84_comp_shadowmask.png using Guid(99b2223ac34c9c548b1ec3b3ece55b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51c9e6d52d8e7bd14656640106ef4587') in 0.014662 seconds 
+  Import took 0.017737 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004444 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-82_comp_light.exr
+  artifactKey: Guid(a5700966e2c41f44a9394b82714413f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-82_comp_light.exr using Guid(a5700966e2c41f44a9394b82714413f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bc51135aa69c39d9702055bc2001006') in 0.017568 seconds 
+  Import took 0.020639 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003041 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/source/Oven Black Glass.mat
+  artifactKey: Guid(5fd92b1acd3129c4a9cf53cc1dd44132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/source/Oven Black Glass.mat using Guid(5fd92b1acd3129c4a9cf53cc1dd44132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b92eb9adcf17488f620d1a02ec9002b2') in 0.014190 seconds 
+  Import took 0.017620 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.028642 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Pot_Color.png
+  artifactKey: Guid(89b9a301c57677040825d5933f395ef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Pot_Color.png using Guid(89b9a301c57677040825d5933f395ef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5aa35fdd3f574fe20ed1fbc5a21379db') in 0.014278 seconds 
+  Import took 0.017412 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003009 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-62_comp_shadowmask.png
+  artifactKey: Guid(4d4347be57ad5b04ba7b4c5e9e8ba783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-62_comp_shadowmask.png using Guid(4d4347be57ad5b04ba7b4c5e9e8ba783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18aae5f521a93f09ecb1ba6f28e98344') in 0.015900 seconds 
+  Import took 0.018808 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007470 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-92_comp_shadowmask.png
+  artifactKey: Guid(0106df3522f0abd44b9f4b703ce612d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-92_comp_shadowmask.png using Guid(0106df3522f0abd44b9f4b703ce612d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03d84ce37d9c916892e3604ea246c73a') in 0.017134 seconds 
+  Import took 0.020190 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007607 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_3_Under.mat
+  artifactKey: Guid(555dd5460fc88ec479fd5176cc2d2c9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_3_Under.mat using Guid(555dd5460fc88ec479fd5176cc2d2c9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfb7ce715c314b2ce7544c5d350f7ea7') in 0.019143 seconds 
+  Import took 0.022040 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003194 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-66_comp_shadowmask.png
+  artifactKey: Guid(a3fca88c19ac6f849a99ea83314093f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-66_comp_shadowmask.png using Guid(a3fca88c19ac6f849a99ea83314093f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5405afa4a82bbbb723e7e92de01407f4') in 0.016777 seconds 
+  Import took 0.019596 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004778 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ceiling/OfficeCeiling001_1K_Displacement.jpg
+  artifactKey: Guid(4042665441b08db49a78f84a78c555a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ceiling/OfficeCeiling001_1K_Displacement.jpg using Guid(4042665441b08db49a78f84a78c555a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f211f2d8a9e238db95a438c13cb4424') in 0.012669 seconds 
+  Import took 0.016493 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002965 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-94_comp_shadowmask.png
+  artifactKey: Guid(c16f05282d8e81c42a818c526a932585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-94_comp_shadowmask.png using Guid(c16f05282d8e81c42a818c526a932585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd19445230af53e2099675b9e93f78c90') in 0.015404 seconds 
+  Import took 0.018719 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005223 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/source/OvenLightMaterial.mat
+  artifactKey: Guid(c310772f8ed7ffe4f89d24daef80610d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/source/OvenLightMaterial.mat using Guid(c310772f8ed7ffe4f89d24daef80610d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67d37f01e1e18c9e906afc8f5d47ac8d') in 0.013600 seconds 
+  Import took 0.016582 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006075 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_fist_anim.fbx
+  artifactKey: Guid(7cb2e1480bb51ce4282f540ea3f41d4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_fist_anim.fbx using Guid(7cb2e1480bb51ce4282f540ea3f41d4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '375dc28d7f10dbc126fb0b85af24e80d') in 0.008773 seconds 
+  Import took 0.011529 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006096 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ceiling/OfficeCeiling001_1K_Metalness.jpg
+  artifactKey: Guid(9eaa6ec3aac669a40bced960f4eb6d79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ceiling/OfficeCeiling001_1K_Metalness.jpg using Guid(9eaa6ec3aac669a40bced960f4eb6d79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9eb6a2cb56b120c500859616a0aae5a') in 0.012246 seconds 
+  Import took 0.015602 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005145 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Doors/Door1/GlassMaterial.mat
+  artifactKey: Guid(5f184020b6db1d144966e8b2ddaa541d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Doors/Door1/GlassMaterial.mat using Guid(5f184020b6db1d144966e8b2ddaa541d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b27f13d1ad62b4ec8a269f5a71171ab') in 0.016623 seconds 
+  Import took 0.019635 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003124 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Pot.mat
+  artifactKey: Guid(1d0d51045dcd5e349a63d1632c613966) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Pot.mat using Guid(1d0d51045dcd5e349a63d1632c613966) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6fb95ff75838b8f4a05dd1c50a6886e') in 0.018848 seconds 
+  Import took 0.022179 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005366 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-85_comp_light.exr
+  artifactKey: Guid(d8f9f83e2128d1d4fb743798cec11899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-85_comp_light.exr using Guid(d8f9f83e2128d1d4fb743798cec11899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b38e832f869dd30269be346ed6286b2') in 0.016676 seconds 
+  Import took 0.019742 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002579 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Fridge.mat
+  artifactKey: Guid(0afc29de2f86ac646b0400f3ce661dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Fridge.mat using Guid(0afc29de2f86ac646b0400f3ce661dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '179acf49ea86be14a7022f54ccf582ba') in 0.017321 seconds 
+  Import took 0.020394 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005726 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyRockPack/Models/Rock Type6 03.dae
+  artifactKey: Guid(a2cba2c95720877468327b3f6924f8c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyRockPack/Models/Rock Type6 03.dae using Guid(a2cba2c95720877468327b3f6924f8c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '819266cbc4f35d608634c5e813681f6a') in 0.016634 seconds 
+  Import took 0.020065 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003180 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-63_comp_shadowmask.png
+  artifactKey: Guid(c876fddc19a6a534c889e263d0c7bcc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-63_comp_shadowmask.png using Guid(c876fddc19a6a534c889e263d0c7bcc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9ea0b8f560af6d58b4541031d9228af') in 0.016554 seconds 
+  Import took 0.020051 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003662 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_relax_mid_fist_anim.fbx
+  artifactKey: Guid(3c1e2504e79f7a242a8a0c8a4add2578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_relax_mid_fist_anim.fbx using Guid(3c1e2504e79f7a242a8a0c8a4add2578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7862801720f1beea86d1c5bc37292178') in 0.008988 seconds 
+  Import took 0.011864 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005022 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Textures/Plaster002_1K_Color.jpg
+  artifactKey: Guid(702fa38725bac3d44be762b0f35e14a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Textures/Plaster002_1K_Color.jpg using Guid(702fa38725bac3d44be762b0f35e14a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a22527cd0a53897b8f197965f2f7adf') in 0.011855 seconds 
+  Import took 0.014639 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004621 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-71_comp_light.exr
+  artifactKey: Guid(b1728c92cde241b419f265b8dc2abc0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-71_comp_light.exr using Guid(b1728c92cde241b419f265b8dc2abc0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bf2b4766e6042f08a8cdca71ee665d0') in 0.015175 seconds 
+  Import took 0.018571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004077 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_thumbs_up_anim.fbx
+  artifactKey: Guid(38245a3244d4c904e9a7c93dfc8ffbaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_thumbs_up_anim.fbx using Guid(38245a3244d4c904e9a7c93dfc8ffbaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f761240f6e4d9563422dd02421aab61c') in 0.010449 seconds 
+  Import took 0.013730 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003927 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-72_comp_light.exr
+  artifactKey: Guid(ea3d506bc97b92747975f1f0917a1349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-72_comp_light.exr using Guid(ea3d506bc97b92747975f1f0917a1349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd70d20410181e342440b6555c3467c84') in 0.015313 seconds 
+  Import took 0.018378 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005295 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-83_comp_light.exr
+  artifactKey: Guid(84fa24614dd0c8f499fb8678854e22a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-83_comp_light.exr using Guid(84fa24614dd0c8f499fb8678854e22a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5c265dfcf10d5d66253c3e9c35f5b5f') in 0.011801 seconds 
+  Import took 0.014722 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003756 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Book_Color.png
+  artifactKey: Guid(128620e897e36f44195eae25c5711927) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Book_Color.png using Guid(128620e897e36f44195eae25c5711927) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae22744178cb36c256cfb34cecb80ad5') in 0.012370 seconds 
+  Import took 0.015641 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007682 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/source/Kitchen Asset Pack.fbx
+  artifactKey: Guid(ad6d263c7c4819e40a72aa3f96aa73e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/source/Kitchen Asset Pack.fbx using Guid(ad6d263c7c4819e40a72aa3f96aa73e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7e8212b51e66bb57c4eefd711569d4d') in 0.137606 seconds 
+  Import took 0.141382 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007992 seconds.
+  path: Assets/InternetAssets/ZAHA LIGHT pendants/ChandelierWireMaterial.mat
+  artifactKey: Guid(a1a0eca947715c3458ae697db767543c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/ZAHA LIGHT pendants/ChandelierWireMaterial.mat using Guid(a1a0eca947715c3458ae697db767543c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '581d2dbe4469830f96c5e4260b8d28af') in 0.014331 seconds 
+  Import took 0.017396 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002757 seconds.
+  path: Assets/PersonalAssets/Misc/NewLayer.terrainlayer
+  artifactKey: Guid(bee29a6826a847d4ba9a3cae09085e07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Misc/NewLayer.terrainlayer using Guid(bee29a6826a847d4ba9a3cae09085e07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '453c362dae4c2b23e821651c53f71b7d') in 0.015565 seconds 
+  Import took 0.018496 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019856 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-69_comp_light.exr
+  artifactKey: Guid(9ac5c043334297f4cab4a41d2ca16187) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-69_comp_light.exr using Guid(9ac5c043334297f4cab4a41d2ca16187) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '505d4468b342a245691175f0cb0ef298') in 0.013400 seconds 
+  Import took 0.016591 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002527 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall4/Wall4_1_Over.mat
+  artifactKey: Guid(6f1b28d4b4c033b47ace2abaec733a2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall4/Wall4_1_Over.mat using Guid(6f1b28d4b4c033b47ace2abaec733a2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3d96b7abe0f8da6bd022df5295945ac') in 0.020974 seconds 
+  Import took 0.024023 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002412 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_3_Over.mat
+  artifactKey: Guid(e8502d6c77dc9514ebe8ae9cb052b304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_3_Over.mat using Guid(e8502d6c77dc9514ebe8ae9cb052b304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e633adc564aad35767113935acd1dcb5') in 0.017030 seconds 
+  Import took 0.020014 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003327 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_relax_3qtr_fist_anim.fbx
+  artifactKey: Guid(79e0d96a3e30fec46a930ab7dd95ef5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_relax_3qtr_fist_anim.fbx using Guid(79e0d96a3e30fec46a930ab7dd95ef5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07b9ca7d1303da5aee54317469f6f5ed') in 0.010142 seconds 
+  Import took 0.012944 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015240 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_2_Under.mat
+  artifactKey: Guid(af6e3a77deb8a7a4b876bdb4db4f5e82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_2_Under.mat using Guid(af6e3a77deb8a7a4b876bdb4db4f5e82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4196e554f01e7afee2bdc0ad681c2e7') in 0.018611 seconds 
+  Import took 0.022110 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007666 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall_2_2.5_Over.mat
+  artifactKey: Guid(02e7a414ecb38ae4986cc4107dd9efac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall_2_2.5_Over.mat using Guid(02e7a414ecb38ae4986cc4107dd9efac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f5c2dfb611eeb52502d0a8cf7fc228a') in 0.017997 seconds 
+  Import took 0.021131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002995 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/ReflectionProbe-0.exr
+  artifactKey: Guid(88332f6da81926541844e29f1c68d561) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/ReflectionProbe-0.exr using Guid(88332f6da81926541844e29f1c68d561) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbcf4ef889acbfe65622a7ebe1480853') in 0.019648 seconds 
+  Import took 0.022579 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003083 seconds.
+  path: Assets/InternetAssets/PicNicTable/table.fbx
+  artifactKey: Guid(ba8a0e5d7554d94478f773ce9d848356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/PicNicTable/table.fbx using Guid(ba8a0e5d7554d94478f773ce9d848356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78c1c0484c82d381b71adf1d889c5f48') in 0.058858 seconds 
+  Import took 0.062316 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003584 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_cap_touch_anim.fbx
+  artifactKey: Guid(16a87db82a90e2b40986857ee65aea51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_cap_touch_anim.fbx using Guid(16a87db82a90e2b40986857ee65aea51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1730274b37e110d926681d636e4dbb1') in 0.008550 seconds 
+  Import took 0.011346 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005822 seconds.
+  path: Assets/InternetAssets/Texture/Foliage004_1K-JPG/Foliage004_1K_Color.jpg
+  artifactKey: Guid(f436419582b87bc48ba6da7e6b857091) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/Texture/Foliage004_1K-JPG/Foliage004_1K_Color.jpg using Guid(f436419582b87bc48ba6da7e6b857091) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2613213fd1ac2489589d1bf2c1ad88e1') in 0.011550 seconds 
+  Import took 0.015021 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006871 seconds.
+  path: Assets/InternetAssets/Texture/Grass004_1K-JPG/Grass004_1K_Color.jpg
+  artifactKey: Guid(b23f4671baf89a14aaa25a36d83bbe48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/Texture/Grass004_1K-JPG/Grass004_1K_Color.jpg using Guid(b23f4671baf89a14aaa25a36d83bbe48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5e52703b58d123e4f7c30322866143b') in 0.013825 seconds 
+  Import took 0.017427 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016905 seconds.
+  path: Assets/PersonalAssets/SceneMAO/UI/chevron_right-512.png
+  artifactKey: Guid(6269b726893a20b4caecff26e6e9ace6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/UI/chevron_right-512.png using Guid(6269b726893a20b4caecff26e6e9ace6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35c5bd494d1ef23f276fc4411680a97d') in 0.039424 seconds 
+  Import took 0.042754 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006159 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/source/Microwave Glass.mat
+  artifactKey: Guid(75f2921dbe05ae24795a742cc99ae5e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/source/Microwave Glass.mat using Guid(75f2921dbe05ae24795a742cc99ae5e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07045eeebb4b4e26a375e518ed43fc1f') in 0.011811 seconds 
+  Import took 0.014981 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007927 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyTreePack/Materials/Normal.mat
+  artifactKey: Guid(fe3e3b8ebc1a32647b48b7ea88f534a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyTreePack/Materials/Normal.mat using Guid(fe3e3b8ebc1a32647b48b7ea88f534a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02399d903ceb55b9a0218d51481efc06') in 0.019347 seconds 
+  Import took 0.022697 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006186 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Doors/Door2/Wood067_1K_Color.jpg
+  artifactKey: Guid(2f93e1b5489470547a7a2ea30b586866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Doors/Door2/Wood067_1K_Color.jpg using Guid(2f93e1b5489470547a7a2ea30b586866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81527ed70047487969f26dc4b3390758') in 0.012637 seconds 
+  Import took 0.015991 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004871 seconds.
+  path: Assets/PersonalAssets/SceneMAO/UI/Wood051_1K_Roughness.jpg
+  artifactKey: Guid(63033171caf91d347ac944a33717a054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/UI/Wood051_1K_Roughness.jpg using Guid(63033171caf91d347ac944a33717a054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ee0952ca432c720cea7637f4ae9c83c') in 0.023094 seconds 
+  Import took 0.026057 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010049 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/source/Oven Glass.mat
+  artifactKey: Guid(38834a60045770b4eb8bc4e0d7ec369d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/source/Oven Glass.mat using Guid(38834a60045770b4eb8bc4e0d7ec369d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18557486d93a3edeb6d320a296f9f7c9') in 0.011636 seconds 
+  Import took 0.015311 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003263 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Fridge_Color.png
+  artifactKey: Guid(b3beca5456bb6ab4a9b5bac33c9f5a41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Fridge_Color.png using Guid(b3beca5456bb6ab4a9b5bac33c9f5a41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a13b0ae08c7f3e6e2a5af507d68b7b76') in 0.014806 seconds 
+  Import took 0.018144 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009585 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-70_comp_light.exr
+  artifactKey: Guid(63dc9ca4709501141b2bf06c3598b664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-70_comp_light.exr using Guid(63dc9ca4709501141b2bf06c3598b664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77ddea70a24caaa19da14381e5e31ea7') in 0.016643 seconds 
+  Import took 0.019984 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005789 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Pillow.mat
+  artifactKey: Guid(eb29f35d74152db44a33c313e7d45a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Pillow.mat using Guid(eb29f35d74152db44a33c313e7d45a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0821af640f2fe1f3027a61be502ab0de') in 0.018079 seconds 
+  Import took 0.021550 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002643 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ceiling/Ceiling4.mat
+  artifactKey: Guid(dcab583b05594874da88f71a8f7c996d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ceiling/Ceiling4.mat using Guid(dcab583b05594874da88f71a8f7c996d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80a7b9c267eaada39e51fb4271ec7dd5') in 0.012233 seconds 
+  Import took 0.015299 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003321 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_cap_touch_index_mask_anim.fbx
+  artifactKey: Guid(8f30ac6cbbbe39d43886ad7626f7e2b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_cap_touch_index_mask_anim.fbx using Guid(8f30ac6cbbbe39d43886ad7626f7e2b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8be9bf38852f90dd0667e7f7bd17ee7d') in 0.009290 seconds 
+  Import took 0.013073 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002296 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall1/Wall1_1_Under.mat
+  artifactKey: Guid(c3f803d0fd5a3dd4486ff46e7fcbdafa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall1/Wall1_1_Under.mat using Guid(c3f803d0fd5a3dd4486ff46e7fcbdafa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ba56c6108c596711f0fbdc3144631ca') in 0.045796 seconds 
+  Import took 0.048738 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002854 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Plant Leaf.mat
+  artifactKey: Guid(ac05cfda44c5318428a05ad12465f593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Plant Leaf.mat using Guid(ac05cfda44c5318428a05ad12465f593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7dc97c681ba13a8456763852a702e129') in 0.030766 seconds 
+  Import took 0.033761 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002838 seconds.
+  path: Assets/InternetAssets/orange/orange.mat
+  artifactKey: Guid(3594eb94f983dec4ca8be7911a6561e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/orange/orange.mat using Guid(3594eb94f983dec4ca8be7911a6561e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '411dad6b988290d01be542c544e9e058') in 0.017916 seconds 
+  Import took 0.020885 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002509 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ceiling/CeilingLight.mat
+  artifactKey: Guid(93979c36f7919e141ac8d247d710a50c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ceiling/CeilingLight.mat using Guid(93979c36f7919e141ac8d247d710a50c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edad6db9d52619d1cf474b92bfdd7171') in 0.030019 seconds 
+  Import took 0.032856 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013590 seconds.
+  path: Assets/InternetAssets/PicNicTable/map_color.png
+  artifactKey: Guid(c99729a7b877d9942a21a3c4cc6b9cee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/PicNicTable/map_color.png using Guid(c99729a7b877d9942a21a3c4cc6b9cee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e28f94a7c1cb36eec512ba3ba99b7b3') in 0.022600 seconds 
+  Import took 0.025884 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002545 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/source/Pot_Mat.mat
+  artifactKey: Guid(52d381146b3785c43870ddc1c9361849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/source/Pot_Mat.mat using Guid(52d381146b3785c43870ddc1c9361849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '604fe11c00c39e5fd24b977366f047aa') in 0.012826 seconds 
+  Import took 0.016220 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003206 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyTreePack/Prefabs/Tree Type1 02.prefab
+  artifactKey: Guid(702740a5e4ac1ee40a1888d3b62faa91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyTreePack/Prefabs/Tree Type1 02.prefab using Guid(702740a5e4ac1ee40a1888d3b62faa91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8f18c7254cbf124a984ddf24acb5665') in 0.012457 seconds 
+  Import took 0.015679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006718 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Plant_Leaf_Color.png
+  artifactKey: Guid(e87d7c18b49a8b14292d2af2c4eaad65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Plant_Leaf_Color.png using Guid(e87d7c18b49a8b14292d2af2c4eaad65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa9800dc829ad69ae9b57690fcb0b608') in 0.015971 seconds 
+  Import took 0.019359 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006720 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/source/Kettle Metalic.mat
+  artifactKey: Guid(a3d4ece9ac8863e449b4c0aaf597a55a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/source/Kettle Metalic.mat using Guid(a3d4ece9ac8863e449b4c0aaf597a55a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f94cdfa11b37a028798ca72871a9ff29') in 0.010962 seconds 
+  Import took 0.014407 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.033284 seconds.
+  path: Assets/InternetAssets/home-office-desk-maple/textures/Maple_Diffuse.png
+  artifactKey: Guid(908582dc23cf6d542bbd73a1e93bf70a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/home-office-desk-maple/textures/Maple_Diffuse.png using Guid(908582dc23cf6d542bbd73a1e93bf70a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a54c98ef9fe2315ef5419201a2196d3') in 0.016966 seconds 
+  Import took 0.021014 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002612 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/source/Kettle Plastic.mat
+  artifactKey: Guid(88fe5e6a25842824086528c6a28f9190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/source/Kettle Plastic.mat using Guid(88fe5e6a25842824086528c6a28f9190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c85cad73820aea865f6ab7d0a9b49a7') in 0.011943 seconds 
+  Import took 0.015031 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004482 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-76_comp_light.exr
+  artifactKey: Guid(60bdffa422c335e48a287dcfba51dd67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-76_comp_light.exr using Guid(60bdffa422c335e48a287dcfba51dd67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac1316dbb3272c2be1b8ce340f04487f') in 0.014602 seconds 
+  Import took 0.017527 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003028 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-90_comp_shadowmask.png
+  artifactKey: Guid(04f622f218af9674aa763cd9c603b0d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-90_comp_shadowmask.png using Guid(04f622f218af9674aa763cd9c603b0d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f07717ecc0a184b0d0a9ca37c00bc15e') in 0.018577 seconds 
+  Import took 0.021579 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004637 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-94_comp_light.exr
+  artifactKey: Guid(729215db3a234594e937cedffa95ffe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-94_comp_light.exr using Guid(729215db3a234594e937cedffa95ffe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '727017fa9a39fd2f03d4f3d8694573f1') in 0.011575 seconds 
+  Import took 0.014429 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003931 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_point_anim.fbx
+  artifactKey: Guid(7a701167f3382f3469c311bb308142af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_point_anim.fbx using Guid(7a701167f3382f3469c311bb308142af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '758fe0987156b9826d8bc16b72639703') in 0.010266 seconds 
+  Import took 0.013513 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002555 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/source/Pot Shader.mat
+  artifactKey: Guid(0cd8ec74880639042afe224281b10660) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/source/Pot Shader.mat using Guid(0cd8ec74880639042afe224281b10660) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa04fed93440fd607f9d8609c77b0019') in 0.011678 seconds 
+  Import took 0.014580 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003878 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_point_anim.fbx
+  artifactKey: Guid(a00bb4e2a48d6b04f9a9865f78869df2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_point_anim.fbx using Guid(a00bb4e2a48d6b04f9a9865f78869df2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a1e9e1d618be63e3d82455a2e829cf9') in 0.009149 seconds 
+  Import took 0.012565 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004511 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Doors/Door2/Wood067_1K_Displacement.jpg
+  artifactKey: Guid(08b431f4c010b0a47922b8db630f45b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Doors/Door2/Wood067_1K_Displacement.jpg using Guid(08b431f4c010b0a47922b8db630f45b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44ba26fc83cb11c5f31c59f4da6517c4') in 0.010837 seconds 
+  Import took 0.013787 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009139 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-74_comp_light.exr
+  artifactKey: Guid(42317c34bb638f24a951b39c2262508f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-74_comp_light.exr using Guid(42317c34bb638f24a951b39c2262508f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '931f10c14ac2dd07d5604f3caf13d9e2') in 0.011749 seconds 
+  Import took 0.015050 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008313 seconds.
+  path: Assets/InternetAssets/orange/sdsdfs.unity_1.obj
+  artifactKey: Guid(3c5e04a5a1f47b443a316c9229aef010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/orange/sdsdfs.unity_1.obj using Guid(3c5e04a5a1f47b443a316c9229aef010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89f1c24df883b3e3b9fca902d416d183') in 0.020450 seconds 
+  Import took 0.023854 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014824 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_hold_generic_anim.fbx
+  artifactKey: Guid(b8943b5ee74fcd945a2746d0051466cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_hold_generic_anim.fbx using Guid(b8943b5ee74fcd945a2746d0051466cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a645a645a110a198038afda9e1c9861d') in 0.009937 seconds 
+  Import took 0.013321 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003309 seconds.
+  path: Assets/InternetAssets/Day-Night Skyboxes/Textures/SkyAfterNoon_Left.png
+  artifactKey: Guid(969ef861056a05940ba9123d15486191) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/Day-Night Skyboxes/Textures/SkyAfterNoon_Left.png using Guid(969ef861056a05940ba9123d15486191) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1386b72896c13616d7124bf1cb6993d1') in 0.010881 seconds 
+  Import took 0.014023 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002455 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Lamp.mat
+  artifactKey: Guid(aed5e7bab7ba9fa4a9f319242cedc501) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Lamp.mat using Guid(aed5e7bab7ba9fa4a9f319242cedc501) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47ff56751b06e515083f1af1e14c5b6d') in 0.014726 seconds 
+  Import took 0.018099 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005865 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-84_comp_light.exr
+  artifactKey: Guid(cf37b4c8059b70a46b8f0d6cdb8fe93d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-84_comp_light.exr using Guid(cf37b4c8059b70a46b8f0d6cdb8fe93d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82b00dd71428df758b7d2f6979f77620') in 0.015151 seconds 
+  Import took 0.018371 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007321 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Doors/Door1/Frame1Material.mat
+  artifactKey: Guid(897867a4bb2112a4b89732262f643eaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Doors/Door1/Frame1Material.mat using Guid(897867a4bb2112a4b89732262f643eaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '650377a5124c1a3806753c84adcc7001') in 0.006177 seconds 
+  Import took 0.009321 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008567 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-87_comp_light.exr
+  artifactKey: Guid(78a293baf35248c4197ff43b0097b1d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-87_comp_light.exr using Guid(78a293baf35248c4197ff43b0097b1d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d5774aa90d4c29757b143d746007038') in 0.010874 seconds 
+  Import took 0.014573 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002771 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-95_comp_shadowmask.png
+  artifactKey: Guid(2bdd499c424ee9148a7ef7862aed6de4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-95_comp_shadowmask.png using Guid(2bdd499c424ee9148a7ef7862aed6de4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41e4060cb9bcccd15bb616d74fe03ee4') in 0.012365 seconds 
+  Import took 0.015558 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004258 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-73_comp_light.exr
+  artifactKey: Guid(394984ff22070c94dbda8c6c3cdb1d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-73_comp_light.exr using Guid(394984ff22070c94dbda8c6c3cdb1d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c8a52c878ac5787ca21a7dcf2b7e089') in 0.013737 seconds 
+  Import took 0.017067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003008 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyRockPack/Prefabs/Rock Type2 04.prefab
+  artifactKey: Guid(5578b82f17c954843901e8b68ca21dcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyRockPack/Prefabs/Rock Type2 04.prefab using Guid(5578b82f17c954843901e8b68ca21dcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb1404029fa944083750b2f6f668b499') in 0.012953 seconds 
+  Import took 0.015827 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003161 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ceiling/Ceiling3.mat
+  artifactKey: Guid(b8973452b0a1c6a4c879896ccf92f680) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ceiling/Ceiling3.mat using Guid(b8973452b0a1c6a4c879896ccf92f680) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fef14ada1f9d365bc3ca30cdc044a1e2') in 0.031234 seconds 
+  Import took 0.034455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002747 seconds.
+  path: Assets/PersonalAssets/Scripts/MAO/MAO_OdorSerialQuest.cs
+  artifactKey: Guid(764b846e12c69464a804e633fde733df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Scripts/MAO/MAO_OdorSerialQuest.cs using Guid(764b846e12c69464a804e633fde733df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c787b5c969e9b27c454b83fd8ffef1cd') in 0.007254 seconds 
+  Import took 0.010188 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021112 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Counter_Color.png
+  artifactKey: Guid(4968ecce31f303443b7ffdf52d5d1fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Counter_Color.png using Guid(4968ecce31f303443b7ffdf52d5d1fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9c30ff872fcd4a0dce0e8e385fa0307') in 0.010836 seconds 
+  Import took 0.014163 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004137 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-64_comp_light.exr
+  artifactKey: Guid(b5542c64d9b7abf4fbcb04d4763a5264) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-64_comp_light.exr using Guid(b5542c64d9b7abf4fbcb04d4763a5264) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77a63dbf126b2dad19e2588ee64b3274') in 0.013533 seconds 
+  Import took 0.016861 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014414 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-79_comp_light.exr
+  artifactKey: Guid(a8a775e63910e914cb56cb318c3130b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-79_comp_light.exr using Guid(a8a775e63910e914cb56cb318c3130b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a8dc8990d460160dc5ebf675acdefab') in 0.011253 seconds 
+  Import took 0.014554 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004726 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-78_comp_light.exr
+  artifactKey: Guid(2d42e8f0e23099446a08ff05487d4659) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-78_comp_light.exr using Guid(2d42e8f0e23099446a08ff05487d4659) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14f986fc7d3aaf70a423f1191de3a0d5') in 0.014176 seconds 
+  Import took 0.017942 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003068 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-89_comp_shadowmask.png
+  artifactKey: Guid(4efb01ffa487d5340895daefbc26a3af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-89_comp_shadowmask.png using Guid(4efb01ffa487d5340895daefbc26a3af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '619033f4ef903d3cba79d15840727fc6') in 0.012748 seconds 
+  Import took 0.015859 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002928 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/source/Kettle Dark.mat
+  artifactKey: Guid(eb40ee7c45ea9f947a4db65567a2d9c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/source/Kettle Dark.mat using Guid(eb40ee7c45ea9f947a4db65567a2d9c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c9af154f97e2dd619a071eb23596ac0') in 0.011999 seconds 
+  Import took 0.015305 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005985 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_pinch_anim.fbx
+  artifactKey: Guid(a91ff20f7450bf446a6bf0bfb5e932ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_pinch_anim.fbx using Guid(a91ff20f7450bf446a6bf0bfb5e932ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '431338525606015b20a15b9f486638e6') in 0.009859 seconds 
+  Import took 0.013276 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003485 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyTreePack/Models/Tree Type0 05.dae
+  artifactKey: Guid(c8fd0d31d77530344baa4b459b8e221e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyTreePack/Models/Tree Type0 05.dae using Guid(c8fd0d31d77530344baa4b459b8e221e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bac9b71c45e61de8557982bb6f6ed6ea') in 0.016960 seconds 
+  Import took 0.021003 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.094927 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Lamp_Color.png
+  artifactKey: Guid(e8f0c6b2105977247a5a0dea033f55c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Lamp_Color.png using Guid(e8f0c6b2105977247a5a0dea033f55c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22f7a64308655ef68f136ed11bc341a6') in 0.012161 seconds 
+  Import took 0.015270 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002837 seconds.
+  path: Assets/Lighting Settings.lighting
+  artifactKey: Guid(118763adde978ce4695e91e8c17a4dd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Lighting Settings.lighting using Guid(118763adde978ce4695e91e8c17a4dd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) LightingSettings: switching bake backend from 1 to 2.
+ -> (artifact id: 'dab9bdb2c57e584d293a7b7a5625fe8d') in 0.007029 seconds 
+  Import took 0.010072 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002291 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Coffee Table.mat
+  artifactKey: Guid(dbef161f735038a4db32ec92b05adcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Coffee Table.mat using Guid(dbef161f735038a4db32ec92b05adcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3148fd128fe49b5c8793df334dfb10b') in 0.015998 seconds 
+  Import took 0.018864 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002265 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ceiling/Ceiling2.mat
+  artifactKey: Guid(ee15704d321e06f4aaebd15731e4f7d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ceiling/Ceiling2.mat using Guid(ee15704d321e06f4aaebd15731e4f7d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c89acd7e625b732f1ff3c64b260ade5c') in 0.016696 seconds 
+  Import took 0.019682 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009086 seconds.
+  path: Assets/PersonalAssets/Hands/Scripts/HandAnimate.cs
+  artifactKey: Guid(28093b398f5bcab4ba155bb184bf4401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Scripts/HandAnimate.cs using Guid(28093b398f5bcab4ba155bb184bf4401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30cb37d4cfc1b88234f27fc5d90e7d80') in 0.005115 seconds 
+  Import took 0.008113 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003025 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-91_comp_shadowmask.png
+  artifactKey: Guid(a9c578f11b1c1fd439ca51b2a5627746) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-91_comp_shadowmask.png using Guid(a9c578f11b1c1fd439ca51b2a5627746) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb7617ff47000b38dba00417dfe3eaf1') in 0.012512 seconds 
+  Import took 0.015494 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008278 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyRockPack/Prefabs/Rock Type2 01.prefab
+  artifactKey: Guid(2d521608fcf07c346b5e2ed4049aa717) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyRockPack/Prefabs/Rock Type2 01.prefab using Guid(2d521608fcf07c346b5e2ed4049aa717) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59d365ab2f5fdd098369f129382487cf') in 0.011747 seconds 
+  Import took 0.014903 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008657 seconds.
+  path: Assets/PersonalAssets/SceneMAO/UI/WoodUI.mat
+  artifactKey: Guid(3bf364e749a2b1b4ebdd07f326ea78c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/UI/WoodUI.mat using Guid(3bf364e749a2b1b4ebdd07f326ea78c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a1bb255ab25ad0fbf9928de9dc6492f') in 0.040613 seconds 
+  Import took 0.044172 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008900 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyTreePack/Models/Tree Type1 01.dae
+  artifactKey: Guid(cb132eeaea305bc478721cc9b5cb57f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyTreePack/Models/Tree Type1 01.dae using Guid(cb132eeaea305bc478721cc9b5cb57f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df0dd446b8cbb06860fc63dce3dc8183') in 0.014800 seconds 
+  Import took 0.018038 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002619 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_1_Under.mat
+  artifactKey: Guid(df78b5de37a3e114891aac56a5144bca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_1_Under.mat using Guid(df78b5de37a3e114891aac56a5144bca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6c9400c3862cc1206db2cdd81b9cd19') in 0.013935 seconds 
+  Import took 0.016885 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003769 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_relax_3qtr_fist_anim.fbx
+  artifactKey: Guid(649ee9096089b1342bee9132e3ccc8bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_relax_3qtr_fist_anim.fbx using Guid(649ee9096089b1342bee9132e3ccc8bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a7f141083daadf3c5daf9b1cfc0fc36') in 0.009506 seconds 
+  Import took 0.012938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004755 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-66_comp_light.exr
+  artifactKey: Guid(d16ac9687a3bf984e8c0adce75d29794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-66_comp_light.exr using Guid(d16ac9687a3bf984e8c0adce75d29794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6eeb8348488433a986c6e22290cc5d40') in 0.011339 seconds 
+  Import took 0.014674 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008829 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyTreePack/Models/Tree Type1 02.dae
+  artifactKey: Guid(e063977d54ec61849aacc1b8e9eafc6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyTreePack/Models/Tree Type1 02.dae using Guid(e063977d54ec61849aacc1b8e9eafc6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff1b392772eb1efea583066b958bc887') in 0.010390 seconds 
+  Import took 0.013420 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.043748 seconds.
+  path: Assets/InternetAssets/PicNicTable/Wood.mat
+  artifactKey: Guid(27c90117525c1e842a5eaff462e6f8d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/PicNicTable/Wood.mat using Guid(27c90117525c1e842a5eaff462e6f8d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dae6d98f666d843e06ae4cc8fe4bb697') in 0.023739 seconds 
+  Import took 0.027250 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010492 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyRockPack/Models/Rock Type3 04.dae
+  artifactKey: Guid(f50da248aa3fb334ab1caff0974120bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyRockPack/Models/Rock Type3 04.dae using Guid(f50da248aa3fb334ab1caff0974120bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a55b2b0aae245825cf6f272394e39f5') in 0.018694 seconds 
+  Import took 0.022777 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005791 seconds.
+  path: Assets/PersonalAssets/Scripts/MAO/MAO_OtherPlatformInitializer.cs
+  artifactKey: Guid(50b278e407d050e4683034d80b02619d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Scripts/MAO/MAO_OtherPlatformInitializer.cs using Guid(50b278e407d050e4683034d80b02619d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60ad633673690ad8d84e17bea526866b') in 0.007671 seconds 
+  Import took 0.010551 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003662 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Oven_Color.png
+  artifactKey: Guid(87fc157055d92774aaebaae89e6c6afa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Oven_Color.png using Guid(87fc157055d92774aaebaae89e6c6afa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b62b39d753cc858e9fd0ec6e5935c4a') in 0.012983 seconds 
+  Import took 0.016202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013783 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Models/r_hand_skeletal_lowres.fbx
+  artifactKey: Guid(d0c255d07fd68f14b94e55d388e7e6bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Models/r_hand_skeletal_lowres.fbx using Guid(d0c255d07fd68f14b94e55d388e7e6bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77f3fe37063a6621aeb072c0e71a40c8') in 0.021810 seconds 
+  Import took 0.025303 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007130 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ground/WoodFloor040_1K_Color.jpg
+  artifactKey: Guid(d11947177aaad7548ae57c7b6bbd534a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ground/WoodFloor040_1K_Color.jpg using Guid(d11947177aaad7548ae57c7b6bbd534a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3c152569e37b8c55d7d659e92037dc4') in 0.011311 seconds 
+  Import took 0.014387 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006067 seconds.
+  path: Assets/InternetAssets/Day-Night Skyboxes/Textures/SkyAfterNoon_Front.png
+  artifactKey: Guid(801a87c5db92ace45a6a9346777f1f5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/Day-Night Skyboxes/Textures/SkyAfterNoon_Front.png using Guid(801a87c5db92ace45a6a9346777f1f5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e1af0a151aa478c90b28568ea51693f') in 0.010986 seconds 
+  Import took 0.014132 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010488 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-90_comp_light.exr
+  artifactKey: Guid(605c10befd3990f45ba16a5917a6a483) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-90_comp_light.exr using Guid(605c10befd3990f45ba16a5917a6a483) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd3d985d93594483f9e32797afe0f3f2') in 0.011745 seconds 
+  Import took 0.014923 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009633 seconds.
+  path: Assets/InternetAssets/home-office-desk-maple/source/Desk #1.fbx
+  artifactKey: Guid(a0791b5c83493c847bffbcd92e687d49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/home-office-desk-maple/source/Desk #1.fbx using Guid(a0791b5c83493c847bffbcd92e687d49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28d509e7b9c2111f81282df316ebb90d') in 0.027719 seconds 
+  Import took 0.030998 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004517 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-67_comp_light.exr
+  artifactKey: Guid(8271e08816b17ad498a3814a2aad0f0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-67_comp_light.exr using Guid(8271e08816b17ad498a3814a2aad0f0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '260a3fc62b3f74cfa99244c8b2d5506a') in 0.010899 seconds 
+  Import took 0.013814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002307 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall4/Wall4_3_Over.mat
+  artifactKey: Guid(2630be9d338c4af4d807d741514b11bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall4/Wall4_3_Over.mat using Guid(2630be9d338c4af4d807d741514b11bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97bab2b09aac671efe6ab5ab0276b9b1') in 0.014930 seconds 
+  Import took 0.017940 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003107 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-82_comp_shadowmask.png
+  artifactKey: Guid(e57a45bd212e3a54e8b52535f8618283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-82_comp_shadowmask.png using Guid(e57a45bd212e3a54e8b52535f8618283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f234efb1cd7fb96f58bb865fe3c81ad0') in 0.011227 seconds 
+  Import took 0.014114 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007846 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Couch.mat
+  artifactKey: Guid(38e702675c06f66409fdab0fb719ba9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Couch.mat using Guid(38e702675c06f66409fdab0fb719ba9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f805bbe1f414c8d8ffaf7855c7984f70') in 0.016242 seconds 
+  Import took 0.019677 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004751 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-92_comp_light.exr
+  artifactKey: Guid(4b2aa9c647e57444da1d06e85881f2e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-92_comp_light.exr using Guid(4b2aa9c647e57444da1d06e85881f2e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e10910986d96b42a749912d81b6476c') in 0.010919 seconds 
+  Import took 0.013903 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008067 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ground/WoodFloor040_1K_NormalDX.jpg
+  artifactKey: Guid(8fdbc9c5272b80c448f5f5a672298d2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ground/WoodFloor040_1K_NormalDX.jpg using Guid(8fdbc9c5272b80c448f5f5a672298d2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a42e002fc0082160d91c18c32d2ce2c9') in 0.011817 seconds 
+  Import took 0.014947 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004621 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-91_comp_light.exr
+  artifactKey: Guid(074da3ff521d42d40896b370394511d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-91_comp_light.exr using Guid(074da3ff521d42d40896b370394511d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91b8718ea1428affa51450b0afef8786') in 0.010188 seconds 
+  Import took 0.013373 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003319 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Pillow_Color.png
+  artifactKey: Guid(79196a948765da446a2228982bb58bc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Pillow_Color.png using Guid(79196a948765da446a2228982bb58bc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09fd2fa0851769199cf008bcc67fad5e') in 0.010159 seconds 
+  Import took 0.012765 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012666 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-86_comp_light.exr
+  artifactKey: Guid(1dd0cb770ca57d6409d44f9f884784db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-86_comp_light.exr using Guid(1dd0cb770ca57d6409d44f9f884784db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d6cd3da27bf17aab1470ad37ce7b131') in 0.011267 seconds 
+  Import took 0.014611 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002957 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_4_Under.mat
+  artifactKey: Guid(204beb41c9177c346b032ba26072bf3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_4_Under.mat using Guid(204beb41c9177c346b032ba26072bf3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d5868d8b05acfa401d8afc9930b9b26') in 0.016794 seconds 
+  Import took 0.020119 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002384 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall4/Wall4_1_Under.mat
+  artifactKey: Guid(60fd1551a9ec9bf4dbb81f79b8e668fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall4/Wall4_1_Under.mat using Guid(60fd1551a9ec9bf4dbb81f79b8e668fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6c127914b9bf806fa0a9b42a3fababc') in 0.018658 seconds 
+  Import took 0.022001 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002802 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyRockPack/Prefabs/Rock Type6 03.prefab
+  artifactKey: Guid(48333a5aa700be24c963813c82ef05d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyRockPack/Prefabs/Rock Type6 03.prefab using Guid(48333a5aa700be24c963813c82ef05d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24144354c97a17a3c99fccf3b9c623f5') in 0.007752 seconds 
+  Import took 0.010597 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002877 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ceiling/OfficeCeiling001_1K_Emission.jpg
+  artifactKey: Guid(34d56ca7c81d2624e98ab95987b86dd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ceiling/OfficeCeiling001_1K_Emission.jpg using Guid(34d56ca7c81d2624e98ab95987b86dd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '941df537fc0a4c72635f0e403f02cdd0') in 0.009302 seconds 
+  Import took 0.012452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007681 seconds.
+  path: Assets/InternetAssets/Texture/Grass004_1K-JPG/Grass004_1K_NormalDX.jpg
+  artifactKey: Guid(4677291e1c2ab194681cbb1772cb7c19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/Texture/Grass004_1K-JPG/Grass004_1K_NormalDX.jpg using Guid(4677291e1c2ab194681cbb1772cb7c19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ac2c92137d836bb212405668b317d84') in 0.011230 seconds 
+  Import took 0.014145 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008830 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-78_comp_shadowmask.png
+  artifactKey: Guid(1bde91caacb8b11498d76fc2f03149eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-78_comp_shadowmask.png using Guid(1bde91caacb8b11498d76fc2f03149eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f5bbe722fb01053ff72c0fa335c08cd') in 0.013212 seconds 
+  Import took 0.016587 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005129 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyTreePack/Prefabs/Tree Type1 01.prefab
+  artifactKey: Guid(fc05c8bfad7df5a4abe568aca7403b9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyTreePack/Prefabs/Tree Type1 01.prefab using Guid(fc05c8bfad7df5a4abe568aca7403b9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06083e98173a816330061fd8d2e66bfb') in 0.007810 seconds 
+  Import took 0.010705 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003313 seconds.
+  path: Assets/InternetAssets/PicNicTable/WoodPlatform_1.fbx
+  artifactKey: Guid(4b772631108d01d489bab3c4c914348e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/PicNicTable/WoodPlatform_1.fbx using Guid(4b772631108d01d489bab3c4c914348e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2539613960833efbdb77b9f3d84a7f5') in 0.023840 seconds 
+  Import took 0.027480 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007184 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Oven.mat
+  artifactKey: Guid(995677e19c4a75244a09f040c0c52e78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Oven.mat using Guid(995677e19c4a75244a09f040c0c52e78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f34b1a1511c0bbd117494c79f7043cf1') in 0.016498 seconds 
+  Import took 0.020265 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002631 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Counter.mat
+  artifactKey: Guid(375d23a8ecbd0074893de846891de3a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Counter.mat using Guid(375d23a8ecbd0074893de846891de3a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07073d17e2192333901ad206dbea94a2') in 0.013526 seconds 
+  Import took 0.016489 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002503 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Sugar Jar.mat
+  artifactKey: Guid(687c24e20106ed645a26c67ffd8c2843) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Sugar Jar.mat using Guid(687c24e20106ed645a26c67ffd8c2843) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19d44b6849f0c2f87b0cc935d8baf0b5') in 0.012998 seconds 
+  Import took 0.016143 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009213 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ground/WoodFloor040_1K_Displacement.jpg
+  artifactKey: Guid(8ac0fb6cab69e674c9dd0fb79e336711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ground/WoodFloor040_1K_Displacement.jpg using Guid(8ac0fb6cab69e674c9dd0fb79e336711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9472e63d54925e4bf51049468afd1450') in 0.011025 seconds 
+  Import took 0.014684 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003175 seconds.
+  path: Assets/InternetAssets/Day-Night Skyboxes/Textures/SkyAfterNoon_Bottom.png
+  artifactKey: Guid(b6ef619cfefbc3a48bfe3a846f9adb9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/Day-Night Skyboxes/Textures/SkyAfterNoon_Bottom.png using Guid(b6ef619cfefbc3a48bfe3a846f9adb9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b30098a189d03f92d19f773c50dc785b') in 0.011151 seconds 
+  Import took 0.014331 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006915 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Plant_Color.png
+  artifactKey: Guid(dcc376a7a4c2dbd48b1af4e6b240245b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Plant_Color.png using Guid(dcc376a7a4c2dbd48b1af4e6b240245b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d24ebb3c3939da0db9a67ddc3968f38') in 0.011352 seconds 
+  Import took 0.014406 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002978 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-80_comp_shadowmask.png
+  artifactKey: Guid(e9693904f762b754f810276464065a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-80_comp_shadowmask.png using Guid(e9693904f762b754f810276464065a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3e54fcbb8ec4b221b3f5a1ba10d567f') in 0.012214 seconds 
+  Import took 0.014996 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002748 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_2_Over.mat
+  artifactKey: Guid(a1a4159c5f58ae34b8e8b81227e85a0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall2/Wall2_2_Over.mat using Guid(a1a4159c5f58ae34b8e8b81227e85a0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1317e4af2428232b53492295be28218') in 0.017740 seconds 
+  Import took 0.021404 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006365 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-80_comp_light.exr
+  artifactKey: Guid(fc462847e4b0c83469e7593ca9a92851) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-80_comp_light.exr using Guid(fc462847e4b0c83469e7593ca9a92851) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3111130596a63c92674d02b6ca9a848f') in 0.011629 seconds 
+  Import took 0.014656 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002406 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ceiling/Ceiling1.mat
+  artifactKey: Guid(d0eb25654a744e24ab360b1d65e21de4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ceiling/Ceiling1.mat using Guid(d0eb25654a744e24ab360b1d65e21de4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23110c58159dc1145ffd0ece3057c20c') in 0.019593 seconds 
+  Import took 0.022899 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003261 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_cap_touch_index_mask_anim.fbx
+  artifactKey: Guid(8e1d6427aa0b5584ab3744e9988d6e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_cap_touch_index_mask_anim.fbx using Guid(8e1d6427aa0b5584ab3744e9988d6e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '415e323634df3f2398bff85df536fe46') in 0.017175 seconds 
+  Import took 0.020343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002853 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-72_comp_shadowmask.png
+  artifactKey: Guid(12e5b421107807141994479b40b00826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-72_comp_shadowmask.png using Guid(12e5b421107807141994479b40b00826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d0221d6920420bf4183ac15b3767ec4') in 0.012815 seconds 
+  Import took 0.016012 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002974 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyTreePack/Prefabs/Tree Type1 04.prefab
+  artifactKey: Guid(8ed1fa325ca228645ad26dd6eff14768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyTreePack/Prefabs/Tree Type1 04.prefab using Guid(8ed1fa325ca228645ad26dd6eff14768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e83a5afb47f2f2851eecac5da362ba5') in 0.013197 seconds 
+  Import took 0.016529 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004945 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ceiling/OfficeCeiling001_1K_AmbientOcclusion.jpg
+  artifactKey: Guid(cd999182d4b25fa45acd711aaa0a1162) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ceiling/OfficeCeiling001_1K_AmbientOcclusion.jpg using Guid(cd999182d4b25fa45acd711aaa0a1162) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cea989640e7af1342c03a652e0292e0a') in 0.011254 seconds 
+  Import took 0.014170 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003378 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_cap_touch_thumb_mask_anim.fbx
+  artifactKey: Guid(73af2d5eb4aa5f84c9489fec88acb742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_cap_touch_thumb_mask_anim.fbx using Guid(73af2d5eb4aa5f84c9489fec88acb742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5aaa192e808fe6b0d35dadf21832ed55') in 0.010481 seconds 
+  Import took 0.013492 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003579 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ground/WoodFloor040_1K_Roughness.jpg
+  artifactKey: Guid(4c071fb346281d24392917ba1032baa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ground/WoodFloor040_1K_Roughness.jpg using Guid(4c071fb346281d24392917ba1032baa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae4e81af855f254b929507287c3e6969') in 0.012007 seconds 
+  Import took 0.014936 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002279 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall3/Wall3_1_Under.mat
+  artifactKey: Guid(57143eb6afb093f4994a22694a5534ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall3/Wall3_1_Under.mat using Guid(57143eb6afb093f4994a22694a5534ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1f1a27a583ba723fc5d81cb4b947f1c') in 0.014888 seconds 
+  Import took 0.019956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005033 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-63_comp_light.exr
+  artifactKey: Guid(41aa27ab5c12c804388f6548ad11e2ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-63_comp_light.exr using Guid(41aa27ab5c12c804388f6548ad11e2ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63675e934c4f80d1fd5efc5507532b00') in 0.013405 seconds 
+  Import took 0.016404 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013256 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Couch_Color.png
+  artifactKey: Guid(7f91312429120ff4fa3cc9415043f922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic_Couch_Color.png using Guid(7f91312429120ff4fa3cc9415043f922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98934814db291929b8e4cfbfb6b41efe') in 0.012034 seconds 
+  Import took 0.015331 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002876 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyTreePack/Models/Tree Type1 04.dae
+  artifactKey: Guid(0ddb82da3485fac4dbfe187acb70a610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyTreePack/Models/Tree Type1 04.dae using Guid(0ddb82da3485fac4dbfe187acb70a610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23e6b16a16d98ee3b1b44e5d5810eaed') in 0.011961 seconds 
+  Import took 0.015137 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003166 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_pinch_anim.fbx
+  artifactKey: Guid(165871bb4fa915847973b6955c7a670d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_pinch_anim.fbx using Guid(165871bb4fa915847973b6955c7a670d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df80b8a4dcf7e419c5f49092d9a23bfd') in 0.009919 seconds 
+  Import took 0.013262 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002612 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-93_comp_shadowmask.png
+  artifactKey: Guid(4dd2595a0a2eefc47aa49f4c31883e22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-93_comp_shadowmask.png using Guid(4dd2595a0a2eefc47aa49f4c31883e22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '974130ff86da5a0951f83b0039244672') in 0.014681 seconds 
+  Import took 0.017549 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003016 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyRockPack/Textures/Colorsheet Rock Grey.png
+  artifactKey: Guid(6eb1476b439514548903a089becbf46a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyRockPack/Textures/Colorsheet Rock Grey.png using Guid(6eb1476b439514548903a089becbf46a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f94d3900536988536d6b9c53865cea7') in 0.009730 seconds 
+  Import took 0.012713 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007171 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Textures/Plaster002_1K_NormalDX.jpg
+  artifactKey: Guid(a2bae0c93709fe54e8af59fff3976f9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Textures/Plaster002_1K_NormalDX.jpg using Guid(a2bae0c93709fe54e8af59fff3976f9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fe53a0cf2668ed55148602b82b8ce98') in 0.012544 seconds 
+  Import took 0.015544 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021837 seconds.
+  path: Assets/InternetAssets/home-office-desk-maple/textures/Maple_Normal.png
+  artifactKey: Guid(61b46be6cc6f8944e84024f9be609b0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/home-office-desk-maple/textures/Maple_Normal.png using Guid(61b46be6cc6f8944e84024f9be609b0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d5d94693255486bdd1781c078d8c045') in 0.015536 seconds 
+  Import took 0.018564 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005205 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Doors/Door2/Wood067_1K_NormalDX.jpg
+  artifactKey: Guid(063c762b262119849a0d236d9e57b221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Doors/Door2/Wood067_1K_NormalDX.jpg using Guid(063c762b262119849a0d236d9e57b221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '638f9a10360c6f8ce3f30532868bc1d7') in 0.012387 seconds 
+  Import took 0.015438 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009689 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-81_comp_light.exr
+  artifactKey: Guid(5a40fcf3d29294943824ba3cfba8d7ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-81_comp_light.exr using Guid(5a40fcf3d29294943824ba3cfba8d7ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a41d319b0a4e5f5219c7a43135791e') in 0.013356 seconds 
+  Import took 0.016967 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003082 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_cap_touch_anim.fbx
+  artifactKey: Guid(e20fcbe7f2c351b4096e9fc3f6a320ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_cap_touch_anim.fbx using Guid(e20fcbe7f2c351b4096e9fc3f6a320ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b802a1a345d81933e348736f5a85c28') in 0.011638 seconds 
+  Import took 0.014698 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018525 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-95_comp_light.exr
+  artifactKey: Guid(9317cbb83e7d03143b3c6d4b4b7ba343) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-95_comp_light.exr using Guid(9317cbb83e7d03143b3c6d4b4b7ba343) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dee99eb895cf1e29e59fbe8ccdee2a0f') in 0.013126 seconds 
+  Import took 0.016456 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003196 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_hold_ping_pong_ball_anim.fbx
+  artifactKey: Guid(7bf81deb4ead62e4c9de1e69bb491c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_hold_ping_pong_ball_anim.fbx using Guid(7bf81deb4ead62e4c9de1e69bb491c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef9ab05cb9b768b0e9f1c536be0024cd') in 0.011006 seconds 
+  Import took 0.014411 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005506 seconds.
+  path: Assets/PersonalAssets/SceneMAO/UI/Wood051_1K_NormalDX.jpg
+  artifactKey: Guid(65624a2c52b900a4d9f30f0202405559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/UI/Wood051_1K_NormalDX.jpg using Guid(65624a2c52b900a4d9f30f0202405559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d7ed4a3715fee4453b7ee4c9d4d1816') in 0.012087 seconds 
+  Import took 0.015146 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004354 seconds.
+  path: Assets/InternetAssets/Day-Night Skyboxes/Textures/SkyAfterNoon_Top.png
+  artifactKey: Guid(31b24bb50a20c0047b30ee5fc78848b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/Day-Night Skyboxes/Textures/SkyAfterNoon_Top.png using Guid(31b24bb50a20c0047b30ee5fc78848b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14c048fd19d4151d123bbf4caf10b694') in 0.012785 seconds 
+  Import took 0.015864 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002589 seconds.
+  path: Assets/InternetAssets/ZAHA LIGHT pendants/ChandelierLight.mat
+  artifactKey: Guid(73786dc5dce73af499258d2f0667e377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/ZAHA LIGHT pendants/ChandelierLight.mat using Guid(73786dc5dce73af499258d2f0667e377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9d578e310c8dca483287c8ec37b9eeb') in 0.017289 seconds 
+  Import took 0.020128 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004995 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-88_comp_light.exr
+  artifactKey: Guid(37e774b67e53b59488bbc54d4fbace2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-88_comp_light.exr using Guid(37e774b67e53b59488bbc54d4fbace2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adc622705f635ab931139f570bfea9ee') in 0.016589 seconds 
+  Import took 0.019807 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009191 seconds.
+  path: Assets/InternetAssets/PicNicTable/map-occlusion.png
+  artifactKey: Guid(d7a68c5176c1ba14bb7ca787b6e4f3db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/PicNicTable/map-occlusion.png using Guid(d7a68c5176c1ba14bb7ca787b6e4f3db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc1930544958550e988cc8bdde511539') in 0.014558 seconds 
+  Import took 0.017675 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002445 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall1/Wall1_1_Over.mat
+  artifactKey: Guid(bded1114994af3b448d3868fbe79b059) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall1/Wall1_1_Over.mat using Guid(bded1114994af3b448d3868fbe79b059) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '203a308ff1ddf1c4c2c8d71066f4b177') in 0.014867 seconds 
+  Import took 0.017686 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004968 seconds.
+  path: Assets/PersonalAssets/SceneMAO/UI/Wood051_1K_Color.jpg
+  artifactKey: Guid(10e9bc43a63829240bb07af96e8bcde5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/UI/Wood051_1K_Color.jpg using Guid(10e9bc43a63829240bb07af96e8bcde5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '830b95a1a785f87d65b61e74cad331ef') in 0.013121 seconds 
+  Import took 0.016026 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012806 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall4/Wall4_2_Over.mat
+  artifactKey: Guid(d0f04a37901560e4c976dde7afd952b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall4/Wall4_2_Over.mat using Guid(d0f04a37901560e4c976dde7afd952b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb80e9d4743e2e1e218f11960499ed80') in 0.015561 seconds 
+  Import took 0.018965 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003074 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_cap_touch_thumb_mask_anim.fbx
+  artifactKey: Guid(335d75faf2966944c94ee3b473124610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_cap_touch_thumb_mask_anim.fbx using Guid(335d75faf2966944c94ee3b473124610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9684416b8a52aa9affdf68dbd537fd6') in 0.011553 seconds 
+  Import took 0.014511 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003041 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_hold_generic_anim.fbx
+  artifactKey: Guid(6c41a6e223fece0458162624394578d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_hold_generic_anim.fbx using Guid(6c41a6e223fece0458162624394578d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72e73720fb25efe74c5f4d1948d738b3') in 0.008744 seconds 
+  Import took 0.011572 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002513 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-79_comp_shadowmask.png
+  artifactKey: Guid(9ebab3e0dbbcf1c45a30419c8bd0130d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-79_comp_shadowmask.png using Guid(9ebab3e0dbbcf1c45a30419c8bd0130d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0b81b4ea79161ac7ba37ac7306905bd') in 0.013063 seconds 
+  Import took 0.015891 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002990 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-69_comp_shadowmask.png
+  artifactKey: Guid(e2cc869c912d014429f6ad2e3ac84147) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-69_comp_shadowmask.png using Guid(e2cc869c912d014429f6ad2e3ac84147) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efcc93ca8ae44281f7dab1b2d9a0a023') in 0.013072 seconds 
+  Import took 0.015962 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003084 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyTreePack/Prefabs/Tree Type2 05.prefab
+  artifactKey: Guid(c7bcf19bbfa57ed4ea9147dff66d5542) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyTreePack/Prefabs/Tree Type2 05.prefab using Guid(c7bcf19bbfa57ed4ea9147dff66d5542) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76c6c522bdb64c14f77284a381238380') in 0.007814 seconds 
+  Import took 0.011223 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009709 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyRockPack/Models/Rock Type2 04.dae
+  artifactKey: Guid(19497d68b37d2594fb3e269601d333be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyRockPack/Models/Rock Type2 04.dae using Guid(19497d68b37d2594fb3e269601d333be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75df952d21eef1138444f915a0851ecc') in 0.011268 seconds 
+  Import took 0.014632 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007711 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-64_comp_shadowmask.png
+  artifactKey: Guid(5e67e728d9573ed448d10aa22ed22290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-64_comp_shadowmask.png using Guid(5e67e728d9573ed448d10aa22ed22290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bf090d4c77d54c3a8b4493fced17c49') in 0.013244 seconds 
+  Import took 0.016571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002295 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Coffee Jar.mat
+  artifactKey: Guid(4b5b393b595747d4790440cab2f6e02c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Coffee Jar.mat using Guid(4b5b393b595747d4790440cab2f6e02c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '642e04718034ea799dd3d3684fcc0094') in 0.016025 seconds 
+  Import took 0.018802 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005885 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-65_comp_light.exr
+  artifactKey: Guid(32fc66b61cf62b5458094e87650e3135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-65_comp_light.exr using Guid(32fc66b61cf62b5458094e87650e3135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd8d84cdc82394ad9a3354a4fb4246e3') in 0.012686 seconds 
+  Import took 0.016223 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021531 seconds.
+  path: Assets/PersonalAssets/Hands/Animations/HandClose.anim
+  artifactKey: Guid(11e478e9acd2b0143b56dd88bc21fd21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Animations/HandClose.anim using Guid(11e478e9acd2b0143b56dd88bc21fd21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27a54e59e00bc3a07be1d59feb993efe') in 0.041196 seconds 
+  Import took 0.044720 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005808 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-65_comp_shadowmask.png
+  artifactKey: Guid(5554e806bdef6b4439e9a1491afa3e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-65_comp_shadowmask.png using Guid(5554e806bdef6b4439e9a1491afa3e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '708bead224baefe8c096471c9d0c819a') in 0.011264 seconds 
+  Import took 0.014345 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013264 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.0.1/Starter Assets/XRI Default Input Actions.inputactions
+  artifactKey: Guid(c348712bda248c246b8c49b3db54643f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.0.1/Starter Assets/XRI Default Input Actions.inputactions using Guid(c348712bda248c246b8c49b3db54643f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92408c2291bef5094dc7f0b2efc03913') in 0.016971 seconds 
+  Import took 0.020378 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016901 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_relax_mid_fist_anim.fbx
+  artifactKey: Guid(ce6184a26b41c254ea24a5968f59d34e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/l_hand_relax_mid_fist_anim.fbx using Guid(ce6184a26b41c254ea24a5968f59d34e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '568189a1bf06092106f4327d4a726702') in 0.009227 seconds 
+  Import took 0.012690 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007699 seconds.
+  path: Assets/InternetAssets/ZAHA LIGHT pendants/ChandelierMaterial.mat
+  artifactKey: Guid(d3a025cbf757a1740bf654842f93b2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/ZAHA LIGHT pendants/ChandelierMaterial.mat using Guid(d3a025cbf757a1740bf654842f93b2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a5e40f2a338587be70c2398474adfb5') in 0.015266 seconds 
+  Import took 0.018949 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002944 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-71_comp_shadowmask.png
+  artifactKey: Guid(c27951fb900a8af4080971c361520b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-71_comp_shadowmask.png using Guid(c27951fb900a8af4080971c361520b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85c6c737cb26f4f2d8857124d517d701') in 0.012239 seconds 
+  Import took 0.015168 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003916 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Coffee_Jar_Color.png
+  artifactKey: Guid(0f169b6dce4a2fb4aae6a9a48f652732) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Coffee_Jar_Color.png using Guid(0f169b6dce4a2fb4aae6a9a48f652732) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a4f03c048d46b35356fb37a93dfe4db') in 0.012783 seconds 
+  Import took 0.015918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009522 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyRockPack/Models/Rock Type2 01.dae
+  artifactKey: Guid(6425f5e52f03e4340a3afa5f62f57a0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyRockPack/Models/Rock Type2 01.dae using Guid(6425f5e52f03e4340a3afa5f62f57a0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '861ace3c6c3c69a6fd396cf017d2c5da') in 0.011315 seconds 
+  Import took 0.014731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009161 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Ceiling/OfficeCeiling001_1K_NormalDX.jpg
+  artifactKey: Guid(96eced91c7e57be4aac00212a58b65a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Ceiling/OfficeCeiling001_1K_NormalDX.jpg using Guid(96eced91c7e57be4aac00212a58b65a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a06fa3e8eebfcbd8d00c78d1f48b2aa5') in 0.012821 seconds 
+  Import took 0.015882 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011676 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/source/Microwave Door.mat
+  artifactKey: Guid(4c3ff9e82cb16484da99fc8278c4f72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/source/Microwave Door.mat using Guid(4c3ff9e82cb16484da99fc8278c4f72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c68fbcfd9bbea78c5c99a515146b2ad') in 0.017225 seconds 
+  Import took 0.020897 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002969 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Book.mat
+  artifactKey: Guid(d4520437a1989994381eebd4160d3a33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Book.mat using Guid(d4520437a1989994381eebd4160d3a33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9996a1ec956fdbdc51171730c794141') in 0.014058 seconds 
+  Import took 0.017497 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005769 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_fist_anim.fbx
+  artifactKey: Guid(005ab0ae8aa7f74438a5fa50f7cd50e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Animations/r_hand_fist_anim.fbx using Guid(005ab0ae8aa7f74438a5fa50f7cd50e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cdbc5f747b2bf52f31e76d940df8f9e') in 0.012890 seconds 
+  Import took 0.015881 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005015 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Materials/Hands_solid.mat
+  artifactKey: Guid(3637b758ff163493f8bb8b6d7e96d7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Materials/Hands_solid.mat using Guid(3637b758ff163493f8bb8b6d7e96d7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22505a452a359ccc121f443f836ede12') in 0.011135 seconds 
+  Import took 0.013955 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003028 seconds.
+  path: Assets/InternetAssets/Day-Night Skyboxes/Materials/SkyAfterNoon.mat
+  artifactKey: Guid(1cf32c17fea93ef4fb120e8e0cdfbef1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/Day-Night Skyboxes/Materials/SkyAfterNoon.mat using Guid(1cf32c17fea93ef4fb120e8e0cdfbef1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '619061cf620fc47b9420ab4726018d94') in 0.020768 seconds 
+  Import took 0.024782 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002625 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall4/Wall4_2_Under.mat
+  artifactKey: Guid(1ae3087f4ffcb5940bc34fc2fee769f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall4/Wall4_2_Under.mat using Guid(1ae3087f4ffcb5940bc34fc2fee769f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0a8721268c1bece5558fd9b8de0fc82') in 0.015555 seconds 
+  Import took 0.019132 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004148 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-68_comp_light.exr
+  artifactKey: Guid(5766137e664943d46b1351ac817a96dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-68_comp_light.exr using Guid(5766137e664943d46b1351ac817a96dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39a2f930ddbb8ff0bd8802f713333e2b') in 0.012755 seconds 
+  Import took 0.015731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003088 seconds.
+  path: Assets/InternetAssets/ZAHA LIGHT pendants/Wire weave blck.jpg
+  artifactKey: Guid(edecb5cd48d7ae8439b9c9569b47f52c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/ZAHA LIGHT pendants/Wire weave blck.jpg using Guid(edecb5cd48d7ae8439b9c9569b47f52c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '905cefed731fdad140676f397362b51c') in 0.011016 seconds 
+  Import took 0.013834 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002561 seconds.
+  path: Assets/PersonalAssets/Hands/Oculus Hands/Models/LeftHandAnimator.controller
+  artifactKey: Guid(17cc85983dec7534ab8d35297a9f9f05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/Hands/Oculus Hands/Models/LeftHandAnimator.controller using Guid(17cc85983dec7534ab8d35297a9f9f05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '450be69961139ad501830fa8532ce205') in 0.013691 seconds 
+  Import took 0.016892 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002543 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Doors/Door2.prefab
+  artifactKey: Guid(9f7ea35cca2a3fd48bb0e7b66fc4292f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Doors/Door2.prefab using Guid(9f7ea35cca2a3fd48bb0e7b66fc4292f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3525ed65d9141868d1b642f0e6d4bbf0') in 0.051744 seconds 
+  Import took 0.055059 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007522 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyTreePack/Prefabs/Tree Type0 05.prefab
+  artifactKey: Guid(9469bb1d3aa88ca40aa4079e96a27f8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyTreePack/Prefabs/Tree Type0 05.prefab using Guid(9469bb1d3aa88ca40aa4079e96a27f8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5ae8c5ff8f5397bc464b511003605d8') in 0.008408 seconds 
+  Import took 0.011873 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002600 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Microwave.mat
+  artifactKey: Guid(4eb8c465468b69a4badb511696722e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Microwave.mat using Guid(4eb8c465468b69a4badb511696722e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1be475896d86c3a5e678d3c1451e3926') in 0.016401 seconds 
+  Import took 0.019803 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003905 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-75_comp_light.exr
+  artifactKey: Guid(cf8466e5ed161e942bfc0414909bad46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-75_comp_light.exr using Guid(cf8466e5ed161e942bfc0414909bad46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0545f86b91bd095ee70453615e1b85b8') in 0.017932 seconds 
+  Import took 0.021027 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018871 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Doors/Door2/Frame2Material.mat
+  artifactKey: Guid(619b0de012382fd4e871dc0aa6167ef3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Doors/Door2/Frame2Material.mat using Guid(619b0de012382fd4e871dc0aa6167ef3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fbcf45a94ed5cf05cd0377b7a8d365d') in 0.017320 seconds 
+  Import took 0.020747 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016323 seconds.
+  path: Assets/InternetAssets/BrokenVector/LowPolyRockPack/Prefabs/Rock Type3 04.prefab
+  artifactKey: Guid(ace40d2a4a1290f4f96f01a7e4ecd7f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/BrokenVector/LowPolyRockPack/Prefabs/Rock Type3 04.prefab using Guid(ace40d2a4a1290f4f96f01a7e4ecd7f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ae1943d1f12050a240fd41cf5634d73') in 0.008752 seconds 
+  Import took 0.012586 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011171 seconds.
+  path: Assets/InternetAssets/Day-Night Skyboxes/Textures/SkyAfterNoon_Back.png
+  artifactKey: Guid(c01c0eb1cbd649e44a59f130b953a379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/Day-Night Skyboxes/Textures/SkyAfterNoon_Back.png using Guid(c01c0eb1cbd649e44a59f130b953a379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd0e8d20792e20384ee2aa66ae0e9c02') in 0.013914 seconds 
+  Import took 0.017767 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008621 seconds.
+  path: Assets/InternetAssets/kitchen-blender-asset-pack/textures/Microwave_Color.png
+  artifactKey: Guid(d33858ce7083c1c46bed58b215e368d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/kitchen-blender-asset-pack/textures/Microwave_Color.png using Guid(d33858ce7083c1c46bed58b215e368d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a9c1e9df6466d8e1802639e1716750d') in 0.013287 seconds 
+  Import took 0.016288 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007242 seconds.
+  path: Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Plant.mat
+  artifactKey: Guid(05f1a64d0033dc5409ffea32ea96afa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InternetAssets/stylised-living-room-blender-asset-pack/textures/Basic Plant.mat using Guid(05f1a64d0033dc5409ffea32ea96afa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8aacd5ded22d5d442350fb776a23943a') in 0.014065 seconds 
+  Import took 0.018264 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003107 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-74_comp_shadowmask.png
+  artifactKey: Guid(93e1da0a98bbaba4da58efd0503187fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-74_comp_shadowmask.png using Guid(93e1da0a98bbaba4da58efd0503187fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '412c9e02cc35b1a9a1c6c9d64c96d333') in 0.013602 seconds 
+  Import took 0.016649 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002385 seconds.
+  path: Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall3/Wall3_1_Over.mat
+  artifactKey: Guid(b94c332478199a044b68a71e013dca60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PersonalAssets/SceneMAO/Materials/Walls/Wall3/Wall3_1_Over.mat using Guid(b94c332478199a044b68a71e013dca60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1326d53ffc2fb6f181975d3ce37f382') in 0.014652 seconds 
+  Import took 0.017423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003148 seconds.
+  path: Assets/Scenes/SampleSceneMAO1/Lightmap-87_comp_shadowmask.png
+  artifactKey: Guid(193ddb8c0051f8047aa5eec85378fd0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleSceneMAO1/Lightmap-87_comp_shadowmask.png using Guid(193ddb8c0051f8047aa5eec85378fd0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '860906e5e1de1d8ece0d54a5ba82e8b9') in 0.017042 seconds 
+  Import took 0.019933 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 11.01 ms, found 7 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 35 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.0 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 2815.
+Total: 4.178600 ms (FindLiveObjects: 0.230700 ms CreateObjectMapping: 0.115700 ms MarkObjects: 3.807400 ms  DeleteObjects: 0.022700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 10.32 ms, found 7 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 35 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.9 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 2815.
+Total: 3.805500 ms (FindLiveObjects: 0.249200 ms CreateObjectMapping: 0.137200 ms MarkObjects: 3.400900 ms  DeleteObjects: 0.016900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -5,7 +5,7 @@ using System.Threading;
 
 //Class allowing to use serial communication while using Unity Editor or Unity built project
 
-public static class MAO_OtherPlatformInitializer
+public static class Nebula_OtherPlatformInitializer
 {
     //Initialize the serial port.
     public static SerialPort serial;
@@ -13,15 +13,15 @@ public static class MAO_OtherPlatformInitializer
     //By default the correct port is defined automaticaly by using a single handshake (FindPort method)
     //You can manually providethe correct port using the bool and the string bellow 
     public static bool defineManuallyCOMPort = false;
-    public static string MAOPort = "COM8";
+    public static string NebulaPort = "COM8";
 
-    //Thread used to read and print on the console everything trhat your MAO is writing on it
+    //Thread used to read and print on the console everything trhat your Nebula is writing on it
     public static Thread thread;
 
     public static bool InitUSBSerial()
     {
-        if (!defineManuallyCOMPort) MAOPort = FindPort("MAOConnect");
-        serial = new SerialPort(MAOPort, baudRate);
+        if (!defineManuallyCOMPort) NebulaPort = FindPort("Nebula");
+        serial = new SerialPort(NebulaPort, baudRate);
         serial.Parity = Parity.None;
         serial.StopBits = StopBits.One;
         serial.DataBits = 8;
@@ -33,7 +33,7 @@ public static class MAO_OtherPlatformInitializer
         return true;
     }
 
-    //Method looking for the MAO, given the handshake necessary => here "MAOConnect"
+    //Method looking for the MAO, given the handshake necessary => here "Nebula"
     private static string FindPort(string handShake)
     {
         string[] portList = SerialPort.GetPortNames();
@@ -56,7 +56,7 @@ public static class MAO_OtherPlatformInitializer
                         currentPort.Close();
                         if (received.Equals(handShake))
                         {
-                            Debug.Log("MAO Found on " + port);
+                            Debug.Log("Nebula found on " + port);
                             return port;
                         }
                     }
@@ -71,6 +71,7 @@ public static class MAO_OtherPlatformInitializer
         return null;
     }
 
+    //Thread dedicated to listen the serial port nad read datas sent from Nebula
     public static void ThreadLoop()
     {
         while (true)
@@ -78,7 +79,7 @@ public static class MAO_OtherPlatformInitializer
 
             if (serial.BytesToRead > 0)
             {
-                string data = serial.ReadTo("\n"); //gathering working return from MAO
+                string data = serial.ReadTo("\n"); //gathering working return from Nebula
                 Debug.Log(data);
             }
 

@@ -58,7 +58,7 @@ void setup()
   while (!Serial) {
       ;
   }
-  Serial.println("MAOConnect");
+  Serial.println("Nebula");
 }
 
 void update_atomization()

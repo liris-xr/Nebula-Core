@@ -1,11 +1,8 @@
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor;
-using System.Text;
 using System.Collections;
 using System.Threading;
+using UnityEngine;
 
-public class MAO_OdorSerialQuest : MonoBehaviour
+public class Nebula_SerialOnQuest : MonoBehaviour
 {
     //Define which odor you are going to diffuse. You spread different smelling objects in your scene
     public enum AtomizerList { Left, Right, Other };
@@ -21,25 +18,35 @@ public class MAO_OdorSerialQuest : MonoBehaviour
     private float distanceFromObject;
 
     //Define the setpoints used (min and max) in order to adjust odor strength
-    public static float setpoint;
-    public int minimalSetpoint = 1;
-    public int maximalSetpoint = 30;
+    [HideInInspector]
+    public float dutyCycle;
+    private float previousSetpoint;
+    public int minimumDutyCycle = 1;
+    public int maximumDutyCycle = 30;
+    //Adjust the PWM frequency of the diffusion
+    public string pwmFrequency = "100";
 
-    bool MAOIsDiffusing;
+    public static bool isDiffusing;
     static bool COMPortInitialized;
+
+    public bool useNebulaGUI = true;
 
     AndroidJavaObject _pluginInstance;
 
     private void Awake()
     {
+        playerHead = GameObject.Find("Main Camera").transform; //Get the transform of the Main Camera, mandatory to measure the distance the player head and the object
         //Adjust the manner to open COM port depending of the platform used
         if (Application.platform == RuntimePlatform.Android && !COMPortInitialized)
         {
-           COMPortInitialized = InitializePlugin("fr.enise.unitymaoplugin.MAOPlugin"); //We use an ANdroid ARchive (AAR) to handle the communication between a Quest and the MAO
+            COMPortInitialized = InitializePlugin("fr.enise.unitymaoplugin.MAOPlugin"); //We use an ANdroid ARchive (AAR) to handle the communication between a Quest and the MAO
         }
-        else if (!COMPortInitialized) COMPortInitialized = MAO_OtherPlatformInitializer.InitUSBSerial(); //We use an another script when on Unity Editor and player to handle the communication for better reading
-        playerHead = GameObject.Find("Main Camera").transform; //Get the transform of the Main Camera, mandatory to measure the distance the player head and the object
-        
+        else if (!COMPortInitialized)
+        {
+            COMPortInitialized = Nebula_OtherPlatformInitializer.InitUSBSerial(); //We use an another script when on Unity Editor and player to handle the communication for better reading
+            if (useNebulaGUI) this.gameObject.AddComponent<Nebula_GUI>();
+        }
+       
         //adjust instruction sent to the Arduino to dissociate left and right atomizer 
         switch (atomizer)
         {
@@ -65,9 +72,9 @@ public class MAO_OdorSerialQuest : MonoBehaviour
         distanceFromObject = (Vector3.Distance(playerHead.position, transform.position) - 0.2f);
 
         //Activate the diffusion when the player enter in the smell radius
-        if (distanceFromObject < smellRadius && !MAOIsDiffusing)
+        if (distanceFromObject < smellRadius && !isDiffusing &&!Nebula_GUI.manualOverride)
         {
-            MAOIsDiffusing = true;
+            isDiffusing = true;
             usbSend(enterString); //Start the diffusion 
             StartCoroutine(OdorDiffusion()); //Start a coroutine in order to adjust odor strength in real time
         }
@@ -95,26 +102,29 @@ public class MAO_OdorSerialQuest : MonoBehaviour
         if (_pluginInstance != null && Application.platform == RuntimePlatform.Android)
         {
             _pluginInstance.Call("SendMessage", data + "\n");
-            //Debug.Log("Sent " + data);
         }
         else
         {
-            MAO_OtherPlatformInitializer.serial.Write(data + "\n");
-           //Debug.Log("Sent " + data);
+            Nebula_OtherPlatformInitializer.serial.Write(data + "\n");
         }
     }
 
     private IEnumerator OdorDiffusion()
     {
-        while (distanceFromObject < smellRadius)
+        while (distanceFromObject < smellRadius && !Nebula_GUI.manualOverride)
         {
             yield return new WaitForSeconds(0.1f); //Avoid overflowding the Arduino
-            setpoint = Mathf.Round((1 - (distanceFromObject / smellRadius)) * maximalSetpoint);
-            if (setpoint <= minimalSetpoint) setpoint = minimalSetpoint;
-            if (setpoint >= maximalSetpoint) setpoint = maximalSetpoint;
-            usbSend("C100;" + setpoint);
+            dutyCycle = Mathf.Round((1 - (distanceFromObject / smellRadius)) * maximumDutyCycle);
+            if (dutyCycle <= minimumDutyCycle) dutyCycle = minimumDutyCycle;
+            if (dutyCycle >= maximumDutyCycle) dutyCycle = maximumDutyCycle;
+            //Pre-format the consigna sent to the arduino
+            if (dutyCycle != previousSetpoint)
+            {
+                usbSend("C" + pwmFrequency + ";" + dutyCycle);
+                previousSetpoint = dutyCycle;
+            }
         }
-        MAOIsDiffusing = false;
+        isDiffusing = false;
         usbSend(exitString);
         StopCoroutine(OdorDiffusion());
     }
@@ -123,8 +133,8 @@ public class MAO_OdorSerialQuest : MonoBehaviour
     {
         if (!(Application.platform == RuntimePlatform.Android))
         {
-            MAO_OtherPlatformInitializer.thread.Abort();
-            MAO_OtherPlatformInitializer.serial.Close();
+            Nebula_OtherPlatformInitializer.thread.Abort();
+            Nebula_OtherPlatformInitializer.serial.Close();
         }
         StopAllCoroutines();
     }

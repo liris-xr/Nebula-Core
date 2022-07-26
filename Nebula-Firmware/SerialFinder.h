@@ -14,7 +14,7 @@ class SerialFinder
 {
   private:
     bool detected = false;
-    String handshakeINPUT = "MAOConnect";
+    String handshakeINPUT = "Nebula";
     String handshakeOUTPUT;
   public:
     SerialFinder();

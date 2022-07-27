@@ -1,8 +1,8 @@
 using System.Collections;
-using System.Threading;
 using UnityEngine;
+using System.Threading;
 
-public class Nebula_SerialOnQuest : MonoBehaviour
+public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
 {
     //Define which odor you are going to diffuse. You spread different smelling objects in your scene
     public enum AtomizerList { Left, Right, Other };
@@ -12,7 +12,7 @@ public class Nebula_SerialOnQuest : MonoBehaviour
     private string exitString;
 
     private Transform playerHead;
-    
+
     //Define the distance (in m) between the player head and the object before the start of the diffusion
     public float smellRadius = 0.6f;
     private float distanceFromObject;
@@ -29,24 +29,26 @@ public class Nebula_SerialOnQuest : MonoBehaviour
     public static bool isDiffusing;
     static bool COMPortInitialized;
 
-    public bool useNebulaGUI = true;
-
     AndroidJavaObject _pluginInstance;
+#if (UNITY_ANDROID)
+    [HideInInspector]
+#endif
+    public bool useNebulaGUI = true;
 
     private void Awake()
     {
         playerHead = GameObject.Find("Main Camera").transform; //Get the transform of the Main Camera, mandatory to measure the distance the player head and the object
-        //Adjust the manner to open COM port depending of the platform used
-        if (Application.platform == RuntimePlatform.Android && !COMPortInitialized)
+        
+        if (!COMPortInitialized) //Adjust the manner to open COM port depending of the platform used
         {
+#if (UNITY_ANDROID)
             COMPortInitialized = InitializePlugin("fr.enise.unitymaoplugin.MAOPlugin"); //We use an ANdroid ARchive (AAR) to handle the communication between a Quest and the MAO
+#elif (UNITY_EDITOR || UNITY_STANDALONE_WIN)
+            COMPortInitialized = Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER.InitUSBSerial(); //We use an another script when on Unity Editor and player to handle the communication for better reading
+        if (useNebulaGUI) this.gameObject.AddComponent<Nebula_GUI>();
+#endif
         }
-        else if (!COMPortInitialized)
-        {
-            COMPortInitialized = Nebula_OtherPlatformInitializer.InitUSBSerial(); //We use an another script when on Unity Editor and player to handle the communication for better reading
-            if (useNebulaGUI) this.gameObject.AddComponent<Nebula_GUI>();
-        }
-       
+
         //adjust instruction sent to the Arduino to dissociate left and right atomizer 
         switch (atomizer)
         {
@@ -72,7 +74,7 @@ public class Nebula_SerialOnQuest : MonoBehaviour
         distanceFromObject = (Vector3.Distance(playerHead.position, transform.position) - 0.2f);
 
         //Activate the diffusion when the player enter in the smell radius
-        if (distanceFromObject < smellRadius && !isDiffusing &&!Nebula_GUI.manualOverride)
+        if (distanceFromObject < smellRadius && !isDiffusing && !Nebula_GUI.manualOverride)
         {
             isDiffusing = true;
             usbSend(enterString); //Start the diffusion 
@@ -80,6 +82,7 @@ public class Nebula_SerialOnQuest : MonoBehaviour
         }
     }
 
+#if (UNITY_ANDROID)
     //Plugin initializer used when scene is built on Quest. Mandatory to use the java android library
     bool InitializePlugin(string pluginName)
     {
@@ -94,19 +97,19 @@ public class Nebula_SerialOnQuest : MonoBehaviour
 
         Thread.Sleep(2000);
 
-    return true;
+        return true;
     }
+#endif
 
     public void usbSend(string data)
     {
-        if (_pluginInstance != null && Application.platform == RuntimePlatform.Android)
-        {
-            _pluginInstance.Call("SendMessage", data + "\n");
-        }
-        else
-        {
-            Nebula_OtherPlatformInitializer.serial.Write(data + "\n");
-        }
+#if (UNITY_ANDROID)
+        if (_pluginInstance != null) _pluginInstance.Call("SendMessage", data + "\n");
+
+#elif (UNITY_EDITOR || UNITY_STANDALONE_WIN)
+
+        Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER.serial.Write(data + "\n");
+#endif
     }
 
     private IEnumerator OdorDiffusion()
@@ -131,11 +134,10 @@ public class Nebula_SerialOnQuest : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        if (!(Application.platform == RuntimePlatform.Android))
-        {
-            Nebula_OtherPlatformInitializer.thread.Abort();
-            Nebula_OtherPlatformInitializer.serial.Close();
-        }
         StopAllCoroutines();
+#if (UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN && !UNITY_ANDROID)
+        Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER.thread.Abort();
+        Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER.serial.Close();
+#endif
     }
 }

@@ -1,12 +1,15 @@
 using System;
 using UnityEngine;
+#if (UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN && !UNITY_ANDROID)
 using System.IO.Ports;
+#endif
 using System.Threading;
 
 //Class allowing to use serial communication while using Unity Editor or Unity built project
 
-public static class Nebula_OtherPlatformInitializer
+public static class Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER
 {
+#if (UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN && !UNITY_ANDROID)
     //Initialize the serial port.
     public static SerialPort serial;
     public static int baudRate = 115200;
@@ -27,7 +30,6 @@ public static class Nebula_OtherPlatformInitializer
         serial.DataBits = 8;
         serial.DtrEnable = true;
         serial.Open();
-        Debug.Log("Serial port opened");
         thread = new Thread (ThreadLoop);
         thread.Start();
         return true;
@@ -76,14 +78,12 @@ public static class Nebula_OtherPlatformInitializer
     {
         while (true)
         {
-
             if (serial.BytesToRead > 0)
             {
                 string data = serial.ReadTo("\n"); //gathering working return from Nebula
                 Debug.Log(data);
             }
-
         }
     }
-
+#endif
 }

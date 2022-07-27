@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 4612240394563674816}
   - component: {fileID: 4612240394563674819}
   - component: {fileID: 4612240394563674817}
-  - component: {fileID: 4612240394563674818}
+  - component: {fileID: 3534421088834219892}
   m_Layer: 7
   m_Name: Orange
   m_TagString: Untagged
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &4612240394563674818
+--- !u!114 &3534421088834219892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,10 +317,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5530580742420731979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 764b846e12c69464a804e633fde733df, type: 3}
+  m_Script: {fileID: 11500000, guid: c16acb1696a208842acb5b39a64120ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   atomizer: 0
   smellRadius: 0.6
-  minimalSetpoint: 1
-  maximalSetpoint: 30
+  dutyCycle: 0
+  minimumDutyCycle: 1
+  maximumDutyCycle: 30
+  pwmFrequency: 100
+  useNebulaGUI: 1

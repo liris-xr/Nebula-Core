@@ -29,11 +29,15 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
     public static bool isDiffusing;
     static bool COMPortInitialized;
 
-    AndroidJavaObject _pluginInstance;
+    static AndroidJavaObject _pluginInstance;
 #if (UNITY_ANDROID)
     [HideInInspector]
 #endif
     public bool useNebulaGUI = true;
+#if (UNITY_ANDROID)
+    [HideInInspector]
+#endif
+    public static bool useListener = false;
 
     private void Awake()
     {
@@ -77,14 +81,14 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
         if (distanceFromObject < smellRadius && !isDiffusing && !Nebula_GUI.manualOverride)
         {
             isDiffusing = true;
-            usbSend(enterString); //Start the diffusion 
+            nebulaSender(enterString); //Start the diffusion 
             StartCoroutine(OdorDiffusion()); //Start a coroutine in order to adjust odor strength in real time
         }
     }
 
 #if (UNITY_ANDROID)
     //Plugin initializer used when scene is built on Quest. Mandatory to use the java android library
-    bool InitializePlugin(string pluginName)
+    static bool InitializePlugin(string pluginName)
     {
         var pluginClass = new AndroidJavaClass("fr.enise.unitymaoplugin.MAOPlugin");
 
@@ -101,7 +105,7 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
     }
 #endif
 
-    public void usbSend(string data)
+    public void nebulaSender(string data)
     {
 #if (UNITY_ANDROID)
         if (_pluginInstance != null) _pluginInstance.Call("SendMessage", data + "\n");
@@ -123,19 +127,21 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
             //Pre-format the consigna sent to the arduino
             if (dutyCycle != previousSetpoint)
             {
-                usbSend("C" + pwmFrequency + ";" + dutyCycle);
+                nebulaSender("C" + pwmFrequency + ";" + dutyCycle);
                 previousSetpoint = dutyCycle;
             }
         }
         isDiffusing = false;
-        usbSend(exitString);
+        nebulaSender(exitString);
         StopCoroutine(OdorDiffusion());
     }
 
     private void OnApplicationQuit()
     {
         StopAllCoroutines();
-#if (UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN && !UNITY_ANDROID)
+#if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
+        nebulaSender("S");                                             //Send stop value Nebula
+        Thread.Sleep(200);
         Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER.thread.Abort();
         Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER.serial.Close();
 #endif

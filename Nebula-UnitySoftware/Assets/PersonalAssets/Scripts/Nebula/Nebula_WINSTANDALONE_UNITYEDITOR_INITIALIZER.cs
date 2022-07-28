@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-#if (UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN && !UNITY_ANDROID)
+#if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
 using System.IO.Ports;
 #endif
 using System.Threading;
@@ -9,7 +9,7 @@ using System.Threading;
 
 public static class Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER
 {
-#if (UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN && !UNITY_ANDROID)
+#if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
     //Initialize the serial port.
     public static SerialPort serial;
     public static int baudRate = 115200;
@@ -29,7 +29,14 @@ public static class Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER
         serial.StopBits = StopBits.One;
         serial.DataBits = 8;
         serial.DtrEnable = true;
-        serial.Open();
+        try
+        {
+            serial.Open();
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+        }
         thread = new Thread (ThreadLoop);
         thread.Start();
         return true;
@@ -81,7 +88,7 @@ public static class Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER
             if (serial.BytesToRead > 0)
             {
                 string data = serial.ReadTo("\n"); //gathering working return from Nebula
-                Debug.Log(data);
+                if (Nebula_MULTIPLATFORM_WIN_ANDROID.useListener) Debug.Log(data);
             }
         }
     }

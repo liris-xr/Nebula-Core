@@ -4,7 +4,7 @@ using System.Threading;
 
 public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
 {
-    //Define which odor you are going to diffuse. You spread different smelling objects in your scene
+    //Define which odor you are going to diffuse. You can spread different smelling objects in the scene
     public enum AtomizerList { Left, Right, Other };
     public AtomizerList atomizer;
 
@@ -17,7 +17,7 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
     public float smellRadius = 0.6f;
     private float distanceFromObject;
 
-    //Define the setpoints used (min and max) in order to adjust odor strength
+    //Define the setpoints used (min and max) in order to adjust odor strength (can me modified in real-time with the provided GUI)
     [HideInInspector]
     public float dutyCycle;
     private float previousSetpoint;
@@ -81,7 +81,7 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
         if (distanceFromObject < smellRadius && !isDiffusing && !Nebula_GUI.manualOverride)
         {
             isDiffusing = true;
-            nebulaSender(enterString); //Start the diffusion 
+            nebulaSender(enterString); //Send the start signal to Nebula 
             StartCoroutine(OdorDiffusion()); //Start a coroutine in order to adjust odor strength in real time
         }
     }

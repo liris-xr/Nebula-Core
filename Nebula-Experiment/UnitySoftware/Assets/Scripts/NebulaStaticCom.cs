@@ -1,48 +1,38 @@
 using System;
 using UnityEngine;
-#if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
 using System.IO.Ports;
-#endif
 using System.Threading;
 
 //Class allowing to use serial communication while using Unity Editor or Unity built project
 
-public static class Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER
+public static class NebulaStaticCom
 {
-#if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
     //Initialize the serial port.
     public static SerialPort serial;
     public static int baudRate = 115200;
     //By default the correct port is defined automaticaly by using a single handshake (FindPort method)
     //You can manually provide the correct port using the bool and the string bellow 
     public static bool defineManuallyCOMPort = false;
-    public static string NebulaPort = "COM8";
+    public static string nebulaPort = "COM3";
 
-    //Thread used to read and print on the console everything that your Nebula is writing on it
+    //Thread used to read and print on the console everything that Nebula is writing on it
     public static Thread thread;
 
     public static bool InitUSBSerial()
     {
-        if (!defineManuallyCOMPort) NebulaPort = FindPort("Nebula");
-        serial = new SerialPort(NebulaPort, baudRate);
+        if (!defineManuallyCOMPort) nebulaPort = FindPort("Nebula");
+        serial = new SerialPort(nebulaPort, baudRate);
         serial.Parity = Parity.None;
         serial.StopBits = StopBits.One;
         serial.DataBits = 8;
         serial.DtrEnable = true;
-        try
-        {
-            serial.Open();
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e);
-        }
-        thread = new Thread (ThreadLoop);
+        serial.Open();
+        thread = new Thread(ThreadLoop);
         thread.Start();
         return true;
     }
 
-    //Method looking for the MAO, given the handshake necessary => here "Nebula"
+    //Method looking for the Nebula, given the handshake necessary 
     private static string FindPort(string handShake)
     {
         string[] portList = SerialPort.GetPortNames();
@@ -80,17 +70,40 @@ public static class Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER
         return null;
     }
 
-    //Thread dedicated to listen the serial port nad read datas sent from Nebula
+    public static void MAOSender(int diffusionType)
+    {
+        switch (diffusionType)
+        {
+            case 0:
+                serial.WriteLine("L");
+                serial.WriteLine("C100;0");
+                break;
+            case 1:
+                serial.WriteLine("L");
+                serial.WriteLine("C100;10");
+                break;
+            case 2:
+                serial.WriteLine("L");
+                serial.WriteLine("C100;50");
+                break;
+            case -1: //end diffusion value
+                serial.WriteLine("l");
+                serial.WriteLine("r");
+                break;
+        }
+    }
+
     public static void ThreadLoop()
     {
         while (true)
         {
+
             if (serial.BytesToRead > 0)
             {
-                string data = serial.ReadTo("\n"); //gathering working return from Nebula
-                if (Nebula_MULTIPLATFORM_WIN_ANDROID.useListener) Debug.Log(data);
+                string data = serial.ReadTo("\n"); 
             }
+
         }
     }
-#endif
+
 }

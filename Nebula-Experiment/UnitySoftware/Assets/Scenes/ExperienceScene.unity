@@ -748,7 +748,7 @@ MonoBehaviour:
   questionnaireCanvas: {fileID: 2017990154}
   quitCanvas: {fileID: 1268050841}
   buttonManager: {fileID: 2017990160}
-  useMAO: 0
+  useMAO: 1
 --- !u!4 &49111143
 Transform:
   m_ObjectHideFlags: 0

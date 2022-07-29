@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
             {
                 randomizerExperiment.notationTime[expeIndex] = questionnaireTimer;
                 randomizerExperiment.notation[expeIndex] = buttonManager.QuestionNote();
-                Debug.Log("Button pressed : " + randomizerExperiment.notation[expeIndex] + "\nTime recordedé : " + randomizerExperiment.notationTime[expeIndex]);
+                Debug.Log("Button pressed : " + randomizerExperiment.notation[expeIndex] + "\nTime recorded : " + randomizerExperiment.notationTime[expeIndex]);
                 questionnaireCanvas.transform.GetChild(2).gameObject.SetActive(false);
                 questionnaireCanvas.transform.GetChild(3).gameObject.SetActive(false);
                 questionnaireCanvas.transform.GetChild(4).gameObject.SetActive(true);
@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviour
     {
         tutoIntroCanvas.SetActive(false);
 
-        for (tutoIndex = 0; tutoIndex < 0; tutoIndex++)
+        for (tutoIndex = 0; tutoIndex < 2; tutoIndex++)
         {
             beReadyCanvas.SetActive(true);
 

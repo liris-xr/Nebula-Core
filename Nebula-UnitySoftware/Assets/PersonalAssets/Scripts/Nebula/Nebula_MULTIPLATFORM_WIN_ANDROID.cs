@@ -15,7 +15,7 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
 
     //Define the distance (in m) between the player head and the object before the start of the diffusion
     public float smellRadius = 0.6f;
-    private float distanceFromObject;
+    private float distanceBetweenPropAndPlayer;
 
     //Define the setpoints used (min and max) in order to adjust odor strength (can me modified in real-time with the provided GUI)
     [HideInInspector]
@@ -23,11 +23,16 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
     private float previousSetpoint;
     public int minimumDutyCycle = 1;
     public int maximumDutyCycle = 30;
+    [HideInInspector]
+    public string propName;
     //Adjust the PWM frequency of the diffusion
     public string pwmFrequency = "100";
 
     public static bool isDiffusing;
     static bool COMPortInitialized;
+
+    Vector3 originalPosition;
+    Quaternion originalOrientation;
 
     static AndroidJavaObject _pluginInstance;
 #if (UNITY_ANDROID)
@@ -42,6 +47,8 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
     private void Awake()
     {
         playerHead = GameObject.Find("Main Camera").transform; //Get the transform of the Main Camera, mandatory to measure the distance the player head and the object
+        originalOrientation = this.gameObject.transform.rotation;
+        originalPosition = this.gameObject.transform.position;
         
         if (!COMPortInitialized) //Adjust the manner to open COM port depending of the platform used
         {
@@ -49,7 +56,7 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
             COMPortInitialized = InitializePlugin("fr.enise.unitymaoplugin.MAOPlugin"); //We use an ANdroid ARchive (AAR) to handle the communication between a Quest and the MAO
 #elif (UNITY_EDITOR || UNITY_STANDALONE_WIN)
             COMPortInitialized = Nebula_WINSTANDALONE_UNITYEDITOR_INITIALIZER.InitUSBSerial(); //We use an another script when on Unity Editor and player to handle the communication for better reading
-        if (useNebulaGUI) this.gameObject.AddComponent<Nebula_GUI>();
+            if (useNebulaGUI) InitializeGUI();
 #endif
         }
 
@@ -74,11 +81,9 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
 
     void Update()
     {
-        //Calculate in real-time the distance between the object to smell and the player head
-        distanceFromObject = (Vector3.Distance(playerHead.position, transform.position) - 0.2f);
-
+        getDistanceBetweenPropAndPlayer();
         //Activate the diffusion when the player enter in the smell radius
-        if (distanceFromObject < smellRadius && !isDiffusing && !Nebula_GUI.manualOverride)
+        if (distanceBetweenPropAndPlayer < smellRadius && !isDiffusing && !Nebula_GUI.manualOverride)
         {
             isDiffusing = true;
             nebulaSender(enterString); //Send the start signal to Nebula 
@@ -105,6 +110,24 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
     }
 #endif
 
+    public void InitializeGUI()
+    {
+        this.gameObject.AddComponent<Nebula_GUI>();
+    }
+
+    public void ResetGameObject()
+    {
+        this.gameObject.transform.position = originalPosition;
+        this.gameObject.transform.rotation = originalOrientation;
+    }
+
+    public float getDistanceBetweenPropAndPlayer()
+    {
+        //Calculate in real-time the distance between the object to smell and the player head
+        distanceBetweenPropAndPlayer = (Vector3.Distance(playerHead.position, transform.position) - 0.2f);
+        return distanceBetweenPropAndPlayer; 
+    }
+
     public void nebulaSender(string data)
     {
 #if (UNITY_ANDROID)
@@ -118,10 +141,10 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
 
     private IEnumerator OdorDiffusion()
     {
-        while (distanceFromObject < smellRadius && !Nebula_GUI.manualOverride)
+        while (distanceBetweenPropAndPlayer < smellRadius && !Nebula_GUI.manualOverride)
         {
             yield return new WaitForSeconds(0.1f); //Avoid overflowding the Arduino
-            dutyCycle = Mathf.Round((1 - (distanceFromObject / smellRadius)) * maximumDutyCycle);
+            dutyCycle = Mathf.Round((1 - (distanceBetweenPropAndPlayer / smellRadius)) * maximumDutyCycle);
             if (dutyCycle <= minimumDutyCycle) dutyCycle = minimumDutyCycle;
             if (dutyCycle >= maximumDutyCycle) dutyCycle = maximumDutyCycle;
             //Pre-format the consigna sent to the arduino
@@ -134,6 +157,14 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
         isDiffusing = false;
         nebulaSender(exitString);
         StopCoroutine(OdorDiffusion());
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Floor"))
+        {
+            ResetGameObject();
+        }
     }
 
     private void OnApplicationQuit()

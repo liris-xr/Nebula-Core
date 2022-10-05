@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Nebula_GUI : MonoBehaviour
 {
@@ -13,9 +14,16 @@ public class Nebula_GUI : MonoBehaviour
     int leftDutyCycle;
     [HideInInspector]
     int leftpreviousDutyCyle;
+    public float DesignWidth = 1280.0f;
+    public float DesignHeight = 720.0f;
 
     void OnGUI()
     {
+        //Calculate change aspects
+        float resX = (float)(Screen.width) / DesignWidth;
+        float resY = (float)(Screen.height) / DesignHeight;
+        //Set matrix
+        GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(resX, resY, 1));
         if (!manualOverride) leftDutyCyclef = this.GetComponent<Nebula_MULTIPLATFORM_WIN_ANDROID>().dutyCycle;
         GUI.Box(new Rect(10, 10, 250, 150), "Nebula manual activation");
         GUI.Box(new Rect(275, 10, 250, 150), "Nebula global settings");

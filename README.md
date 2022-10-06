@@ -14,3 +14,19 @@ Nebula create an odorant mist using an **ultrasonic atomizer**, powered by a *pu
 This modulation, handled by a micro-controller (we used an Arduino Nano Every) allows Nebula to reach several olfactory intensities.
 
 In addition to the atomizer, we used two fans which are useful to control our air flow. The smallest one, *5VDC 25x25x6mm*, is always active and forces a constant air flow to be able to smell the odor more rapidly after its diffusion and mitigates the pressure drop when enabling the extraction fan. This one is a *12VDC 40x40x20mm*, much stronger, that runs for 2 seconds in order to extract the remaining odorant and thus improve the reactivity of the device.
+
+Nebula is ready to use with Unity (PC VR built or in editor), using the provided Unity-Package or scripsts from the Nebula-UnitySoftware folder.
+Furthemore, Nebula works standalone using an Android Archive Library using the provided package on your own built scene. (Tested on a Meta Quest 2)
+
+## Repository Structure
+
+  * ``Nebula-CAD`` contains all STL files (ready to print), a PDF version of the wiring diagram and some printings recommendations.
+  * ``Nebula-Experiment``contains results and the unity project used in ur experiment described in our paper.
+  * ``Nebula-Firmware`` contains code for the microcontroller used (Arduino Nano Every).
+  * ``Nebula-UnitySoftware`` is the Unity project unsing Nebula in VR including a sample scene with an orange ready to diffuse when approached to the nose !
+  
+   ### Release content
+   
+   * ``Nebula-UnityPackage`` Unity Package which includes everything needed to bring Nebula into your project unity.
+   * ``Nebula-PCSampleScene`` sample scene included in the repository built that countains a ready-to-use application for Nebula (perfect to test yours !)
+   * ``Nebula-Scene`` same as above but built for Meta Quest 2.

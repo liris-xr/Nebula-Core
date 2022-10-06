@@ -119,6 +119,8 @@ public class Nebula_MULTIPLATFORM_WIN_ANDROID : MonoBehaviour
     {
         this.gameObject.transform.position = originalPosition;
         this.gameObject.transform.rotation = originalOrientation;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
 
     public float getDistanceBetweenPropAndPlayer()

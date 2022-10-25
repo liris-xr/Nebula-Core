@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: a4f5d486e2e76b8409c8f78ccbcae05a, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: c5bcfbc55a960264d93d97a768256fa4, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1827,15 +1827,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 586c560ea5ce12b4ab826616286037af, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.8
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 586c560ea5ce12b4ab826616286037af, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.8
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 586c560ea5ce12b4ab826616286037af, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.8
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 586c560ea5ce12b4ab826616286037af, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2706,7 +2706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 806801462690830945, guid: 57efb921106d748409dc73cd7d5614dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.602
+      value: 1.366
       objectReference: {fileID: 0}
     - target: {fileID: 806801462690830945, guid: 57efb921106d748409dc73cd7d5614dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2754,7 +2754,7 @@ PrefabInstance:
       objectReference: {fileID: 1524604083}
     - target: {fileID: 916742947884602555, guid: 57efb921106d748409dc73cd7d5614dd, type: 3}
       propertyPath: diffusionMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57efb921106d748409dc73cd7d5614dd, type: 3}

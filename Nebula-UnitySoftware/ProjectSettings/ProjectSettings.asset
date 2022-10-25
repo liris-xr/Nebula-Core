@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: ECL-ENISE-VR
   productName: Nebula_SampleScene
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -161,6 +161,12 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: -4271523447686367644, guid: 1a4b2566dc9765c42bfafecd46285329, type: 2}
+  - {fileID: 0}
+  - {fileID: 915884665053293211, guid: 78cabeffbac09d940b0cac5fcc54d7e0, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -178,7 +184,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DefaultCompany.Nebula_SampleScene
+    Android: com.ECLENISEVR.Nebula_SampleScene
     Standalone: com.DefaultCompany.NebulaSampleScene
   buildNumber:
     Standalone: 0

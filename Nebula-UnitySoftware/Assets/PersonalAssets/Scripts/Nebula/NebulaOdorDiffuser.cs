@@ -17,7 +17,6 @@ public class NebulaOdorDiffuser : MonoBehaviour
     private Transform playerHead;
 
     //Define the distance (in m) between the player head and the object before the start of the diffusion
-    public float smellRadius = 0.6f;
     private float distanceBetweenGameObjectAndPlayer;
     //Define the setpoints used (min and max) in order to adjust odor strength (can me modified in real-time with the provided GUI)
     [HideInInspector]
@@ -57,69 +56,19 @@ public class NebulaOdorDiffuser : MonoBehaviour
                 break;
         }
     }
-    void Update()
-    {
-        //Activate the diffusion when the player enter in the smell radius
-        if (diffusionMode == DiffusionMode.Linear && !NebulaManager.nebulaIsDiffusing)
-        {
-            LinearModeDiffusion();
-        }
-    }
-
-    public void ResetGameObject()
-    {
-        this.gameObject.transform.position = originalPosition;
-        this.gameObject.transform.rotation = originalOrientation;
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-    }
-
-    public float getDistanceBetweenGameObjectAndPlayer()
-    {
-        //Calculate in real-time the distance between the object to smell and the player head
-        distanceBetweenGameObjectAndPlayer = (Vector3.Distance(playerHead.position, transform.position) - 0.2f);
-        return distanceBetweenGameObjectAndPlayer;
-    }
-
-    private void LinearModeDiffusion()
-    {
-        if (getDistanceBetweenGameObjectAndPlayer() < smellRadius && !NebulaGUI.manualOverride)
-        {
-            NebulaManager.nebulaIsDiffusing = true;
-            NebulaManager.nebulaSender(enterString); //Send the start signal to Nebula 
-            StartCoroutine(OdorDiffusionLinearMode()); //Start a coroutine in order to adjust odor strength in real time
-        }
-    }
-
-    private IEnumerator OdorDiffusionLinearMode()
-    {
-        while (getDistanceBetweenGameObjectAndPlayer() < smellRadius && !NebulaGUI.manualOverride)
-        {
-            yield return new WaitForSeconds(0.1f); //Avoid overflowding the Arduino
-            dutyCycle = Mathf.Round((1 - (getDistanceBetweenGameObjectAndPlayer() / smellRadius)) * maximumDutyCycle);
-            if (dutyCycle <= minimumDutyCycle) dutyCycle = minimumDutyCycle;
-            if (dutyCycle >= maximumDutyCycle) dutyCycle = maximumDutyCycle;
-            if (dutyCycle != previousSetpoint)
-            {
-                NebulaManager.nebulaSender("C" + pwmFrequency + ";" + dutyCycle);
-                previousSetpoint = dutyCycle;;
-                NebulaManager.currentDutyCycle = dutyCycle;
-            }
-        }
-        NebulaManager.nebulaIsDiffusing = false;
-        NebulaManager.nebulaSender(exitString);
-        StopCoroutine(OdorDiffusionLinearMode());
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("MainCamera") && diffusionMode == DiffusionMode.Boolean)
+        if (other.CompareTag("MainCamera"))
         {
-            dutyCycle = booleanDutyCycle;
-            NebulaManager.currentDutyCycle = dutyCycle;
-            NebulaManager.nebulaSender(enterString);
-            NebulaManager.nebulaSender("C" + pwmFrequency + ";" + dutyCycle);
-            NebulaManager.nebulaIsDiffusing = true;
+            if (diffusionMode == DiffusionMode.Linear)
+            {
+                LinearDiffusionMode();
+            }
+            else if (diffusionMode == DiffusionMode.Boolean)
+            {
+                BooleanDiffusionMode();
+            }
         }
 
         if (other.CompareTag("Floor"))
@@ -130,14 +79,76 @@ public class NebulaOdorDiffuser : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("MainCamera") && diffusionMode == DiffusionMode.Boolean)
+        if (other.CompareTag("MainCamera"))
         {
-            dutyCycle = 0;
-            NebulaManager.currentDutyCycle = dutyCycle;
-            NebulaManager.nebulaSender(exitString);
-            NebulaManager.nebulaIsDiffusing = false;
+            if (diffusionMode == DiffusionMode.Linear)
+            {
+                NebulaManager.nebulaIsDiffusing = false;
+                NebulaManager.nebulaSender(exitString);
+                StopCoroutine(OdorDiffusionLinearMode());
+            }
+            else if (diffusionMode == DiffusionMode.Boolean)
+            {
+                dutyCycle = 0;
+                NebulaManager.currentDutyCycle = dutyCycle;
+                NebulaManager.nebulaSender(exitString);
+                NebulaManager.nebulaIsDiffusing = false;
+            }
         }
     }
+
+    private void LinearDiffusionMode()
+    {
+        if (!NebulaGUI.manualOverride)
+        {
+            NebulaManager.nebulaIsDiffusing = true;
+            NebulaManager.nebulaSender(enterString); //Send the start signal to Nebula 
+            StartCoroutine(OdorDiffusionLinearMode()); //Start a coroutine in order to adjust odor strength in real time
+        }
+    }
+
+    public float updateDistance()
+    {
+        //Calculate in real-time the distance between the object to smell and the player head
+        distanceBetweenGameObjectAndPlayer = (Vector3.Distance(playerHead.position, transform.position)-0.35f);
+        return distanceBetweenGameObjectAndPlayer;
+    }
+
+    private IEnumerator OdorDiffusionLinearMode()
+    {
+        while (!NebulaGUI.manualOverride)
+        {
+            yield return new WaitForSeconds(0.1f); //Avoid overflowding the Arduino
+            dutyCycle = Mathf.Round(1-((updateDistance()/0.3f) * maximumDutyCycle));
+            //dutyCycle = Mathf.Round(maximumDutyCycle/(updateDistance()+0.2f));
+            if (dutyCycle <= minimumDutyCycle) dutyCycle = minimumDutyCycle;
+            if (dutyCycle >= maximumDutyCycle) dutyCycle = maximumDutyCycle;
+            if (dutyCycle != previousSetpoint)
+            {
+                NebulaManager.nebulaSender("C" + pwmFrequency + ";" + dutyCycle);
+                previousSetpoint = dutyCycle;
+                NebulaManager.currentDutyCycle = dutyCycle;
+            }
+        }
+    }
+
+    private void BooleanDiffusionMode()
+    {
+        dutyCycle = booleanDutyCycle;
+        NebulaManager.currentDutyCycle = dutyCycle;
+        NebulaManager.nebulaSender(enterString);
+        NebulaManager.nebulaSender("C" + pwmFrequency + ";" + dutyCycle);
+        NebulaManager.nebulaIsDiffusing = true;
+    }
+
+    public void ResetGameObject()
+    {
+        this.gameObject.transform.position = originalPosition;
+        this.gameObject.transform.rotation = originalOrientation;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+    }
+
 
     private void OnApplicationQuit()
     {
@@ -151,7 +162,7 @@ public class NebulaOdorDiffuser : MonoBehaviour
             NebulaManager.thread.Abort();
             NebulaManager.nebulaSerial.Close();
         }
-        catch (Exception e) {  }
+        catch (Exception) {  }
 #endif
     }
 }

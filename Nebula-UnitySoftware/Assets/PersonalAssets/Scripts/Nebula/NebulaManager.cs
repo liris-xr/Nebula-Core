@@ -57,7 +57,7 @@ public class NebulaManager : MonoBehaviour
             thread = new Thread(ThreadLoop);
             thread.Start();
         }
-        catch (Exception e)
+        catch (Exception)
         {
             Debug.LogError("Nebula not detected : check COM ports");
         }
@@ -97,7 +97,7 @@ public class NebulaManager : MonoBehaviour
                         }
                     }
                 }
-                catch (Exception e) {   }
+                catch (Exception) {   }
             }
 
         }
@@ -116,7 +116,7 @@ public class NebulaManager : MonoBehaviour
                     string data = nebulaSerial.ReadTo("\n"); //gathering working return from Nebula
                     if (useListener) Debug.Log(data);
                 }
-                catch (Exception e) { }
+                catch (Exception) { }
             }
         }
     }
@@ -157,9 +157,9 @@ public class NebulaManager : MonoBehaviour
 #elif (UNITY_EDITOR || UNITY_STANDALONE_WIN)
         try
         {
-            NebulaManager.nebulaSerial.Write(data + "\n");
+            nebulaSerial.Write(data + "\n");
         }
-        catch (Exception e) { }
+        catch (Exception) { }
 #endif
     }
 

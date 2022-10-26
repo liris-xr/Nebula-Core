@@ -2758,7 +2758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 916742947884602555, guid: 57efb921106d748409dc73cd7d5614dd, type: 3}
       propertyPath: maximumDutyCycle
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 916742947884602555, guid: 57efb921106d748409dc73cd7d5614dd, type: 3}
       propertyPath: minimumDutyCycle

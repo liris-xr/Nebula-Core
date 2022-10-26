@@ -125,9 +125,9 @@ public class NebulaManager : MonoBehaviour
         }
     }
 
-        public void InitializeGUI()
+    public void InitializeGUI()
     {
-        this.gameObject.AddComponent<NebulaGUI>();
+        gameObject.AddComponent<NebulaGUI>();
     }
 #endif
 #if (UNITY_ANDROID)

@@ -34,8 +34,8 @@ public class NebulaOdorDiffuser : MonoBehaviour
     private void Awake()
     {
         playerHead = GameObject.Find("NebulaManager").GetComponent<NebulaManager>().playerHead.transform;
-        originalOrientation = this.gameObject.transform.rotation;
-        originalPosition = this.gameObject.transform.position;
+        originalOrientation = gameObject.transform.rotation;
+        originalPosition = gameObject.transform.position;
         //adjust instruction sent to the Arduino to dissociate left and right atomizer 
         switch (atomizer)
         {
@@ -141,7 +141,7 @@ public class NebulaOdorDiffuser : MonoBehaviour
 
     public void ResetGameObject()
     {
-        this.gameObject.transform.SetPositionAndRotation(originalPosition, originalOrientation);
+        gameObject.transform.SetPositionAndRotation(originalPosition, originalOrientation);
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }

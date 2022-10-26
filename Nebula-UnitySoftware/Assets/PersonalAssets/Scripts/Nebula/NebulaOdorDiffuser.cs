@@ -18,14 +18,12 @@ public class NebulaOdorDiffuser : MonoBehaviour
 
     //Define the distance (in m) between the player head and the object before the start of the diffusion
     private float distanceBetweenGameObjectAndPlayer;
-    //Define the setpoints used (min and max) in order to adjust odor strength (can me modified in real-time with the provided GUI)
     [HideInInspector]
     private float dutyCycle;
-    private float previousSetpoint;
+    private float previousDutyCycle;
+    //Define min and max duty cycle for the game object in order to adjust odor strength (can be adjusted in real time in the inspector
     public int minimumDutyCycle = 1;
     public int maximumDutyCycle = 30;
-    [HideInInspector]
-    public string propName;
     //Adjust the PWM frequency of the diffusion
     public string pwmFrequency = "100";
     public int booleanDutyCycle = 50;
@@ -84,15 +82,15 @@ public class NebulaOdorDiffuser : MonoBehaviour
             if (diffusionMode == DiffusionMode.Linear)
             {
                 NebulaManager.nebulaIsDiffusing = false;
-                NebulaManager.nebulaSender(exitString);
+                NebulaManager.NebulaSender(exitString);
                 StopCoroutine(OdorDiffusionLinearMode());
             }
             else if (diffusionMode == DiffusionMode.Boolean)
             {
-                dutyCycle = 0;
-                NebulaManager.currentDutyCycle = dutyCycle;
-                NebulaManager.nebulaSender(exitString);
                 NebulaManager.nebulaIsDiffusing = false;
+                dutyCycle = 0;
+                NebulaManager.NebulaSender(exitString);
+                NebulaManager.currentDutyCycle = dutyCycle;
             }
         }
     }
@@ -102,31 +100,31 @@ public class NebulaOdorDiffuser : MonoBehaviour
         if (!NebulaGUI.manualOverride)
         {
             NebulaManager.nebulaIsDiffusing = true;
-            NebulaManager.nebulaSender(enterString); //Send the start signal to Nebula 
+            NebulaManager.NebulaSender(enterString); //Send the start signal to Nebula 
             StartCoroutine(OdorDiffusionLinearMode()); //Start a coroutine in order to adjust odor strength in real time
         }
     }
 
-    public float updateDistance()
+    public float UpdateDistance()
     {
         //Calculate in real-time the distance between the object to smell and the player head
         distanceBetweenGameObjectAndPlayer = (Vector3.Distance(playerHead.position, transform.position)-0.35f);
         return distanceBetweenGameObjectAndPlayer;
     }
 
+    //Coroutine for the linear diffusion mode
     private IEnumerator OdorDiffusionLinearMode()
     {
         while (!NebulaGUI.manualOverride)
         {
             yield return new WaitForSeconds(0.1f); //Avoid overflowding the Arduino
-            dutyCycle = Mathf.Round(1-((updateDistance()/0.3f) * maximumDutyCycle));
-            //dutyCycle = Mathf.Round(maximumDutyCycle/(updateDistance()+0.2f));
+            dutyCycle = Mathf.Round(1-((UpdateDistance()/0.3f) * maximumDutyCycle)+1); // Increase duty cycle according to distance
             if (dutyCycle <= minimumDutyCycle) dutyCycle = minimumDutyCycle;
             if (dutyCycle >= maximumDutyCycle) dutyCycle = maximumDutyCycle;
-            if (dutyCycle != previousSetpoint)
+            if (dutyCycle != previousDutyCycle)
             {
-                NebulaManager.nebulaSender("C" + pwmFrequency + ";" + dutyCycle);
-                previousSetpoint = dutyCycle;
+                NebulaManager.NebulaSender("C" + pwmFrequency + ";" + dutyCycle);
+                previousDutyCycle = dutyCycle;
                 NebulaManager.currentDutyCycle = dutyCycle;
             }
         }
@@ -136,15 +134,14 @@ public class NebulaOdorDiffuser : MonoBehaviour
     {
         dutyCycle = booleanDutyCycle;
         NebulaManager.currentDutyCycle = dutyCycle;
-        NebulaManager.nebulaSender(enterString);
-        NebulaManager.nebulaSender("C" + pwmFrequency + ";" + dutyCycle);
+        NebulaManager.NebulaSender(enterString);
+        NebulaManager.NebulaSender("C" + pwmFrequency + ";" + dutyCycle);
         NebulaManager.nebulaIsDiffusing = true;
     }
 
     public void ResetGameObject()
     {
-        this.gameObject.transform.position = originalPosition;
-        this.gameObject.transform.rotation = originalOrientation;
+        this.gameObject.transform.SetPositionAndRotation(originalPosition, originalOrientation);
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
@@ -154,7 +151,7 @@ public class NebulaOdorDiffuser : MonoBehaviour
     {
         StopAllCoroutines();
 #if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
-        NebulaManager.nebulaSender("S");
+        NebulaManager.NebulaSender("S");
         try
         {
             //Send stop value Nebula

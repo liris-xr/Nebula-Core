@@ -39,15 +39,15 @@ public class NebulaGUI : MonoBehaviour
             {
                 manualOverride = true;
                 NebulaManager.nebulaIsDiffusing = true;
-                NebulaManager.nebulaSender("L");
-                NebulaManager.nebulaSender("C" + manualPWMfreq.ToString() + "; " + manualDC);
-                StartCoroutine(manualDiffusion()); 
+                NebulaManager.NebulaSender("L");
+                NebulaManager.NebulaSender("C" + manualPWMfreq.ToString() + "; " + manualDC);
+                StartCoroutine(ManualDiffusion()); 
             }
         }
         else
         {
-            if (!manualOverride) GUI.Label(new Rect(25, 90, 150, 30), "Current duty cyle : " + manualDC.ToString() + "%");
-            else GUI.Label(new Rect(25, 90, 150, 30), "Duty cyle : " + manualDC.ToString() +"%");
+            if (!manualOverride) GUI.Label(new Rect(25, 90, 150, 30), "Current duty cyle : " + NebulaManager.currentDutyCycle.ToString() + "%");
+            else GUI.Label(new Rect(25, 90, 150, 30), "Duty cyle : " + NebulaManager.currentDutyCycle.ToString() +"%");
             dutyCyclef = GUI.HorizontalSlider(new Rect(25, 110, 100, 30), dutyCyclef, minManualDutyCycle, maxManualDutyCycle);
             manualDC = (int)Mathf.Round(this.dutyCyclef);
 
@@ -60,7 +60,7 @@ public class NebulaGUI : MonoBehaviour
         }
     }
 
-    private IEnumerator manualDiffusion()
+    private IEnumerator ManualDiffusion()
     {
         while (NebulaManager.nebulaIsDiffusing)
         {
@@ -68,12 +68,13 @@ public class NebulaGUI : MonoBehaviour
             if (manualDC != previousDutyCycle)
             {
                 previousDutyCycle = manualDC;
-                NebulaManager.nebulaSender("C" + pwmFrequency.ToString() + "; " + manualDC);
+                NebulaManager.currentDutyCycle = manualDC;
+                NebulaManager.NebulaSender("C" + pwmFrequency.ToString() + "; " + manualDC);
             }
         }
         NebulaManager.nebulaIsDiffusing = false;
-        NebulaManager.nebulaSender("l");
-        StopCoroutine(manualDiffusion());
+        NebulaManager.NebulaSender("l");
+        StopCoroutine(ManualDiffusion());
         Debug.Log("Stopped left diffusion");
     }
 #endif

@@ -48,11 +48,13 @@ public class NebulaManager : MonoBehaviour
         if (!defineManuallyCOMPort) NebulaPort = FindPort("Nebula");
         try
         {
-            nebulaSerial = new SerialPort(NebulaPort, baudRate);
-            nebulaSerial.Parity = Parity.None;
-            nebulaSerial.StopBits = StopBits.One;
-            nebulaSerial.DataBits = 8;
-            nebulaSerial.DtrEnable = true;
+            nebulaSerial = new SerialPort(NebulaPort, baudRate)
+            {
+                Parity = Parity.None,
+                StopBits = StopBits.One,
+                DataBits = 8,
+                DtrEnable = true
+            };
             nebulaSerial.Open();
             thread = new Thread(ThreadLoop);
             thread.Start();
@@ -79,11 +81,13 @@ public class NebulaManager : MonoBehaviour
             {
                 try
                 {
-                    SerialPort currentPort = new SerialPort(port, baudRate);
-                    currentPort.Parity = Parity.None;
-                    currentPort.StopBits = StopBits.One;
-                    currentPort.DataBits = 8;
-                    currentPort.DtrEnable = true;
+                    SerialPort currentPort = new SerialPort(port, baudRate)
+                    {
+                        Parity = Parity.None,
+                        StopBits = StopBits.One,
+                        DataBits = 8,
+                        DtrEnable = true
+                    };
                     if (!currentPort.IsOpen)
                     {
                         currentPort.Open();
@@ -145,7 +149,7 @@ public class NebulaManager : MonoBehaviour
     }
 #endif
 
-    public static void nebulaSender(string data)
+    public static void NebulaSender(string data)
     {
 #if (UNITY_ANDROID)
         if (_pluginInstance != null)

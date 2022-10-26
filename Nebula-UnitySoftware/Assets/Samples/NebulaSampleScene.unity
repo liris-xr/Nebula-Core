@@ -2756,6 +2756,14 @@ PrefabInstance:
       propertyPath: diffusionMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 916742947884602555, guid: 57efb921106d748409dc73cd7d5614dd, type: 3}
+      propertyPath: maximumDutyCycle
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 916742947884602555, guid: 57efb921106d748409dc73cd7d5614dd, type: 3}
+      propertyPath: minimumDutyCycle
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57efb921106d748409dc73cd7d5614dd, type: 3}
 --- !u!4 &1134597437389484398

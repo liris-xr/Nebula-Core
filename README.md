@@ -1,3 +1,5 @@
+![nebula_banner](https://user-images.githubusercontent.com/20073809/198014753-975e6ed2-2b6e-4484-b7b0-5a9902b57aae.png)
+
 # Nebula: an affordable open-source and autonomous olfactory display for VR headsets (VRST 2022)
  
 This repository is the official implementation of “Nebula: an affordable open-source and autonomous olfactory display for VR headsets”.

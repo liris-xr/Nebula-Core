@@ -53,7 +53,12 @@ public class NebulaGUI : MonoBehaviour
 
             if (GUI.Button(new Rect(20, 40, 200, 20), "Stop Atomization"))
             {
-                if (NebulaManager.nebulaIsDiffusing) manualOverride = true;
+                if (NebulaManager.nebulaIsDiffusing)
+                {
+                    manualOverride = true;
+                    NebulaManager.NebulaSender("S");
+                    NebulaManager.nebulaIsDiffusing = false;
+                }
                 else manualOverride = !manualOverride;
                 NebulaManager.nebulaIsDiffusing = false;
             }

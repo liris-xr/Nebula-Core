@@ -2,13 +2,14 @@ using System.Collections;
 using UnityEngine;
 using System.Threading;
 using System;
+using System.IO;
 
 public class NebulaOdorDiffuser : MonoBehaviour
 {
     //Define which odor you are going to diffuse. You can spread different smelling objects in the scene
     public enum AtomizerList { Left, Right, Other };
     public AtomizerList atomizer;
-    public enum DiffusionMode { Linear, Boolean, Other };
+    public enum DiffusionMode { Progressive, Boolean, Other };
     public DiffusionMode diffusionMode;
 
     private string enterString;
@@ -21,10 +22,10 @@ public class NebulaOdorDiffuser : MonoBehaviour
     [HideInInspector]
     private float dutyCycle;
     private float previousDutyCycle;
-    //Define min and max duty cycle for the game object in order to adjust odor strength (can be adjusted in real time in the inspector
+    //Define min and max duty cycle used for the progressive diffusion
     public int minimumDutyCycle = 1;
     public int maximumDutyCycle = 30;
-    //Adjust the PWM frequency of the diffusion
+    //Adjust the PWM frequency of Nebula
     public string pwmFrequency = "100";
     public int booleanDutyCycle = 50;
 
@@ -59,9 +60,9 @@ public class NebulaOdorDiffuser : MonoBehaviour
     {
         if (other.CompareTag("MainCamera"))
         {
-            if (diffusionMode == DiffusionMode.Linear)
+            if (diffusionMode == DiffusionMode.Progressive)
             {
-                LinearDiffusionMode();
+                ProgressiveDiffusionMode();
             }
             else if (diffusionMode == DiffusionMode.Boolean)
             {
@@ -79,11 +80,14 @@ public class NebulaOdorDiffuser : MonoBehaviour
     {
         if (other.CompareTag("MainCamera"))
         {
-            if (diffusionMode == DiffusionMode.Linear)
+            if (diffusionMode == DiffusionMode.Progressive)
             {
                 NebulaManager.nebulaIsDiffusing = false;
+                dutyCycle = 0;
+
                 NebulaManager.NebulaSender(exitString);
-                StopCoroutine(OdorDiffusionLinearMode());
+                StopCoroutine(OdorDiffusionProgressiveMode());
+                NebulaManager.currentDutyCycle = dutyCycle;
             }
             else if (diffusionMode == DiffusionMode.Boolean)
             {
@@ -95,30 +99,31 @@ public class NebulaOdorDiffuser : MonoBehaviour
         }
     }
 
-    private void LinearDiffusionMode()
+    private void ProgressiveDiffusionMode()
     {
         if (!NebulaGUI.manualOverride)
         {
             NebulaManager.nebulaIsDiffusing = true;
             NebulaManager.NebulaSender(enterString); //Send the start signal to Nebula 
-            StartCoroutine(OdorDiffusionLinearMode()); //Start a coroutine in order to adjust odor strength in real time
+            StartCoroutine(OdorDiffusionProgressiveMode()); //Start a coroutine in order to adjust odor strength in real time
         }
     }
 
     public float UpdateDistance()
     {
         //Calculate in real-time the distance between the object to smell and the player head
-        distanceBetweenGameObjectAndPlayer = (Vector3.Distance(playerHead.position, transform.position)-0.35f);
+        distanceBetweenGameObjectAndPlayer = Vector3.Distance(playerHead.position, transform.position) - NebulaManager.playerHeadRadius/2;
+        if (distanceBetweenGameObjectAndPlayer < 0) distanceBetweenGameObjectAndPlayer = 0;
         return distanceBetweenGameObjectAndPlayer;
     }
 
     //Coroutine for the linear diffusion mode
-    private IEnumerator OdorDiffusionLinearMode()
+    private IEnumerator OdorDiffusionProgressiveMode()
     {
         while (!NebulaGUI.manualOverride)
         {
             yield return new WaitForSeconds(0.1f); //Avoid overflowding the Arduino
-            dutyCycle = Mathf.Round(1-((UpdateDistance()/0.3f) * maximumDutyCycle)+1); // Increase duty cycle according to distance
+            dutyCycle = Mathf.Round((1 / UpdateDistance())); // Increase duty cycle according to distance
             if (dutyCycle <= minimumDutyCycle) dutyCycle = minimumDutyCycle;
             if (dutyCycle >= maximumDutyCycle) dutyCycle = maximumDutyCycle;
             if (dutyCycle != previousDutyCycle)
@@ -160,6 +165,7 @@ public class NebulaOdorDiffuser : MonoBehaviour
             NebulaManager.nebulaSerial.Close();
         }
         catch (Exception) {  }
+
 #endif
     }
-}
+    }

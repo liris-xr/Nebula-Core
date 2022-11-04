@@ -23,6 +23,7 @@ public class NebulaManager : MonoBehaviour
     [SerializeField]
     private string NebulaPort = "";
     public GameObject playerHead;
+    public static float playerHeadRadius = 0.3f;
     //Thread used to read and print on the console everything that your Nebula is writing on it
     public static Thread thread;
     public bool useListener;
@@ -61,11 +62,11 @@ public class NebulaManager : MonoBehaviour
         }
         catch (Exception)
         {
-            Debug.LogError("Nebula not detected : check COM ports");
+            Debug.LogError("Nebula is not detected : check serial ports");
         }
 #endif
         SphereCollider HeadCollider = playerHead.AddComponent<SphereCollider>();
-        HeadCollider.radius = 0.3f;
+        HeadCollider.radius = playerHeadRadius;
         HeadCollider.isTrigger = true;
     }
     //#endif

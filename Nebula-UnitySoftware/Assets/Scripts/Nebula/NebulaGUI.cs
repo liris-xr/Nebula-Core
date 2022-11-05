@@ -39,8 +39,8 @@ public class NebulaGUI : MonoBehaviour
             {
                 manualOverride = true;
                 NebulaManager.nebulaIsDiffusing = true;
-                NebulaManager.NebulaSender("L");
-                NebulaManager.NebulaSender("C" + manualPWMfreq.ToString() + "; " + manualDC);
+                NebulaManager.SendData("L");
+                NebulaManager.SendData("C" + manualPWMfreq.ToString() + "; " + manualDC);
                 StartCoroutine(ManualDiffusion()); 
             }
         }
@@ -56,7 +56,7 @@ public class NebulaGUI : MonoBehaviour
                 if (NebulaManager.nebulaIsDiffusing)
                 {
                     manualOverride = true;
-                    NebulaManager.NebulaSender("S");
+                    NebulaManager.SendData("S");
                     NebulaManager.nebulaIsDiffusing = false;
                 }
                 else manualOverride = !manualOverride;
@@ -74,11 +74,11 @@ public class NebulaGUI : MonoBehaviour
             {
                 previousDutyCycle = manualDC;
                 NebulaManager.currentDutyCycle = manualDC;
-                NebulaManager.NebulaSender("C" + pwmFrequency.ToString() + "; " + manualDC);
+                NebulaManager.SendData("C" + pwmFrequency.ToString() + "; " + manualDC);
             }
         }
         NebulaManager.nebulaIsDiffusing = false;
-        NebulaManager.NebulaSender("l");
+        NebulaManager.SendData("l");
         StopCoroutine(ManualDiffusion());
         Debug.Log("Stopped left diffusion");
     }

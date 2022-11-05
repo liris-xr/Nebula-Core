@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.ComponentModel;
+//We can't use System.IO.Ports if building on Android so we arre going to cut every references when we are on android
 #if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
 using System.IO.Ports;
 #endif
@@ -11,7 +12,6 @@ using System.Threading;
 public class NebulaManager : MonoBehaviour
 {
 #if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
-    //Initialize the nebulaSerial port.
     public static SerialPort nebulaSerial;
 #endif
     [SerializeField]
@@ -71,7 +71,7 @@ public class NebulaManager : MonoBehaviour
     }
     //#endif
 
-    //Method looking for the MAO, given the necessary handshake => here "Nebula"
+    //Method looking for Nebula, we are checking in each serial port if we have the necessary handshake => here "Nebula"
 #if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
     private string FindPort(string handShake)
     {
@@ -109,7 +109,7 @@ public class NebulaManager : MonoBehaviour
         return null;
     }
 
-    //Thread dedicated to listen the nebulaSerial port nad read datas sent from Nebula
+    //Thread dedicated to listen the nebulaSerial port and read datas sent from Nebula
     private void ThreadLoop()
     {
         while (true)
@@ -118,7 +118,7 @@ public class NebulaManager : MonoBehaviour
             {
                 try
                 {
-                    string data = nebulaSerial.ReadTo("\n"); //gathering working return from Nebula
+                    string data = nebulaSerial.ReadTo("\n"); 
                     if (useListener) Debug.Log(data);
                 }
                 catch (Exception) { }
@@ -143,14 +143,14 @@ public class NebulaManager : MonoBehaviour
 
         _pluginInstance = pluginClass.CallStatic<AndroidJavaObject>("InitializePlugin", context, new MAOPluginCallback());
         Debug.Log("Plugin initialized !");
-
+//We add an extra delay to be sure that the serial port is correctly opened : might casue issues if we remove it
         Thread.Sleep(2000);
 
         return true;
     }
 #endif
 
-    public static void NebulaSender(string data)
+    public static void SendData(string data)
     {
 #if (UNITY_ANDROID)
         if (_pluginInstance != null)

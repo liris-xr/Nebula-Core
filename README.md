@@ -20,13 +20,13 @@ Furthemore, Nebula works standalone using an Android Archive Library using the p
 
 ## Repository Structure
 
-  * ``Nebula-CAD`` contains all STL files (ready to print), a PDF version of the wiring diagram and some printings recommendations.
-  * ``Nebula-Experiment``contains results and the unity project used in ur experiment described in our paper.
-  * ``Nebula-Firmware`` contains code for the microcontroller used (Arduino Nano Every).
-  * ``Nebula-UnitySoftware`` is the Unity project unsing Nebula in VR including a sample scene with an orange ready to diffuse when approached to the nose !
+  * [Nebula-CAD](https://github.com/Plateforme-VR-ENISE/Nebula-Core/tree/master/Nebula-CAD) contains all STL files (ready to print), a PDF version of the wiring diagram, a list of the necessary components and some printings recommendations.
+  * [Nebula-Experiment](https://github.com/Plateforme-VR-ENISE/Nebula-Core/tree/master/Nebula-Experiment) contains results and the unity project used in our experiment described in our paper.
+  * [Nebula-Firmware](https://github.com/Plateforme-VR-ENISE/Nebula-Core/tree/master/Nebula-Firmware) contains code for the microcontroller used (Arduino Nano Every).
+  * [Nebula-UnitySoftware](https://github.com/Plateforme-VR-ENISE/Nebula-Core/tree/master/Nebula-UnitySoftware) is the Unity project using Nebula in VR including a sample scene with an orange ready to diffuse when approached to the nose !
   
-   ### Release content
+   ## Release content
    
    * ``Nebula-UnityPackage`` Unity Package which includes everything needed to bring Nebula into your project unity.
    * ``Nebula-PCSampleScene`` sample scene included in the repository built that countains a ready-to-use application for Nebula (perfect to test yours !)
-   * ``Nebula-Scene`` same as above but built for Meta Quest 2.
+   * ``Nebula-SampleScene`` same as above but built for Meta Quest 2.

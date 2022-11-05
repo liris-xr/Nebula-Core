@@ -29,7 +29,7 @@ public class NebulaOdorDiffuser : MonoBehaviour
     public float offsetMinDutyCycle = 0.45f;
     //Adjust the PWM frequency of Nebula
     public string pwmFrequency = "100";
-    public int booleanDutyCycle = 50;
+    public int binaryDutyCycle = 50;
 
     Vector3 originalPosition;
     Quaternion originalOrientation;
@@ -87,7 +87,7 @@ public class NebulaOdorDiffuser : MonoBehaviour
         {
             NebulaManager.nebulaIsDiffusing = true;
             NebulaManager.SendData(enterString); //Send the start signal to Nebula 
-            dutyCycle = booleanDutyCycle;
+            if (diffusionMode == DiffusionMode.Binary) dutyCycle = binaryDutyCycle;
             NebulaManager.currentDutyCycle = dutyCycle;
             NebulaManager.SendData("C" + pwmFrequency + ";" + dutyCycle);
             if (diffusionMode != DiffusionMode.Binary) StartCoroutine(DiffusionCoroutine());
@@ -103,7 +103,7 @@ public class NebulaOdorDiffuser : MonoBehaviour
             switch (diffusionMode)
             {
                 case DiffusionMode.InverseSquare:
-                    dutyCycle = Mathf.Round((1 / (float)Math.Pow(CalculateCorrectedDistance(), 2))); // Increase duty cycle according to distance
+                    dutyCycle = Mathf.Round((1 / (float)Math.Pow(Vector3.Distance(playerHead.position, transform.position), 2))); // Increase duty cycle according to distance
                     break;
                 case DiffusionMode.Linear:
                     dutyCycle = Mathf.Round((Mathf.InverseLerp(offsetMinDutyCycle, offsetMaxDutyCycle, Vector3.Distance(playerHead.position, transform.position))) * 100); // Increase duty cycle according to distance
@@ -120,16 +120,7 @@ public class NebulaOdorDiffuser : MonoBehaviour
         }
     }
 
-    //Calculate the distance between the object to smell and the player head and correct it in order to get the max intensity before 
-    public float CalculateCorrectedDistance()
-    {
-        correctedDistance = Vector3.Distance(playerHead.position, transform.position);
-        correctedDistance = (float)Math.Pow(correctedDistance, 2);
-        if (correctedDistance < 0) correctedDistance = 0;
-        return correctedDistance;
-    }
-
-    //Simple method to reset teh gameobject when it fall on the ground
+    //Simple method to reset the game object when it fall on the ground
     public void ResetGameObject()
     {
         gameObject.transform.SetPositionAndRotation(originalPosition, originalOrientation);

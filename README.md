@@ -6,7 +6,7 @@ This repository is the official implementation of “Nebula: an affordable open-
 
 ## Description 
 
-The impact of olfactory cues on user experience in virtual reality is increasingly studied. However, results are still heterogeneous and existing studies difficult to replicate, mainly due to a lack of standardized olfactory displays. In that context, we present Nebula, a **_low-cost_** (less than 100€), **_open-source_**, olfactory display capable of diffusing scents at *different diffusion rates* using a nebulization process. Nebula can be used with **PC VR** or **autonomous** head mounted displays, making it easily transportable without the need for an external computer.
+The impact of olfactory cues on user experience in virtual reality is increasingly studied. However, results are still heterogeneous and existing studies are difficult to replicate, mainly due to a lack of standardized olfactory displays. In that context, we present Nebula, a **_low-cost_** (less than 100€), **_open-source_**, olfactory display capable of diffusing scents at *different diffusion rates* using a nebulization process. Nebula can be used with **PC VR** or **autonomous** head mounted displays, making it easily transportable without any external computer needed.
 
 Nebula can be easily replicated using a 3D printers and some basic electronic skills. On this repo, you will find anything needed in order to build our proposed olfactory display. 
 
@@ -17,7 +17,7 @@ This modulation, handled by a micro-controller (we used an Arduino Nano Every) a
 
 In addition to the atomizer, we used two fans which are useful to control our air flow. The smallest one, *5VDC 25x25x6mm*, is always active and forces a constant air flow to be able to smell the odor more rapidly after its diffusion and mitigates the pressure drop when enabling the extraction fan. This one is a *12VDC 40x40x20mm*, much stronger, that runs for 2 seconds in order to extract the remaining odorant and thus improve the reactivity of the device.
 
-Nebula is ready to use with Unity (PC VR built or in editor), using the provided Unity-Package or scripsts from the Nebula-UnitySoftware folder.
+Nebula is ready to be used with Unity (PC VR built or in editor), using the provided Unity-Package or scripts from the Nebula-UnitySoftware folder.
 Furthemore, Nebula works standalone using an Android Archive Library using the provided package on your own built scene. (Tested on a Meta Quest 2)
 
 ## Repository Structure

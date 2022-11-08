@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Samples/SampleSceneNebula-Multiplatform.unity
-    guid: 049b14f01bad11142a62c18cd56a7e01
+    path: Assets/Samples/NebulaSampleScene.unity
+    guid: 1647e0b71c9fa4546b6bae5e65ab454c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e715927e9a0baa74c89f9b238a0df73f, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 78cabeffbac09d940b0cac5fcc54d7e0, type: 2}

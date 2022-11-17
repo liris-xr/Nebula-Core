@@ -135,13 +135,13 @@ public class NebulaManager : MonoBehaviour
     //Plugin initializer used when scene is built on Quest. Mandatory to use the java android library
     static bool InitializePlugin(string pluginName)
     {
-        var pluginClass = new AndroidJavaClass("fr.enise.unitymaoplugin.MAOPlugin");
+        var pluginClass = new AndroidJavaClass("fr.enise.unitynebulaplugin.NebulaPlugin");
 
         AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         AndroidJavaObject activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
         AndroidJavaObject context = activity.Call<AndroidJavaObject>("getApplicationContext");
 
-        _pluginInstance = pluginClass.CallStatic<AndroidJavaObject>("InitializePlugin", context, new MAOPluginCallback());
+        _pluginInstance = pluginClass.CallStatic<AndroidJavaObject>("InitializePlugin", context, new NebulaPluginCallBack());
         Debug.Log("Plugin initialized !");
 //We add an extra delay to be sure that the serial port is correctly opened : might casue issues if we remove it
         Thread.Sleep(2000);

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-class MAOPluginCallback : AndroidJavaProxy
+class NebulaPluginCallBack : AndroidJavaProxy
 {
-    public MAOPluginCallback() : base("fr.enise.unitymaoplugin.PluginCallback") { }
+    public NebulaPluginCallBack() : base("fr.enise.unitynebulaplugin.PluginCallback") { }
 
     public void ReceiveMessage(string msg)
     {

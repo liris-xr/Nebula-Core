@@ -32,3 +32,9 @@ Furthemore, Nebula works standalone using an Android Archive Library using the p
    * ``Nebula-UnityPackage`` Unity Package which includes everything needed to bring Nebula into your project unity. Includes Android Studio project for AAR files generation.
    * ``Nebula-PCSampleScene`` sample scene included in the repository built that countains a ready-to-use application for Nebula.
    * ``Nebula-SampleScene`` same as above but built for Meta Quest 2.
+   
+   ## Contacts
+   
+   * Pierre-Philippe Elst (Engineer) : pierre-philippe.elst@enise.fr
+   * Charles Javerliat (PhD Student) : charles.javerliat@enise.fr
+   * Guillaume Lavoué (Professor) : guillaume.lavoue@enise.fr

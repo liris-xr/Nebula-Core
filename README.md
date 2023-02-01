@@ -1,8 +1,12 @@
 ![nebula_banner](https://user-images.githubusercontent.com/20073809/198014753-975e6ed2-2b6e-4484-b7b0-5a9902b57aae.png)
 
-# Nebula: an affordable open-source and autonomous olfactory display for VR headsets (VRST 2022)
- 
-This repository is the official implementation of “Nebula: an affordable open-source and autonomous olfactory display for VR headsets”.
+# Nebula: an affordable open-source and autonomous olfactory display for VR headsets
+
+Charles JAVERLIAT, Pierre-Philippe ELST, Anne-Lise SAIVE, Patrick BAERT, Guillaume LAVOUE.
+
+_Conference on Virtual Reality Software and Technology (VRST), 2022._
+
+[[Paper]](https://hal.science/hal-03838757v1/file/Nebula_VRST_2022%20%281%29.pdf)
 
 ## Description 
 
@@ -38,3 +42,16 @@ Furthemore, Nebula works standalone using an Android Archive Library using the p
    * Pierre-Philippe Elst (Engineer) : pierre-philippe.elst@enise.fr
    * Charles Javerliat (PhD Student) : charles.javerliat@enise.fr
    * Guillaume Lavoué (Professor) : guillaume.lavoue@enise.fr
+
+## Citation
+
+```
+@inproceedings{javerliat2022,
+  title = {Nebula: An Affordable Open-Source and Autonomous Olfactory Display for VR Headsets},
+  author = {JAVERLIAT, Charles and Elst, Pierre-Philippe and Saive, Anne-Lise and Baert, Patrick and Lavou{\'e}, Guillaume},
+  booktitle = {Proceedings of the 28th ACM Symposium on Virtual Reality Software and Technology},
+  year = {2022},
+  month = Nov,
+  doi = {10.1145/3562939.3565617},
+}
+```

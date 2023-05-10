@@ -24,7 +24,7 @@ In addition to the atomizer, we used two fans which are useful to control our ai
 Nebula is ready to be used with Unity (PC VR built or in editor), using the provided Unity-Package or scripts from the Nebula-UnitySoftware folder.
 Furthemore, Nebula works standalone using an Android Archive Library using the provided package on your own built scene. (Tested on a Meta Quest 2)
 
-## Repository Structure
+  ## Repository Structure
 
   * [Nebula-CAD](https://github.com/Plateforme-VR-ENISE/Nebula-Core/tree/master/Nebula-CAD) contains all STL files (ready to print), a PDF version of the wiring diagram, a list of the necessary components and some printings recommendations.
   * [Nebula-Experiment](https://github.com/Plateforme-VR-ENISE/Nebula-Core/tree/master/Nebula-Experiment) contains results and the unity project used in our experiment described in our paper.
@@ -36,6 +36,15 @@ Furthemore, Nebula works standalone using an Android Archive Library using the p
    * ``Nebula-UnityPackage`` Unity Package which includes everything needed to bring Nebula into your project unity. Includes Android Studio project for AAR files generation.
    * ``Nebula-PCSampleScene`` sample scene included in the repository built that countains a ready-to-use application for Nebula.
    * ``Nebula-SampleScene`` same as above but built for Meta Quest 2.
+
+   ## How to install
+   
+  * Download the lastest ``Nebula.unitypackage`` on the [Release](https://github.com/Plateforme-VR-ENISE/Nebula-Core/releases) section.
+  * Open your Unity project or create a new one.
+  * Configure .NET 4.x API Compatibility Level **MANDATORY** on your project (*Edit => Project Settings => Player => Other Settings => Api Compatibility Level => .NET 4.x*).
+  * Import ``Nebula.unitypackage`` previously downloaded (*Assets => Import Package => Custom Package*) and check *All => Import*.
+  * Install OpenXR and XR Interaction Toolkit, you have to install them if you wants to use the provided sample scene (*Windows => Package Manager => Unity registery => Search for Open XR Plugin and XR Interaction Toolkit => Install*).
+  * If needed : re-open the project.
    
    ## Contacts
    

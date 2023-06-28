@@ -25,42 +25,45 @@ public class NebulaGUI : MonoBehaviour
 
     void OnGUI()
     {
-        //Calculate change aspects
-        float resX = (float)(Screen.width) / DesignWidth;
-        float resY = (float)(Screen.height) / DesignHeight;
-        //Set matrix
-        GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(resX, resY, 1));
-        if (!manualOverride) dutyCyclef = NebulaManager.currentDutyCycle;
-        GUI.Box(new Rect(10, 10, 250, 150), "Nebula manual activation");
-
-        if (!NebulaManager.nebulaIsDiffusing)
+        if (NebulaManager.nebulaSerial.IsOpen)
         {
-            if (GUI.Button(new Rect(20, 40, 200, 20), "Start left atomization"))
-            {
-                manualOverride = true;
-                NebulaManager.nebulaIsDiffusing = true;
-                NebulaManager.SendData("L");
-                NebulaManager.SendData("C" + manualPWMfreq.ToString() + "; " + manualDC);
-                StartCoroutine(ManualDiffusion()); 
-            }
-        }
-        else
-        {
-            if (!manualOverride) GUI.Label(new Rect(25, 90, 150, 30), "Current duty cyle : " + NebulaManager.currentDutyCycle.ToString() + "%");
-            else GUI.Label(new Rect(25, 90, 150, 30), "Duty cyle : " + NebulaManager.currentDutyCycle.ToString() +"%");
-            dutyCyclef = GUI.HorizontalSlider(new Rect(25, 110, 100, 30), dutyCyclef, minManualDutyCycle, maxManualDutyCycle);
-            manualDC = (int)Mathf.Round(this.dutyCyclef);
+            //Calculate change aspects
+            float resX = (float)(Screen.width) / DesignWidth;
+            float resY = (float)(Screen.height) / DesignHeight;
+            //Set matrix
+            GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(resX, resY, 1));
+            if (!manualOverride) dutyCyclef = NebulaManager.currentDutyCycle;
+            GUI.Box(new Rect(10, 10, 250, 150), "Nebula manual activation");
 
-            if (GUI.Button(new Rect(20, 40, 200, 20), "Stop Atomization"))
+            if (!NebulaManager.nebulaIsDiffusing)
             {
-                if (NebulaManager.nebulaIsDiffusing)
+                if (GUI.Button(new Rect(20, 40, 200, 20), "Start left atomization"))
                 {
                     manualOverride = true;
-                    NebulaManager.SendData("S");
+                    NebulaManager.nebulaIsDiffusing = true;
+                    NebulaManager.SendData("L");
+                    NebulaManager.SendData("C" + manualPWMfreq.ToString() + "; " + manualDC);
+                    StartCoroutine(ManualDiffusion());
+                }
+            }
+            else
+            {
+                if (!manualOverride) GUI.Label(new Rect(25, 90, 150, 30), "Current duty cyle : " + NebulaManager.currentDutyCycle.ToString() + "%");
+                else GUI.Label(new Rect(25, 90, 150, 30), "Duty cyle : " + NebulaManager.currentDutyCycle.ToString() + "%");
+                dutyCyclef = GUI.HorizontalSlider(new Rect(25, 110, 100, 30), dutyCyclef, minManualDutyCycle, maxManualDutyCycle);
+                manualDC = (int)Mathf.Round(this.dutyCyclef);
+
+                if (GUI.Button(new Rect(20, 40, 200, 20), "Stop Atomization"))
+                {
+                    if (NebulaManager.nebulaIsDiffusing)
+                    {
+                        manualOverride = true;
+                        NebulaManager.SendData("S");
+                        NebulaManager.nebulaIsDiffusing = false;
+                    }
+                    else manualOverride = !manualOverride;
                     NebulaManager.nebulaIsDiffusing = false;
                 }
-                else manualOverride = !manualOverride;
-                NebulaManager.nebulaIsDiffusing = false;
             }
         }
     }

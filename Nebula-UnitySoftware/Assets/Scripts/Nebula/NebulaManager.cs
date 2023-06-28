@@ -54,7 +54,9 @@ public class NebulaManager : MonoBehaviour
                 Parity = Parity.None,
                 StopBits = StopBits.One,
                 DataBits = 8,
-                DtrEnable = true
+                DtrEnable = true,
+                ReadTimeout = 200,
+                WriteTimeout = 200
             };
             nebulaSerial.Open();
             thread = new Thread(ThreadLoop);
@@ -87,7 +89,9 @@ public class NebulaManager : MonoBehaviour
                         Parity = Parity.None,
                         StopBits = StopBits.One,
                         DataBits = 8,
-                        DtrEnable = true
+                        DtrEnable = true,
+                        ReadTimeout = 200,
+                        WriteTimeout = 200
                     };
                     if (!currentPort.IsOpen)
                     {

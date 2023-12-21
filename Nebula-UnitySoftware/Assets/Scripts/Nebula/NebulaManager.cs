@@ -1,43 +1,33 @@
 using System;
 using UnityEngine;
 using System.ComponentModel;
-//We can't use System.IO.Ports if building on Android so we arre going to cut every references when we are on android
 #if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
 using System.IO.Ports;
 #endif
 using System.Threading;
-
-//Class allowing to use nebulaSerial communication while using Unity Editor or Unity built project
 
 public class NebulaManager : MonoBehaviour
 {
 #if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
     public static SerialPort nebulaSerial;
 #endif
-    [SerializeField]
-    private int baudRate = 115200;
+    public static Thread thread;
+    public static float playerHeadRadius = 0.3f;
+
+    public bool useListener;
+    public bool useNebulaGUI = true;
+    public GameObject playerHead;
+
+    [SerializeField] private int baudRate = 115200;
     //By default the correct port is defined automaticaly by using a single handshake (FindPort method)
     //You can manually provide the correct port using the bool and the string bellow 
-    [SerializeField]
-    private bool defineManuallyCOMPort = false;
-    [SerializeField]
-    private string NebulaPort = "";
-    public GameObject playerHead;
-    public static float playerHeadRadius = 0.3f;
-    //Thread used to read and print on the console everything that your Nebula is writing on it
-    public static Thread thread;
-    public bool useListener;
-    [HideInInspector]
-    public static bool nebulaIsDiffusing;
-    public bool useNebulaGUI = true;
-    public static float currentDutyCycle;
+    [SerializeField] private bool defineManuallyCOMPort = false;
+    [SerializeField] private string NebulaPort = "";
+
 #if (UNITY_ANDROID)
     static AndroidJavaObject _pluginInstance;
     [HideInInspector]
 #endif
-
-
-    //#if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
 
     private void Awake()
     {
@@ -113,7 +103,6 @@ public class NebulaManager : MonoBehaviour
         return null;
     }
 
-    //Thread dedicated to listen the nebulaSerial port and read datas sent from Nebula
     private void ThreadLoop()
     {
         while (true)
@@ -134,6 +123,7 @@ public class NebulaManager : MonoBehaviour
     {
         gameObject.AddComponent<NebulaGUI>();
     }
+
 #endif
 #if (UNITY_ANDROID)
     //Plugin initializer used when scene is built on Quest. Mandatory to use the java android library
@@ -154,23 +144,61 @@ public class NebulaManager : MonoBehaviour
     }
 #endif
 
-    public static void SendData(string data)
+    public static void SendCommand(string command)
     {
+        string data = "";
 #if (UNITY_ANDROID)
         if (_pluginInstance != null)
         {
-            _pluginInstance.Call("SendMessage", data + "\n");
-            Debug.Log("Sending " + data);
+            _pluginInstance.Call("SendMessage", command + "\n");
+            Debug.Log("Sending " + command);
         }
 
 #elif (UNITY_EDITOR || UNITY_STANDALONE_WIN)
+        switch (command)
+        {
+            case "startLeftDiffusion":
+                data = "L";
+                break;
+            case "startRightDiffusion":
+                data = "R";
+                break;
+            case "stopLeftDiffusion":
+                data = "l";
+                break;
+            case "stopRightDiffusion":
+                data = "r";
+                break;
+            case "stop":
+                data = "S";
+                break;
+            default:
+                data = command;
+                break;
+            }
         try
         {
             nebulaSerial.Write(data + "\n");
         }
+
         catch (Exception) { }
 #endif
     }
 
+    private void OnApplicationQuit()
+    {
+        StopAllCoroutines();
+#if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
+        try
+        {
+            //Send stop value Nebula
+            NebulaManager.SendCommand("stop");
+            Thread.Sleep(200);
+            NebulaManager.thread.Abort();
+            NebulaManager.nebulaSerial.Close();
+        }
+        catch (Exception) { }
 
+#endif
+    }
 }

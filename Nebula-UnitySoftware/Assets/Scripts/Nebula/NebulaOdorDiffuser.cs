@@ -7,29 +7,26 @@ using System.IO;
 public class NebulaOdorDiffuser : MonoBehaviour
 {
     //Define which odor you are going to diffuse. You can spread different smelling objects in the scene
-    public enum AtomizerList { Left, Right};
-    public AtomizerList atomizer;
-    public enum DiffusionMode { InverseSquare, Linear , Binary};
+    public enum AtomizerList { Left, Right };
+    public enum DiffusionMode { InverseSquare, Linear, Binary };
     public DiffusionMode diffusionMode;
-
-    private string enterString;
-    private string exitString;
-
-    private Transform playerHead;
-
-    //Define the distance (in m) between the player head and the object before the start of the diffusion
-    private float correctedDistance;
-    [HideInInspector]
-    private float dutyCycle;
-    private float previousDutyCycle;
+    public AtomizerList atomizer;
+    [HideInInspector] public string startDiffusionCommand;
+    [HideInInspector] public string stopDiffusionCommand;
+    [HideInInspector] public string changeConfigurationCommand;
+    [HideInInspector] public float previousDutyCycle;
+    [HideInInspector] public float dutyCycle;
+    [HideInInspector] public bool isDiffusing;
     //Define min and max duty cycle used for the progressive diffusion
     public int minimumDutyCycle = 1;
     public int maximumDutyCycle = 30;
+    //Adjust the PWM frequency of Nebula
+    public int pwmFrequency = 100;
+    public int binaryDutyCycle = 50;
     public float offsetMaxDutyCycle = 0.1f;
     public float offsetMinDutyCycle = 0.45f;
-    //Adjust the PWM frequency of Nebula
-    public string pwmFrequency = "100";
-    public int binaryDutyCycle = 50;
+
+    private Transform playerHead;
 
     Vector3 originalPosition;
     Quaternion originalOrientation;
@@ -43,15 +40,17 @@ public class NebulaOdorDiffuser : MonoBehaviour
         switch (atomizer)
         {
             case AtomizerList.Left:
-                enterString = "L\n";
-                exitString = "l\n";
+                startDiffusionCommand = "L";
+                stopDiffusionCommand = "l";
+                changeConfigurationCommand = "C";
                 break;
             case AtomizerList.Right:
-                enterString = "R\n";
-                exitString = "r\n";
+                startDiffusionCommand = "R";
+                stopDiffusionCommand = "r";
+                changeConfigurationCommand = "D";
                 break;
             default:
-                Debug.Log("Incorrect atomizer location");
+                Debug.Log("Incorrect atomizer");
                 break;
         }
     }
@@ -60,6 +59,7 @@ public class NebulaOdorDiffuser : MonoBehaviour
     {
         if (other.CompareTag("MainCamera"))
         {
+            Debug.Log(NebulaGUI.controlFromUI);
             StartDiffusion();
         }
 
@@ -73,23 +73,21 @@ public class NebulaOdorDiffuser : MonoBehaviour
     {
         if (other.CompareTag("MainCamera"))
         {
-            NebulaManager.nebulaIsDiffusing = false;
+            isDiffusing = false;
             dutyCycle = 0;
-            NebulaManager.SendData(exitString);
-            NebulaManager.currentDutyCycle = dutyCycle;
+            NebulaManager.SendCommand(stopDiffusionCommand);
             StopCoroutine(DiffusionCoroutine());
         }
     }
 
     private void StartDiffusion()
     {
-        if (!NebulaGUI.manualOverride)
+        if (!NebulaGUI.controlFromUI)
         {
-            NebulaManager.nebulaIsDiffusing = true;
-            NebulaManager.SendData(enterString); //Send the start signal to Nebula 
+            isDiffusing = true;
+            NebulaManager.SendCommand(startDiffusionCommand); //Send the start signal to Nebula 
             if (diffusionMode == DiffusionMode.Binary) dutyCycle = binaryDutyCycle;
-            NebulaManager.currentDutyCycle = dutyCycle;
-            NebulaManager.SendData("C" + pwmFrequency + ";" + dutyCycle);
+            NebulaManager.SendCommand(changeConfigurationCommand + pwmFrequency + ";" + dutyCycle);
             if (diffusionMode != DiffusionMode.Binary) StartCoroutine(DiffusionCoroutine());
         }
     }
@@ -97,7 +95,7 @@ public class NebulaOdorDiffuser : MonoBehaviour
     //Coroutine allowing to control diffusion levels in real time
     private IEnumerator DiffusionCoroutine()
     {
-        while (!NebulaGUI.manualOverride)
+        while (!NebulaGUI.controlFromUI)
         {
             yield return new WaitForSeconds(0.1f); //Avoid overflowding the Arduino
             switch (diffusionMode)
@@ -110,12 +108,11 @@ public class NebulaOdorDiffuser : MonoBehaviour
                     break;
             }
             if (dutyCycle <= minimumDutyCycle) dutyCycle = minimumDutyCycle;
-            if (dutyCycle >= maximumDutyCycle) dutyCycle = maximumDutyCycle;
+            else dutyCycle = maximumDutyCycle;
             if (dutyCycle != previousDutyCycle)
             {
-                NebulaManager.SendData("C" + pwmFrequency + ";" + dutyCycle);
+                NebulaManager.SendCommand(changeConfigurationCommand + pwmFrequency + ";" + dutyCycle);
                 previousDutyCycle = dutyCycle;
-                NebulaManager.currentDutyCycle = dutyCycle;
             }
         }
     }
@@ -127,22 +124,4 @@ public class NebulaOdorDiffuser : MonoBehaviour
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
-
-
-    private void OnApplicationQuit()
-    {
-        StopAllCoroutines();
-#if (!UNITY_ANDROID && UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN)
-        try
-        {
-            //Send stop value Nebula
-            NebulaManager.SendData("S");
-            Thread.Sleep(200);
-            NebulaManager.thread.Abort();
-            NebulaManager.nebulaSerial.Close();
-        }
-        catch (Exception) {  }
-
-#endif
-    }
-    }
+}

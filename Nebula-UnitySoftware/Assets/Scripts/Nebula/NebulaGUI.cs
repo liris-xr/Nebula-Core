@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -32,12 +33,12 @@ public class NebulaGUI : MonoBehaviour
 
     private void CreateOdorSourcePanels(GameObject[] odorSources)
     {
-        //Create the same UI template for each odor source on the scene
+        //Create the same UI template for each odor source in the scene
         //Can currently :           -(de)activate diffusion for each odor source with the configuration filled on the NebulaOdorDiffuser component of the GameObject
         //                          -stop diffusion when diffusion is triggered automatically
         //                          -change the duty cycle sent to the arduino
         //                          -if one odor source is manually activated, it can be activated again automatically again once stopped manually
-        //Things to do on the UI :  -change min/max dutycycle for each odor source
+        //TODO :                    -change min/max dutycycle for each odor source
         //                          -change diffusion mode
         //                          -stop all diffusions at once 
 
@@ -49,6 +50,7 @@ public class NebulaGUI : MonoBehaviour
                 if (GUI.Button(new Rect(20, 40 + offset, 200, 20), "Start " + GetOdorSourceAttribute(odorSource,"name") + " atomization"))
                 {
                     ChangeOdorSourceAttribute(odorSource, "isDiffusing", true);
+                    ChangeOdorSourceAttribute(odorSource, "dutyCycle", GetOdorSourceAttribute(odorSource, "minimumDutyCycle"));
                     NebulaManager.SendCommand(GetOdorSourceAttribute(odorSource,"startDiffusionCommand"));
                     StartCoroutine(ManualDiffusion(odorSource));
                 }
@@ -62,8 +64,6 @@ public class NebulaGUI : MonoBehaviour
                     int dutyCycle = Mathf.RoundToInt(GUI.HorizontalSlider(new Rect(25, 62 + offset, 200, 30), GetOdorSourceAttribute(odorSource, "dutyCycle"), GetOdorSourceAttribute(odorSource, "minimumDutyCycle"), GetOdorSourceAttribute(odorSource, "maximumDutyCycle")));
                     ChangeOdorSourceAttribute(odorSource, "dutyCycle", dutyCycle);
                     GUI.Label(new Rect(25, 70 + offset, 150, 30), "Manual " + GetOdorSourceAttribute(odorSource, "name") + " " + dutyCycle.ToString() + "%");
-                    string minimumDutyCycle = GUI.TextField(new Rect(25, 60 + offset, 100, 100), GetOdorSourceAttribute(odorSource, "minimumDutyCycle").ToString());
-                    ChangeOdorSourceAttribute(odorSource, "minimumDutyCycle", int.Parse(minimumDutyCycle));
                 }
 
                 if (GUI.Button(new Rect(20, 40 + offset, 200, 20), "Stop "+ GetOdorSourceAttribute(odorSource,"name") + " atomization"))

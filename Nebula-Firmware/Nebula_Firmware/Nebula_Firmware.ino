@@ -22,16 +22,22 @@ const int EXTRACTION_FAN_SPEED = 255;
 const long EXTRACTION_DURATION = 2000; // ms
 
 /**
- * @brief Square signal definition for the atomisation
+ * @brief Square signal definition for the left atomisation
  */
-int atomization_period = 1000;   // ms
-int atomization_duty_cycle = 50; // in %
+int atomization_period_l = 1000;   // ms
+int atomization_duty_cycle_l = 50; // in %
+/**
+ * @brief Square signal definition for the right atomisation
+ */
+int atomization_period_r = 1000;   // ms
+int atomization_duty_cycle_r = 50; // in %
 
 /**
  * @brief Atomization square signal used for activation.
  * Prevent a long atomization of volatile product to the nose of the participant
  */
-bool atomization_sq_sig = false;
+bool atomization_sq_sig_l = false;
+bool atomization_sq_sig_r = false;
 
 /**
  * @brief Keeps track of when the extraction fan started after stopping atomizing.
@@ -39,9 +45,10 @@ bool atomization_sq_sig = false;
  */
 long extraction_fan_start_time = -1;
 
-long atomizations_counter = 0;
-long last_atomization_update = 0;
-
+long atomizations_counter_l = 0;
+long atomizations_counter_r = 0;
+long last_atomization_update_l = 0;
+long last_atomization_update_r = 0;
 bool atomize_left = false;
 bool atomize_right = false;
 
@@ -61,28 +68,54 @@ void setup()
   Serial.println("Nebula");
 }
 
-void update_atomization()
+void update_left_atomization()
 {
-  long duration = atomization_sq_sig ? (atomization_duty_cycle / 100.0 * atomization_period) : (atomization_period - atomization_duty_cycle / 100.0 * atomization_period);
+  long duration_l = atomization_sq_sig_l ? (atomization_duty_cycle_l / 100.0 * atomization_period_l) : (atomization_period_l - atomization_duty_cycle_l / 100.0 * atomization_period_l);
+
 
   // Toggle atomisation every period
-  if (millis() - last_atomization_update >= duration)
+  if (millis() - last_atomization_update_l >= duration_l)
   {
-    last_atomization_update = millis();
-    atomization_sq_sig = !atomization_sq_sig;
+    last_atomization_update_l = millis();
+    atomization_sq_sig_l = !atomization_sq_sig_l;
 
-    if (atomization_sq_sig)
+    if (atomization_sq_sig_l)
     {
-      atomizations_counter++;
-      Serial.print("Number of atomizations ");
-      Serial.println(atomizations_counter);
+      atomizations_counter_l++;
+      Serial.print("Number of left atomizations ");
+      Serial.println(atomizations_counter_l);
     }
   }
 }
 
-void reset_atomization_counter()
+void update_right_atomization()
 {
-  atomizations_counter = 0;
+  long duration_r = atomization_sq_sig_r ? (atomization_duty_cycle_r / 100.0 * atomization_period_r) : (atomization_period_r - atomization_duty_cycle_r / 100.0 * atomization_period_r);
+
+  // Toggle atomisation every period
+  if (millis() - last_atomization_update_r >= duration_r)
+  {
+    last_atomization_update_r = millis();
+    atomization_sq_sig_r = !atomization_sq_sig_r;
+
+    if (atomization_sq_sig_r)
+    {
+      atomizations_counter_r++;
+      Serial.print("Number of right atomizations ");
+      Serial.println(atomizations_counter_r);
+    }
+  }
+}
+
+
+void reset_atomization_counter_l()
+{
+  atomizations_counter_l = 0;
+}
+
+void reset_atomization_counter_r()
+{
+  atomizations_counter_r = 0;
 }
 
 void loop()
@@ -172,17 +205,26 @@ void loop()
       {
         extraction_fan_start_time = millis();
       }
-
       current_mode = OFF;
       break;
     case 'C':
-      if (sscanf(args.c_str(), "%d;%d", &atomization_period, &atomization_duty_cycle) == 2)
+      if (sscanf(args.c_str(), "%d;%d", &atomization_period_l, &atomization_duty_cycle_l) == 2)
       {
-        Serial.println("Set atomization configuration to period=" + String(atomization_period) + "ms, duty cycle=" + String(atomization_duty_cycle) + "%");
+        Serial.println("Set atomization left configuration to period=" + String(atomization_period_l) + "ms, duty cycle=" + String(atomization_duty_cycle_l) + "%");
       }
       else
       {
         Serial.println("Invalid arguments, expecting command formatted as `CX;Y` with X the atomization period (ms) and Y the duty cycle (%)");
+      }
+      break;
+    case 'D':
+      if (sscanf(args.c_str(), "%d;%d", &atomization_period_r, &atomization_duty_cycle_r) == 2)
+      {
+        Serial.println("Set atomization right configuration to period=" + String(atomization_period_r) + "ms, duty cycle=" + String(atomization_duty_cycle_r) + "%");
+      }
+      else
+      {
+        Serial.println("Invalid arguments, expecting command formatted as `DX;Y` with X the atomization period (ms) and Y the duty cycle (%)");
       }
       break;
     default:
@@ -194,42 +236,46 @@ void loop()
   switch (current_mode)
   {
   case ATOMIZE_LEFT:
-    update_atomization();
+    update_left_atomization();
     analogWrite(ATOMIZER_FAN_PIN, ATOMIZATION_FAN_SPEED);
-    digitalWrite(ATOMIZER_LEFT_PIN, atomization_sq_sig ? HIGH : LOW);
+    digitalWrite(ATOMIZER_LEFT_PIN, atomization_sq_sig_l ? HIGH : LOW);
     digitalWrite(ATOMIZER_RIGHT_PIN, 0);
     analogWrite(EXTRACTION_FAN_PIN, 0);
     break;
   case ATOMIZE_RIGHT:
-    update_atomization();
+    update_right_atomization();
     analogWrite(ATOMIZER_FAN_PIN, ATOMIZATION_FAN_SPEED);
     digitalWrite(ATOMIZER_LEFT_PIN, 0);
-    digitalWrite(ATOMIZER_RIGHT_PIN, atomization_sq_sig ? HIGH : LOW);
+    digitalWrite(ATOMIZER_RIGHT_PIN, atomization_sq_sig_r ? HIGH : LOW);
     analogWrite(EXTRACTION_FAN_PIN, 0);
     break;
   case ATOMIZE_BOTH:
-    update_atomization();
+    update_left_atomization();
+    update_right_atomization();
     analogWrite(ATOMIZER_FAN_PIN, ATOMIZATION_FAN_SPEED);
-    digitalWrite(ATOMIZER_LEFT_PIN, atomization_sq_sig ? HIGH : LOW);
-    digitalWrite(ATOMIZER_RIGHT_PIN, atomization_sq_sig ? HIGH : LOW);
+    digitalWrite(ATOMIZER_LEFT_PIN, atomization_sq_sig_l ? HIGH : LOW);
+    digitalWrite(ATOMIZER_RIGHT_PIN, atomization_sq_sig_r ? HIGH : LOW);
     analogWrite(EXTRACTION_FAN_PIN, 0);
     break;
   case EXTRACT_AIR:
-    reset_atomization_counter();
+    reset_atomization_counter_l();
+    reset_atomization_counter_r();
     analogWrite(ATOMIZER_FAN_PIN, ATOMIZATION_FAN_SPEED);
     digitalWrite(ATOMIZER_LEFT_PIN, LOW);
     digitalWrite(ATOMIZER_RIGHT_PIN, LOW);
     analogWrite(EXTRACTION_FAN_PIN, EXTRACTION_FAN_SPEED);
     break;
   case FANLESS_ATOMIZE_BOTH:
-    update_atomization();
+    update_left_atomization();
+    update_right_atomization();
     analogWrite(ATOMIZER_FAN_PIN, 0);
     digitalWrite(ATOMIZER_LEFT_PIN, HIGH);
     digitalWrite(ATOMIZER_RIGHT_PIN, HIGH);
     analogWrite(EXTRACTION_FAN_PIN, 0);
     break;
   default: // OFF
-    reset_atomization_counter();
+    reset_atomization_counter_l();
+    reset_atomization_counter_r();
     analogWrite(ATOMIZER_FAN_PIN, ATOMIZATION_FAN_SPEED);
     digitalWrite(ATOMIZER_LEFT_PIN, LOW);
     digitalWrite(ATOMIZER_RIGHT_PIN, LOW);

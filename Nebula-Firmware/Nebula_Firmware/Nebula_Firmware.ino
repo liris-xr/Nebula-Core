@@ -1,18 +1,16 @@
-enum Mode
-{
-  OFF,
-  ATOMIZE_LEFT,
-  ATOMIZE_RIGHT,
-  ATOMIZE_BOTH,
-  EXTRACT_AIR,
-  FANLESS_ATOMIZE_BOTH,
-};
+// ---------------------------
+// Pins
+// ---------------------------
+const int ATOMIZER_FAN_PIN     = A0;
+const int EXTRACTION_FAN_PIN   = 9;
+const int ATOMIZER_A_PIN       = 3;
+const int ATOMIZER_B_PIN       = 4;
+const int ATOMIZER_C_PIN       = 5;
+const int ATOMIZER_D_PIN       = 6;
 
-const int ATOMIZER_FAN_PIN = A0;
-const int EXTRACTION_FAN_PIN = 9;
-const int ATOMIZER_RIGHT_PIN = 6;
-const int ATOMIZER_LEFT_PIN = 5;
-
+// ---------------------------
+// Fan speeds and durations
+// ---------------------------
 const int ATOMIZATION_FAN_SPEED = 255;
 const int EXTRACTION_FAN_SPEED = 255;
 
@@ -44,253 +42,193 @@ bool atomization_sq_sig_r = false;
  * Used to stop the extraction fan after the duration is expired.
  */
 long extraction_fan_start_time = -1;
+bool is_diffusing = false;
+bool was_diffusing = false;
 
-long atomizations_counter_l = 0;
-long atomizations_counter_r = 0;
-long last_atomization_update_l = 0;
-long last_atomization_update_r = 0;
-bool atomize_left = false;
-bool atomize_right = false;
-
-
-enum Mode current_mode = OFF;
-
-void setup()
-{
-  pinMode(ATOMIZER_LEFT_PIN, OUTPUT);
-  pinMode(ATOMIZER_RIGHT_PIN, OUTPUT);
+// ---------------------------
+// Setup
+// ---------------------------
+void setup() {
+  pinMode(ATOMIZER_A_PIN, OUTPUT);
+  pinMode(ATOMIZER_B_PIN, OUTPUT);
+  pinMode(ATOMIZER_C_PIN, OUTPUT);
+  pinMode(ATOMIZER_D_PIN, OUTPUT);
   pinMode(ATOMIZER_FAN_PIN, OUTPUT);
   pinMode(EXTRACTION_FAN_PIN, OUTPUT);
-  Serial.begin(115200); // Open COM PORT => WARNING : if NANO EVERY think to enable DTR while opening COM port on Unity!!
-  while (!Serial) {
-      ;
-  }
+
+  Serial.begin(115200);
+  while (!Serial) {}
   Serial.println("Nebula");
 }
 
-void update_left_atomization()
-{
-  long duration_l = atomization_sq_sig_l ? (atomization_duty_cycle_l / 100.0 * atomization_period_l) : (atomization_period_l - atomization_duty_cycle_l / 100.0 * atomization_period_l);
-
-
-  // Toggle atomisation every period
-  if (millis() - last_atomization_update_l >= duration_l)
-  {
-    last_atomization_update_l = millis();
-    atomization_sq_sig_l = !atomization_sq_sig_l;
-
-    if (atomization_sq_sig_l)
-    {
-      atomizations_counter_l++;
-      Serial.print("Number of left atomizations ");
-      Serial.println(atomizations_counter_l);
-    }
+// ---------------------------
+// Update atomization square signal
+// ---------------------------
+void update_atomization(bool &sq_sig, long &last_update, int period, int duty) {
+  long duration = sq_sig ? (duty / 100.0 * period) : (period - duty / 100.0 * period);
+  if (millis() - last_update >= duration) {
+    last_update = millis();
+    sq_sig = !sq_sig;
   }
 }
 
-void update_right_atomization()
-{
-  long duration_r = atomization_sq_sig_r ? (atomization_duty_cycle_r / 100.0 * atomization_period_r) : (atomization_period_r - atomization_duty_cycle_r / 100.0 * atomization_period_r);
+// ---------------------------
+// Main loop
+// ---------------------------
+void loop() {
 
-  // Toggle atomisation every period
-  if (millis() - last_atomization_update_r >= duration_r)
-  {
-    last_atomization_update_r = millis();
-    atomization_sq_sig_r = !atomization_sq_sig_r;
+  // --- Serial command handling ---
+  while (Serial.available() > 0) {
+    String serialReceived = Serial.readStringUntil('\n');
+    Serial.print("Received: ");
+    Serial.println(serialReceived);
 
-    if (atomization_sq_sig_r)
-    {
-      atomizations_counter_r++;
-      Serial.print("Number of right atomizations ");
-      Serial.println(atomizations_counter_r);
-    }
-  }
-}
+    char cmdChar = serialReceived.charAt(0);
+    String args = serialReceived.substring(1);
 
+    switch (cmdChar) {
+      case 'A':
+        if (!atomize_a) atomization_start_a = millis();
+        atomize_a = true;
+        Serial.println("Atomizer A activated");
+        break;
 
-void reset_atomization_counter_l()
-{
-  atomizations_counter_l = 0;
-}
+      case 'B':
+        if (!atomize_b) atomization_start_b = millis();
+        atomize_b = true;
+        Serial.println("Atomizer B activated");
+        break;
 
-void reset_atomization_counter_r()
-{
-  atomizations_counter_r = 0;
-}
+      case 'C':
+        if (!atomize_c) atomization_start_c = millis();
+        atomize_c = true;
+        Serial.println("Atomizer C activated");
+        break;
 
-void loop()
-{
-  String serialReceived;
-  char cmdChar;
-  String args;
+      case 'D':
+        if (!atomize_d) atomization_start_d = millis();
+        atomize_d = true;
+        Serial.println("Atomizer D activated");
+        break;
 
-  while (Serial.available() > 0)
-  {
-    serialReceived = Serial.readStringUntil('\n');
-    Serial.print("Received `");
-    Serial.print(serialReceived);
-    Serial.println("`");
-    cmdChar = serialReceived.charAt(0);
-    args = serialReceived.substring(1);
+      case 'a':
+        if (atomize_a) {
+          Serial.print("Atomizer A stopped after ");
+          Serial.print(millis() - atomization_start_a);
+          Serial.println(" ms");
+        }
+        atomize_a = false;
+        break;
 
-    switch (cmdChar)
-    {
-    case 'L':
-      Serial.println("Left atomization");
+      case 'b':
+        if (atomize_b) {
+          Serial.print("Atomizer B stopped after ");
+          Serial.print(millis() - atomization_start_b);
+          Serial.println(" ms");
+        }
+        atomize_b = false;
+        break;
 
-      if (current_mode == ATOMIZE_RIGHT)
-      {
-        current_mode = ATOMIZE_BOTH;
-      }
-      else
-      {
-        current_mode = ATOMIZE_LEFT;
-      }
+      case 'c':
+        if (atomize_c) {
+          Serial.print("Atomizer C stopped after ");
+          Serial.print(millis() - atomization_start_c);
+          Serial.println(" ms");
+        }
+        atomize_c = false;
+        break;
 
-      break;
-    case 'R':
-      Serial.println("Right atomization");
+      case 'd':
+        if (atomize_d) {
+          Serial.print("Atomizer D stopped after ");
+          Serial.print(millis() - atomization_start_d);
+          Serial.println(" ms");
+        }
+        atomize_d = false;
+        break;
 
-      if (current_mode == ATOMIZE_LEFT)
-      {
-        current_mode = ATOMIZE_BOTH;
-      }
-      else
-      {
-        current_mode = ATOMIZE_RIGHT;
-      }
+      case 'L':
+        fanless_mode = true;
+        Serial.println("Fanless mode enabled");
+        break;
 
-      break;
-    case 'l':
-      Serial.println("Stop left atomization");
+      case 'S':
+        if (atomize_a) {Serial.print("Atomizer A stopped after "); Serial.print(millis() - atomization_start_a); Serial.println("ms");}
+        if (atomize_b) {Serial.print("Atomizer B stopped after "); Serial.print(millis() - atomization_start_b); Serial.println("ms");}
+        if (atomize_c) {Serial.print("Atomizer C stopped after "); Serial.print(millis() - atomization_start_c); Serial.println("ms");}
+        if (atomize_d) {Serial.print("Atomizer D stopped after "); Serial.print(millis() - atomization_start_d); Serial.println("ms");}
 
-      if (current_mode == ATOMIZE_BOTH)
-      {
-        current_mode = ATOMIZE_RIGHT;
-      }
-      else if (current_mode == ATOMIZE_LEFT)
-      {
-        extraction_fan_start_time = millis();
-        current_mode = OFF;
-      }
+        atomize_a = atomize_b = atomize_c = atomize_d = false;
+        fanless_mode = false;
+        break;
 
-      break;
-    case 'r':
-      Serial.println("Stop right atomization");
+      case 'E':
+        if (sscanf(args.c_str(), "%d;%d", &atomization_period_a, &atomization_duty_cycle_a) == 2) {
+          Serial.print("Atomizer A config: period = "); Serial.print(atomization_period_a);
+          Serial.print(" ms, duty = "); Serial.print(atomization_duty_cycle_a); Serial.println(" %");
+        } else Serial.println("Invalid Atomizer A config");
+        break;
 
-      if (current_mode == ATOMIZE_BOTH)
-      {
-        current_mode = ATOMIZE_LEFT;
-      }
-      else if (current_mode == ATOMIZE_RIGHT)
-      {
-        extraction_fan_start_time = millis();
-        current_mode = OFF;
-      }
+      case 'F':
+        if (sscanf(args.c_str(), "%d;%d", &atomization_period_b, &atomization_duty_cycle_b) == 2) {
+          Serial.print("Atomizer B config: period = "); Serial.print(atomization_period_b);
+          Serial.print(" ms, duty = "); Serial.print(atomization_duty_cycle_b); Serial.println(" %");
+        } else Serial.println("Invalid Atomizer B config");
+        break;
 
-      break;
-    case 'F':
-      Serial.println("Fanless atomization");
-      current_mode = FANLESS_ATOMIZE_BOTH;
-      break;
-    case 'E':
-      Serial.println("Extracting air");
-      current_mode = EXTRACT_AIR;
-      break;
-    case 'S':
-      Serial.println("Stopped atomization");
+      case 'G':
+        if (sscanf(args.c_str(), "%d;%d", &atomization_period_c, &atomization_duty_cycle_c) == 2) {
+          Serial.print("Atomizer C config: period = "); Serial.print(atomization_period_c);
+          Serial.print(" ms, duty = "); Serial.print(atomization_duty_cycle_c); Serial.println(" %");
+        } else Serial.println("Invalid Atomizer C config");
+        break;
 
-      // If previous mode was atomizing, extract air for a few seconds to clean up the air chamber
-      if (current_mode == ATOMIZE_LEFT || current_mode == ATOMIZE_RIGHT || current_mode == ATOMIZE_BOTH)
-      {
-        extraction_fan_start_time = millis();
-      }
-      current_mode = OFF;
-      break;
-    case 'C':
-      if (sscanf(args.c_str(), "%d;%d", &atomization_period_l, &atomization_duty_cycle_l) == 2)
-      {
-        Serial.println("Set atomization left configuration to period=" + String(atomization_period_l) + "ms, duty cycle=" + String(atomization_duty_cycle_l) + "%");
-      }
-      else
-      {
-        Serial.println("Invalid arguments, expecting command formatted as `CX;Y` with X the atomization period (ms) and Y the duty cycle (%)");
-      }
-      break;
-    case 'D':
-      if (sscanf(args.c_str(), "%d;%d", &atomization_period_r, &atomization_duty_cycle_r) == 2)
-      {
-        Serial.println("Set atomization right configuration to period=" + String(atomization_period_r) + "ms, duty cycle=" + String(atomization_duty_cycle_r) + "%");
-      }
-      else
-      {
-        Serial.println("Invalid arguments, expecting command formatted as `DX;Y` with X the atomization period (ms) and Y the duty cycle (%)");
-      }
-      break;
-    default:
-      Serial.println("Unknown command");
-      break;
+      case 'H':
+        if (sscanf(args.c_str(), "%d;%d", &atomization_period_d, &atomization_duty_cycle_d) == 2) {
+          Serial.print("Atomizer D config: period = "); Serial.print(atomization_period_d);
+          Serial.print(" ms, duty = "); Serial.print(atomization_duty_cycle_d); Serial.println(" %");
+        } else Serial.println("Invalid Atomizer D config");
+        break;
+
+      case '?':
+        Serial.print("Diffusing: "); Serial.println(is_diffusing ? "YES" : "NO");
+        break;
+
+      default:
+        Serial.println("Unknown command");
+        break;
     }
   }
 
-  switch (current_mode)
-  {
-  case ATOMIZE_LEFT:
-    update_left_atomization();
-    analogWrite(ATOMIZER_FAN_PIN, ATOMIZATION_FAN_SPEED);
-    digitalWrite(ATOMIZER_LEFT_PIN, atomization_sq_sig_l ? HIGH : LOW);
-    digitalWrite(ATOMIZER_RIGHT_PIN, 0);
-    analogWrite(EXTRACTION_FAN_PIN, 0);
-    break;
-  case ATOMIZE_RIGHT:
-    update_right_atomization();
-    analogWrite(ATOMIZER_FAN_PIN, ATOMIZATION_FAN_SPEED);
-    digitalWrite(ATOMIZER_LEFT_PIN, 0);
-    digitalWrite(ATOMIZER_RIGHT_PIN, atomization_sq_sig_r ? HIGH : LOW);
-    analogWrite(EXTRACTION_FAN_PIN, 0);
-    break;
-  case ATOMIZE_BOTH:
-    update_left_atomization();
-    update_right_atomization();
-    analogWrite(ATOMIZER_FAN_PIN, ATOMIZATION_FAN_SPEED);
-    digitalWrite(ATOMIZER_LEFT_PIN, atomization_sq_sig_l ? HIGH : LOW);
-    digitalWrite(ATOMIZER_RIGHT_PIN, atomization_sq_sig_r ? HIGH : LOW);
-    analogWrite(EXTRACTION_FAN_PIN, 0);
-    break;
-  case EXTRACT_AIR:
-    reset_atomization_counter_l();
-    reset_atomization_counter_r();
-    analogWrite(ATOMIZER_FAN_PIN, ATOMIZATION_FAN_SPEED);
-    digitalWrite(ATOMIZER_LEFT_PIN, LOW);
-    digitalWrite(ATOMIZER_RIGHT_PIN, LOW);
-    analogWrite(EXTRACTION_FAN_PIN, EXTRACTION_FAN_SPEED);
-    break;
-  case FANLESS_ATOMIZE_BOTH:
-    update_left_atomization();
-    update_right_atomization();
-    analogWrite(ATOMIZER_FAN_PIN, 0);
-    digitalWrite(ATOMIZER_LEFT_PIN, HIGH);
-    digitalWrite(ATOMIZER_RIGHT_PIN, HIGH);
-    analogWrite(EXTRACTION_FAN_PIN, 0);
-    break;
-  default: // OFF
-    reset_atomization_counter_l();
-    reset_atomization_counter_r();
-    analogWrite(ATOMIZER_FAN_PIN, ATOMIZATION_FAN_SPEED);
-    digitalWrite(ATOMIZER_LEFT_PIN, LOW);
-    digitalWrite(ATOMIZER_RIGHT_PIN, LOW);
+  // --- Update atomizations ---
+  if (atomize_a) update_atomization(atomization_sq_sig_a, last_atomization_update_a, atomization_period_a, atomization_duty_cycle_a);
+  if (atomize_b) update_atomization(atomization_sq_sig_b, last_atomization_update_b, atomization_period_b, atomization_duty_cycle_b);
+  if (atomize_c) update_atomization(atomization_sq_sig_c, last_atomization_update_c, atomization_period_c, atomization_duty_cycle_c);
+  if (atomize_d) update_atomization(atomization_sq_sig_d, last_atomization_update_d, atomization_period_d, atomization_duty_cycle_d);
 
-    // extraction_fan_start_time != -1 is used to prevent activating the fan on boot
+  is_diffusing = atomize_a || atomize_b || atomize_c || atomize_d;
 
-    if (extraction_fan_start_time != -1 && millis() - extraction_fan_start_time <= EXTRACTION_DURATION)
-    {
+  // --- Atomizer fan ---
+  analogWrite(ATOMIZER_FAN_PIN, fanless_mode ? 0 : ATOMIZATION_FAN_SPEED);
+
+  // --- Atomizer outputs ---
+  digitalWrite(ATOMIZER_A_PIN, atomize_a && atomization_sq_sig_a ? HIGH : LOW);
+  digitalWrite(ATOMIZER_B_PIN, atomize_b && atomization_sq_sig_b ? HIGH : LOW);
+  digitalWrite(ATOMIZER_C_PIN, atomize_c && atomization_sq_sig_c ? HIGH : LOW);
+  digitalWrite(ATOMIZER_D_PIN, atomize_d && atomization_sq_sig_d ? HIGH : LOW);
+
+  // --- Extraction fan ---
+  if (!is_diffusing && was_diffusing) extraction_fan_start_time = millis();
+  was_diffusing = is_diffusing;
+
+  if (extraction_fan_start_time != -1) {
+    if (millis() - extraction_fan_start_time <= EXTRACTION_DURATION) {
       analogWrite(EXTRACTION_FAN_PIN, EXTRACTION_FAN_SPEED);
-    }
-    else
-    {
+    } else {
       analogWrite(EXTRACTION_FAN_PIN, 0);
+      extraction_fan_start_time = -1;
     }
-
-    break;
+  } else {
+    analogWrite(EXTRACTION_FAN_PIN, 0); // Ensure fan is off by default
   }
 }

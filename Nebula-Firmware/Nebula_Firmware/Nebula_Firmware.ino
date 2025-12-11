@@ -12,35 +12,47 @@ const int ATOMIZER_D_PIN       = 6;
 // Fan speeds and durations
 // ---------------------------
 const int ATOMIZATION_FAN_SPEED = 255;
-const int EXTRACTION_FAN_SPEED = 255;
+const int EXTRACTION_FAN_SPEED  = 255;
+const long EXTRACTION_DURATION  = 2000; // ms
 
-/**
- * @brief When stopping the atomization, the extraction fan runs for a few seconds. This constant determines for how long it will run.
- */
-const long EXTRACTION_DURATION = 2000; // ms
+// ---------------------------
+// Atomizer configuration
+// ---------------------------
+int atomization_period_a = 1000, atomization_duty_cycle_a = 50;
+int atomization_period_b = 1000, atomization_duty_cycle_b = 50;
+int atomization_period_c = 1000, atomization_duty_cycle_c = 50;
+int atomization_period_d = 1000, atomization_duty_cycle_d = 50;
 
-/**
- * @brief Square signal definition for the left atomisation
- */
-int atomization_period_l = 1000;   // ms
-int atomization_duty_cycle_l = 50; // in %
-/**
- * @brief Square signal definition for the right atomisation
- */
-int atomization_period_r = 1000;   // ms
-int atomization_duty_cycle_r = 50; // in %
+// ---------------------------
+// Atomization square signals
+// ---------------------------
+bool atomization_sq_sig_a = false;
+bool atomization_sq_sig_b = false;
+bool atomization_sq_sig_c = false;
+bool atomization_sq_sig_d = false;
 
-/**
- * @brief Atomization square signal used for activation.
- * Prevent a long atomization of volatile product to the nose of the participant
- */
-bool atomization_sq_sig_l = false;
-bool atomization_sq_sig_r = false;
+// ---------------------------
+// Timing trackers
+// ---------------------------
+long last_atomization_update_a = 0;
+long last_atomization_update_b = 0;
+long last_atomization_update_c = 0;
+long last_atomization_update_d = 0;
 
-/**
- * @brief Keeps track of when the extraction fan started after stopping atomizing.
- * Used to stop the extraction fan after the duration is expired.
- */
+long atomization_start_a = 0;
+long atomization_start_b = 0;
+long atomization_start_c = 0;
+long atomization_start_d = 0;
+
+// ---------------------------
+// Diffusion state
+// ---------------------------
+bool atomize_a = false;
+bool atomize_b = false;
+bool atomize_c = false;
+bool atomize_d = false;
+
+bool fanless_mode = false;
 long extraction_fan_start_time = -1;
 bool is_diffusing = false;
 bool was_diffusing = false;

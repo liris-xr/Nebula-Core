@@ -205,7 +205,7 @@ void loop() {
       case '?':
         Serial.print("Diffusing: "); Serial.println(is_diffusing ? "YES" : "NO");
         break;
-
+        
       default:
         Serial.println("Unknown command");
         break;
@@ -235,12 +235,12 @@ void loop() {
 
   if (extraction_fan_start_time != -1) {
     if (millis() - extraction_fan_start_time <= EXTRACTION_DURATION) {
-      analogWrite(EXTRACTION_FAN_PIN, EXTRACTION_FAN_SPEED);
+      digitalWrite(EXTRACTION_FAN_PIN, HIGH);
     } else {
-      analogWrite(EXTRACTION_FAN_PIN, 0);
+      digitalWrite(EXTRACTION_FAN_PIN, LOW);
       extraction_fan_start_time = -1;
     }
   } else {
-    analogWrite(EXTRACTION_FAN_PIN, 0); // Ensure fan is off by default
+    analogWrite(EXTRACTION_FAN_PIN, LOW); // Ensure fan is off by default
   }
 }

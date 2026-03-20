@@ -7,7 +7,7 @@ using System.IO;
 public class NebulaOdorDiffuser : MonoBehaviour
 {
     //Define which odor you are going to diffuse. You can spread different smelling objects in the scene
-    public enum AtomizerList { Left, Right };
+    public enum AtomizerList { A, B, C, D };
     public enum DiffusionMode { InverseSquare, Linear, Binary };
     public DiffusionMode diffusionMode;
     public AtomizerList atomizer;
@@ -39,15 +39,25 @@ public class NebulaOdorDiffuser : MonoBehaviour
         //adjust instruction sent to the Arduino to dissociate left and right atomizer 
         switch (atomizer)
         {
-            case AtomizerList.Left:
-                startDiffusionCommand = "L";
-                stopDiffusionCommand = "l";
-                changeConfigurationCommand = "C";
+            case AtomizerList.A:
+                startDiffusionCommand = "A";
+                stopDiffusionCommand = "a";
+                changeConfigurationCommand = "E";
                 break;
-            case AtomizerList.Right:
-                startDiffusionCommand = "R";
-                stopDiffusionCommand = "r";
-                changeConfigurationCommand = "D";
+            case AtomizerList.B:
+                startDiffusionCommand = "B";
+                stopDiffusionCommand = "b";
+                changeConfigurationCommand = "F";
+                break;
+            case AtomizerList.C:
+                startDiffusionCommand = "C";
+                stopDiffusionCommand = "c";
+                changeConfigurationCommand = "G";
+                break;
+            case AtomizerList.D:
+                startDiffusionCommand = "D";
+                stopDiffusionCommand = "d";
+                changeConfigurationCommand = "H";
                 break;
             default:
                 Debug.Log("Incorrect atomizer");

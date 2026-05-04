@@ -1,0 +1,8 @@
+Command		Action			Description
+A, B, C, D	Start Atomizer		Activates specific atomizer and starts its timer.
+a, b, c, d	Stop Atomizer		Deactivates it and prints the duration used.
+E, F, G, H	Configure		Sets Period(ms) and Duty Cycle(%) (e.g., 1000;50).
+L / l		Fanless			L: Enable (Fans OFF) / l: Disable (Normal).
+N / n		Cleanup			N: Force extraction ON / n: Resume Auto.
+S		STOP			Shutdown of all outputs and modes (soft reset).
+?		Status			Returns the current system state.

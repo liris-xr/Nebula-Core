@@ -1,2 +1,0 @@
-SerialFinder KEYWORD1
-findMe KEYWORD2

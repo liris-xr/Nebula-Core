@@ -52,8 +52,9 @@ bool atomize_b = false;
 bool atomize_c = false;
 bool atomize_d = false;
 
-bool fanless_mode = false;
 long extraction_fan_start_time = -1;
+bool fanless_mode = false;
+bool cleanup_mode = false;
 bool is_diffusing = false;
 bool was_diffusing = false;
 
@@ -67,7 +68,6 @@ void setup() {
   pinMode(ATOMIZER_D_PIN, OUTPUT);
   pinMode(ATOMIZER_FAN_PIN, OUTPUT);
   pinMode(EXTRACTION_FAN_PIN, OUTPUT);
-
   Serial.begin(115200);
   while (!Serial) {}
   Serial.println("Nebula");
@@ -158,22 +158,7 @@ void loop() {
         }
         atomize_d = false;
         break;
-
-      case 'L':
-        fanless_mode = true;
-        Serial.println("Fanless mode enabled");
-        break;
-
-      case 'S':
-        if (atomize_a) {Serial.print("Atomizer A stopped after "); Serial.print(millis() - atomization_start_a); Serial.println("ms");}
-        if (atomize_b) {Serial.print("Atomizer B stopped after "); Serial.print(millis() - atomization_start_b); Serial.println("ms");}
-        if (atomize_c) {Serial.print("Atomizer C stopped after "); Serial.print(millis() - atomization_start_c); Serial.println("ms");}
-        if (atomize_d) {Serial.print("Atomizer D stopped after "); Serial.print(millis() - atomization_start_d); Serial.println("ms");}
-
-        atomize_a = atomize_b = atomize_c = atomize_d = false;
-        fanless_mode = false;
-        break;
-
+      
       case 'E':
         if (sscanf(args.c_str(), "%d;%d", &atomization_period_a, &atomization_duty_cycle_a) == 2) {
           Serial.print("Atomizer A config: period = "); Serial.print(atomization_period_a);
@@ -202,6 +187,26 @@ void loop() {
         } else Serial.println("Invalid Atomizer D config");
         break;
 
+      case 'L':
+        fanless_mode = true;
+        Serial.println("Fanless mode enabled");
+        break;
+      
+      case 'N':
+        cleanup_mode = true;
+        Serial.println("Cleanup mode enabled");
+        break;
+
+      case 'S':
+        if (atomize_a) {Serial.print("Atomizer A stopped after "); Serial.print(millis() - atomization_start_a); Serial.println("ms");}
+        if (atomize_b) {Serial.print("Atomizer B stopped after "); Serial.print(millis() - atomization_start_b); Serial.println("ms");}
+        if (atomize_c) {Serial.print("Atomizer C stopped after "); Serial.print(millis() - atomization_start_c); Serial.println("ms");}
+        if (atomize_d) {Serial.print("Atomizer D stopped after "); Serial.print(millis() - atomization_start_d); Serial.println("ms");}
+        atomize_a = atomize_b = atomize_c = atomize_d = false;
+        fanless_mode = false;
+        cleanup_mode = false;
+        break;
+
       case '?':
         Serial.print("Diffusing: "); Serial.println(is_diffusing ? "YES" : "NO");
         break;
@@ -222,6 +227,9 @@ void loop() {
 
   // --- Atomizer fan ---
   analogWrite(ATOMIZER_FAN_PIN, fanless_mode ? 0 : ATOMIZATION_FAN_SPEED);
+    
+  // --- Cleanup mode ---
+  digitalWrite(EXTRACTION_FAN_PIN, cleanup_mode ? HIGH : LOW)
 
   // --- Atomizer outputs ---
   digitalWrite(ATOMIZER_A_PIN, atomize_a && atomization_sq_sig_a ? HIGH : LOW);
